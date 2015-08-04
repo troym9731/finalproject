@@ -1,12 +1,9 @@
 {
   "users": [
     {
-      
-    }
-  ],
-  "places": [
-    {
-      
+      "first_name": "Troy",
+      "last_name": "Mullaney",
+      "id": 1
     }
   ]
 }
