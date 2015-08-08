@@ -3,6 +3,18 @@
     {
       "first_name": "Troy",
       "last_name": "Mullaney",
+      "email": "troym9731@gmail.com",
+      "password": "password",
+      "genre": "rock",
+      "instruments": ["guitar", "piano", "violin"],
+      "id": 1
+    }
+  ],
+  "bands": [
+    {
+      "band_name": "AC/DC",
+      "members_needed": 4,
+      "members": [1],
       "id": 1
     }
   ]
