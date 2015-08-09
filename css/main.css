@@ -205,6 +205,7 @@ samp {
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
 button,
+a.btn,
 input,
 optgroup,
 select,
@@ -219,7 +220,7 @@ textarea {
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-button {
+button, a.btn {
   overflow: visible; }
 
 /**
@@ -229,6 +230,7 @@ button {
  * Correct `select` style inheritance in Firefox.
  */
 button,
+a.btn,
 select {
   text-transform: none; }
 
@@ -240,9 +242,9 @@ select {
  *    `input` and others.
  */
 button,
+a.btn,
 html input[type="button"], input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
   /* 3 */ }
@@ -251,6 +253,7 @@ input[type="submit"] {
  * Re-set default cursor for disabled elements.
  */
 button[disabled],
+a[disabled].btn,
 html input[disabled] {
   cursor: default; }
 
@@ -258,6 +261,7 @@ html input[disabled] {
  * Remove inner padding and border in Firefox 4+.
  */
 button::-moz-focus-inner,
+a.btn::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -2387,5 +2391,38 @@ th {
   content: "\f280"; }
 
 /****************************************
+  Components and Helpers
+*****************************************/
+button, a.btn {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  padding: 10px;
+  border-radius: 4px; }
+
+a.btn {
+  text-decoration: none; }
+
+/****************************************
   Layout
 *****************************************/
+.primary-header {
+  background-color: transparent;
+  min-height: 100px;
+  position: relative; }
+  .primary-header .fa {
+    color: white;
+    font-size: 4em;
+    position: absolute;
+    top: 10px;
+    left: 200px; }
+  .primary-header .primary-nav {
+    position: absolute;
+    top: 30px;
+    right: 200px; }
+    .primary-header .primary-nav .btn {
+      margin: 0 4px; }
+
+div.background {
+  background-image: url("../images/homebg.jpg");
+  background-size: cover; }

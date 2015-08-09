@@ -1,0 +1,12 @@
+button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+a.btn {
+  @extend button;
+  text-decoration: none;
+}
