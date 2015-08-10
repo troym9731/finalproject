@@ -2397,11 +2397,12 @@ button, a.btn {
   color: white;
   background-color: transparent;
   border: 1px solid #FFF;
-  padding: 10px;
+  padding: 1em;
   border-radius: 4px; }
 
 a.btn {
-  text-decoration: none; }
+  text-decoration: none;
+  display: inline-block; }
 
 /****************************************
   Layout
@@ -2412,17 +2413,82 @@ a.btn {
   position: relative; }
   .primary-header .fa {
     color: white;
-    font-size: 4em;
+    font-size: 4.5em;
     position: absolute;
-    top: 10px;
-    left: 200px; }
+    top: 35px;
+    left: 170px; }
   .primary-header .primary-nav {
     position: absolute;
-    top: 30px;
-    right: 200px; }
+    top: 35px;
+    right: 170px; }
+    .primary-header .primary-nav .btn:not(:last-child) {
+      border: none;
+      padding: 15px 10px;
+      margin-right: 12px; }
     .primary-header .primary-nav .btn {
-      margin: 0 4px; }
+      padding: 15px 25px; }
 
 div.background {
   background-image: url("../images/homebg.jpg");
-  background-size: cover; }
+  background-size: cover;
+  min-height: 580px;
+  position: relative; }
+  div.background > div {
+    position: relative;
+    min-height: 450px; }
+  div.background.lightbox {
+    background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url("../images/homebg.jpg");
+    background-size: cover; }
+
+.banner {
+  position: absolute;
+  text-align: center;
+  min-height: 170px;
+  left: 0;
+  right: 0;
+  top: 110px; }
+  .banner h1 {
+    color: white;
+    font-size: 4.5em;
+    margin: 0; }
+  .banner p {
+    color: white;
+    font-size: 1.4em;
+    display: block;
+    width: 400px;
+    margin: 5px auto 15px auto; }
+  .banner a.btn {
+    display: inline-block;
+    padding: 20px 40px; }
+
+.primary-footer {
+  background-color: #000;
+  color: white;
+  min-height: 100px;
+  position: relative; }
+  .primary-footer > div {
+    position: absolute;
+    top: 40px;
+    left: 170px; }
+  .primary-footer nav {
+    position: absolute;
+    font-size: 1.7em;
+    top: 20px;
+    right: 170px; }
+    .primary-footer nav .fa {
+      margin: 15px; }
+
+.form-box {
+  width: 360px;
+  height: 420px;
+  background-color: #FFF;
+  border-radius: 7px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .form-box h1 {
+    width: 150px;
+    margin: 55px auto; }
+  .form-box .fa {
+    margin-right: 5px; }
