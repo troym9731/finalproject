@@ -8,6 +8,15 @@ var Footer = require('./Footer');
 var Template = React.createClass({
   mixins: [Router.State],
 
+  changeBackground: function() {
+    var path = this.getPath();
+    if (path === '/' || path === '/login' || path === '/signup') {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
   lightbox: function() {
     var path = this.getPath();
     if (path === '/login' || path === '/signup') {
@@ -19,10 +28,11 @@ var Template = React.createClass({
 
   render: function() {
     var path = this.getPath();
-    var bgCheck = this.lightbox() ? 'background lightbox' : 'background';
+    var lightbox = this.lightbox() ? 'background lightbox' : 'background wallpaper';
+    var bgImage = this.changeBackground() ? lightbox : 'background';
     return (
       <div>
-        <div className={bgCheck}>
+        <div className={bgImage}>
           <Header search={path} />
           <RouteHandler />
         </div>

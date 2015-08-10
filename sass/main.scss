@@ -8,9 +8,13 @@
   Fonts
 *****************************************/
 
+@import url(http://fonts.googleapis.com/css?family=Istok+Web:400,700);
+
 /****************************************
   Defaults
 *****************************************/
+
+@import 'defaults';
 
 /****************************************
   Font-Awesome
@@ -23,6 +27,7 @@
 *****************************************/
 
 @import 'components';
+@import 'mixins';
 
 /****************************************
   Layout
@@ -32,3 +37,4 @@
 @import 'home';
 @import 'footer';
 @import 'login';
+@import 'search';

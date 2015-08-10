@@ -3,11 +3,15 @@
   min-height: 100px;
   position: relative;
 
+  &.dark {
+    background-color: #000;
+  }
+
   .fa {
     color: white;
     font-size: 4.5em;
     position: absolute;
-    top: 35px;
+    top: 20px;
     left: 170px;
   }
 

@@ -1,27 +1,101 @@
-.login-box {
-  width: 360px;
-  height: 420px;
+.login-box, .signup-box {
+  width: 340px;
+  height: 450px;
   background-color: #FFF;
-  border-radius: 7px;
+  color: #000;
+  border-radius: 4px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
 
-.signup-box {
-  @extend .login-box;
-  width: 600px;
-  height: 420px;
-}
+  h1 {
+  width: 170px;
+  margin: 65px auto;
+  font-size: 33pt;
 
-.login-box, .signup-box {
-    h1 {
-    width: 150px;
-    margin: 55px auto;
+    .fa {
+    color: #000;
+    font-size: 40pt;
+    margin-right: 10px;
+    }
   }
 
   .fa {
-    margin-right: 5px;
+    color: #000;
+    font-size: 20pt;
+  }
+
+  a.btn {
+    background-color: #50A2E5;
+    display: block;
+    width: 237px;
+    padding: 12px;
+    margin: 17px 0 0 54px;
+    text-align: center;
+  }
+
+  .cb-form {
+    margin-left: 25px;
+  }
+
+  .cb-wrapper {
+    display: inline-block;
+    width: 125px;
   }
 }
+
+.signup-box {
+  width: 800px;
+  height: 450px;
+
+  h1 {
+    width: 220px;
+    margin: 30px auto 12px auto;
+  }
+
+  h3 {
+    margin: 10px 0 0 15px;
+    font-size: 17pt;
+  }
+
+  .form-object {
+    margin-left: 80px;
+  }
+
+  a.btn {
+    margin: 17px auto;
+  }
+}
+
+.form-divider {
+  @include media-object(400px);
+
+  > :last-child .form-object {
+    margin-left: 20px;
+  }
+}
+
+.form-object {
+  @include media-object(30px);
+  margin-top: 15px;
+
+  > :first-child {
+    margin: 7px 5px 0 20px;
+  }
+
+  input {
+    outline: none;
+    border: 1px solid #C0C0C0;
+    border-radius: 4px;
+    width: 235px;
+    padding: 12px 4px;
+    font-size: 11pt;
+    -webkit-transition: all 0.3s;
+
+    &:focus {
+      border: 1px solid #50A2E5;
+    }
+  }
+}
+

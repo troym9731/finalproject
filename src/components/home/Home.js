@@ -7,7 +7,7 @@ var Home = React.createClass({
         <div className="banner">
           <h1>BandJam</h1>
           <p>The place to meet up with local musicians to form a band or just to jam!</p>
-          <a className="btn">Search Now</a>
+          <a href="/#/search" className="btn">Search Now</a>
         </div>
       </div>
     );

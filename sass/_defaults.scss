@@ -1,0 +1,11 @@
+html {
+  box-sizing: border-box;
+  font: 12pt 'Istok Web', 'Open Sans', Arial;
+  color: white;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  color: inherit;
+  font: inherit;
+}

@@ -1,0 +1,12 @@
+@mixin media-object($width) {
+    overflow: hidden;
+
+    > :first-child {
+        float: left;
+        width: $width;
+    }
+
+    > :last-child {
+        margin-left: $width;
+    }
+}
