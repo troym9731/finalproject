@@ -40,7 +40,7 @@ var Signup = React.createClass({
                   <div><i className="fa fa-music"></i></div>
                   <div>
                     <select name="genere" id="genre">
-                      <option selected disabled>Genre...</option>
+                      <option defaultValue>Genre...</option>
                       <option value="rock">Rock</option>
                       <option value="jazz">Jazz</option>
                       <option value="country">Country</option>

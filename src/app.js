@@ -1,4 +1,5 @@
 var React = require('react');
+var $ = require('jquery');
 var Router = require('react-router');
 var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
@@ -21,14 +22,4 @@ Router.run(routes, Router.HashLocation, function(Root) {
   React.render(<Root />, document.body);
 });
 
-map = new GMaps({
-  el: '#map',
-  lat: -12.043333,
-  lng: -77.028333,
-  click: function(e) {
-    alert('click');
-  },
-  dragend: function(e) {
-    alert('dragend');
-  }
-});
+

@@ -2428,11 +2428,11 @@ a.btn {
     color: white;
     font-size: 4.5em;
     position: absolute;
-    top: 20px;
+    top: 15px;
     left: 170px; }
   .primary-header .primary-nav {
     position: absolute;
-    top: 35px;
+    top: 30px;
     right: 170px; }
     .primary-header .primary-nav .btn:not(:last-child) {
       border: none;
@@ -2574,9 +2574,44 @@ div.background {
 
 #map {
   width: 1280px;
-  height: 500px; }
+  height: 300px; }
 
 .search {
   background: url("../images/band-night.jpg") center;
   background-size: contain;
-  min-height: 500px; }
+  min-height: 500px;
+  position: relative; }
+
+.search-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px; }
+  .search-box h2 {
+    width: 400px;
+    font-size: 25pt;
+    margin: 30px auto; }
+  .search-box .map-choices {
+    margin-left: 240px; }
+    .search-box .map-choices label {
+      margin-right: 50px; }
+  .search-box .fa {
+    font-size: 20pt; }
+  .search-box .form-object {
+    margin-left: 175px;
+    margin-top: 30px; }
+  .search-box a.btn {
+    color: #FFF;
+    border-radius: 4px;
+    border: none;
+    background-color: #50A2E5;
+    display: block;
+    width: 237px;
+    padding: 12px;
+    margin: 20px 0 0 220px;
+    text-align: center; }
