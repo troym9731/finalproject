@@ -5,9 +5,9 @@ var Route = Router.Route;
 var DefaultRoute = Router.DefaultRoute;
 var Template = require('./components/Template');
 var Home = require('./components/Home');
-var Login = require('./components/Login');
-var Signup = require('./components/Signup');
-var Search = require('./components/Search');
+var Login = require('./components/login/Login');
+var Signup = require('./components/signup/Signup');
+var Search = require('./components/search/Search');
 
 var routes = (
   <Route path="/" handler={Template}>

@@ -26,6 +26,15 @@
       margin-right: 12px;
     }
 
+    a.btn:last-child {
+      -webkit-transition: all 0.2s;
+
+      &:hover {
+        background-color: #FFF;
+        color: #444;
+      }
+    }
+
     .btn {
       padding: 15px 25px;
     }

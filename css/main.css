@@ -2458,6 +2458,11 @@ a.btn {
       border: none;
       padding: 15px 10px;
       margin-right: 12px; }
+    .primary-header .primary-nav a.btn:last-child {
+      -webkit-transition: all 0.2s; }
+      .primary-header .primary-nav a.btn:last-child:hover {
+        background-color: #FFF;
+        color: #444; }
     .primary-header .primary-nav .btn {
       padding: 15px 25px; }
 
@@ -2494,7 +2499,11 @@ div.background {
     margin: 0 auto 15px auto; }
   .banner a.btn {
     display: inline-block;
-    padding: 20px 40px; }
+    padding: 20px 40px;
+    -webkit-transition: all 0.2s; }
+    .banner a.btn:hover {
+      background-color: #FFF;
+      color: #444; }
 
 .primary-footer {
   background-color: #000;
@@ -2533,6 +2542,10 @@ div.background {
   display: inline-block;
   width: 125px; }
 
+.login-box .form-object input {
+  padding: 12px 4px;
+  font-size: 11pt; }
+
 .signup-box {
   width: 800px;
   min-height: 460px; }
@@ -2541,6 +2554,8 @@ div.background {
     margin: 30px auto 12px auto; }
   .signup-box h3 {
     margin: 10px 0 0 15px;
+    font-size: 17pt; }
+  .signup-box .fa {
     font-size: 17pt; }
   .signup-box .form-object {
     margin-left: 80px; }
@@ -2570,8 +2585,8 @@ div.background {
     border: 1px solid #C0C0C0;
     border-radius: 4px;
     width: 235px;
-    padding: 12px 4px;
-    font-size: 11pt;
+    padding: 8px 4px;
+    font-size: 10pt;
     -webkit-transition: all 0.3s; }
     .form-object input:focus {
       border: 1px solid #50A2E5; }
@@ -2600,9 +2615,9 @@ div.background {
     .search-box .map-choices label {
       margin-right: 50px; }
   .search-box .fa {
-    font-size: 16pt; }
+    font-size: 17pt; }
   .search-box .form-object {
     margin-left: 180px;
-    margin-top: 30px; }
+    margin-top: 15px; }
   .search-box a.btn {
     color: #FFF; }

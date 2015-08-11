@@ -5,16 +5,39 @@
       "last_name": "Mullaney",
       "email": "troym9731@gmail.com",
       "password": "password",
+      "address": "1363 W. 14th St.",
+      "city": "Tempe",
+      "state": "Arizona",
+      "zipcode": "85281",
       "genre": "rock",
       "instruments": ["guitar", "piano", "violin"],
       "id": 1
+    },
+    {
+      "first_name": "Example",
+      "last_name": "LastExample",
+      "email": "example@ex.com",
+      "password": "password",
+      "address": "1525 W. 18th St.",
+      "city": "Tempe",
+      "state": "Arizona",
+      "zipcode": "85281",
+      "genre": "rock",
+      "instruments": ["guitar", "piano"],
+      "id": 2
     }
   ],
   "bands": [
     {
       "band_name": "AC/DC",
       "members_needed": 4,
-      "members": [1],
+      "address": "1363 W. 14th St.",
+      "city": "Tempe",
+      "state": "Arizona",
+      "zipcode": "85281",
+      "genre": "rock",
+      "members": [1, 2],
+      "owner": 1,
       "id": 1
     }
   ]
