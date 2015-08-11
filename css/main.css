@@ -2405,7 +2405,7 @@ html {
   Components and Helpers
 *****************************************/
 button, a.btn {
-  color: white;
+  color: #FFF;
   background-color: transparent;
   border: 1px solid #FFF;
   padding: 1em;
@@ -2414,6 +2414,26 @@ button, a.btn {
 a.btn {
   text-decoration: none;
   display: inline-block; }
+
+.login-box, .signup-box, .search-box {
+  width: 340px;
+  min-height: 450px;
+  background-color: #FFF;
+  color: #000;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.login-box a.btn, .signup-box a.btn, .search-box a.btn {
+  background-color: #50A2E5;
+  display: block;
+  width: 237px;
+  padding: 12px;
+  margin: 17px auto;
+  text-align: center;
+  border: none; }
 
 /****************************************
   Layout
@@ -2493,43 +2513,29 @@ div.background {
     .primary-footer nav .fa {
       margin: 15px; }
 
-.login-box, .signup-box {
-  width: 340px;
-  height: 450px;
-  background-color: #FFF;
-  color: #000;
-  border-radius: 4px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-  .login-box h1, .signup-box h1 {
-    width: 170px;
-    margin: 65px auto;
-    font-size: 33pt; }
-    .login-box h1 .fa, .signup-box h1 .fa {
-      color: #000;
-      font-size: 40pt;
-      margin-right: 10px; }
-  .login-box .fa, .signup-box .fa {
+.login-box h1, .signup-box h1 {
+  width: 170px;
+  margin: 65px auto;
+  font-size: 33pt; }
+  .login-box h1 .fa, .signup-box h1 .fa {
     color: #000;
-    font-size: 20pt; }
-  .login-box a.btn, .signup-box a.btn {
-    background-color: #50A2E5;
-    display: block;
-    width: 237px;
-    padding: 12px;
-    margin: 17px 0 0 54px;
-    text-align: center; }
-  .login-box .cb-form, .signup-box .cb-form {
-    margin-left: 25px; }
-  .login-box .cb-wrapper, .signup-box .cb-wrapper {
-    display: inline-block;
-    width: 125px; }
+    font-size: 40pt;
+    margin-right: 10px; }
+
+.login-box .fa, .signup-box .fa {
+  color: #000;
+  font-size: 20pt; }
+
+.login-box .cb-form, .signup-box .cb-form {
+  margin-left: 25px; }
+
+.login-box .cb-wrapper, .signup-box .cb-wrapper {
+  display: inline-block;
+  width: 125px; }
 
 .signup-box {
   width: 800px;
-  height: 450px; }
+  min-height: 460px; }
   .signup-box h1 {
     width: 220px;
     margin: 30px auto 12px auto; }
@@ -2538,8 +2544,6 @@ div.background {
     font-size: 17pt; }
   .signup-box .form-object {
     margin-left: 80px; }
-  .signup-box a.btn {
-    margin: 17px auto; }
 
 .form-divider {
   overflow: hidden; }
@@ -2556,9 +2560,9 @@ div.background {
   margin-top: 15px; }
   .form-object > :first-child {
     float: left;
-    width: 30px; }
+    width: 29px; }
   .form-object > :last-child {
-    margin-left: 30px; }
+    margin-left: 29px; }
   .form-object > :first-child {
     margin: 7px 5px 0 20px; }
   .form-object input {
@@ -2583,35 +2587,22 @@ div.background {
   position: relative; }
 
 .search-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 700px;
-  height: 400px;
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 4px; }
+  min-height: 400px;
+  background-color: rgba(255, 255, 255, 0.8); }
   .search-box h2 {
     width: 400px;
     font-size: 25pt;
     margin: 30px auto; }
   .search-box .map-choices {
-    margin-left: 240px; }
+    width: 220px;
+    margin: 0 auto; }
     .search-box .map-choices label {
       margin-right: 50px; }
   .search-box .fa {
-    font-size: 20pt; }
+    font-size: 16pt; }
   .search-box .form-object {
-    margin-left: 175px;
+    margin-left: 180px;
     margin-top: 30px; }
   .search-box a.btn {
-    color: #FFF;
-    border-radius: 4px;
-    border: none;
-    background-color: #50A2E5;
-    display: block;
-    width: 237px;
-    padding: 12px;
-    margin: 20px 0 0 220px;
-    text-align: center; }
+    color: #FFF; }
