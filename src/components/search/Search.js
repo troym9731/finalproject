@@ -73,9 +73,7 @@ var Search = React.createClass({
   render: function() {
     return (
       <div>
-        <div className="map-wrapper">
-          <div id="map"></div>
-        </div>
+        <div id="map"></div>
         <div className="search">
           <SearchBox onClick={this.handleClick}/>
         </div>
