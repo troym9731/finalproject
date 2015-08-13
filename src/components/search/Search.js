@@ -32,8 +32,7 @@ var Search = React.createClass({
                   id: id,
                   genre: genre,
                   infoWindow: {
-                    content: '<p>user' + id + '</p>' 
-                                + '<p>' + genre '</p>'
+                    content: '<p>user' + id + ' ' + genre + '</p>' 
                   }
                 });
               }
@@ -61,8 +60,7 @@ var Search = React.createClass({
                     id: id,
                     genre: genre,
                     infoWindow: {
-                      content: '<p>band' + id + '</p>' 
-                                + '<p>' + genre '</p>'
+                      content: '<p>band' + id + ' ' + genre + '</p>' 
                     }
                   });
                 }
@@ -75,7 +73,9 @@ var Search = React.createClass({
   render: function() {
     return (
       <div>
-        <div id="map"></div>
+        <div className="map-wrapper">
+          <div id="map"></div>
+        </div>
         <div className="search">
           <SearchBox onClick={this.handleClick}/>
         </div>
@@ -85,35 +85,49 @@ var Search = React.createClass({
 
   handleClick: function(e) {
     e.preventDefault();
+    _.forEach(map.markers, function(marker) {
+      marker.setVisible(false);
+    });
     var fields = $('form').serializeArray();
     var searchObj = {};
-    fields.forEach(function(field) {
+    _.forEach(fields, function(field) {
       searchObj[field.name] = field.value;
     });
+     
+    var choice = searchObj.choice;
+    var genre = searchObj.genre;
 
-    if (searchObj.choice === '') {
-      map.markers.forEach(function(marker) {
-        marker.setVisible(true);
-      });
-    } else if (searchObj.choice === 'bands') {
-      map.markers.forEach(function(marker) {
-        if (marker.band) {
+    if (genre === '') {
+      if (choice === '') {
+        _.forEach(map.markers, function(marker) {
           marker.setVisible(true);
-        } else {
-          marker.setVisible(false);
-        }
-      });
-    } else if (searchObj.choice === 'musicians') {
-      map.markers.forEach(function(marker) {
-        if (marker.musician) {
+        });
+      } else if (choice === 'bands') {
+        _.forEach(_.where(map.markers, {band: true}), function(marker) {
           marker.setVisible(true);
-        } else {
-          marker.setVisible(false);
-        }
-      });
+        });
+      } else if (choice === 'musicians') {
+        _.forEach(_.where(map.markers, {musician: true}), function(marker) {
+          marker.setVisible(true);
+        });
+      }
+    } else {
+      if (choice === '') {
+        _.forEach(_.where(map.markers, {genre: genre}), function(marker) {
+          marker.setVisible(true);
+        });
+      } else if (choice === 'bands') {
+        _.forEach(_.where(map.markers, {band: true, genre: genre}), function(marker) {
+          marker.setVisible(true);
+        });
+      } else if (choice === 'musicians') {
+        _.forEach(_.where(map.markers, {musician: true, genre: genre}), function(marker) {
+          marker.setVisible(true);
+        });
+      }
     }
 
-    var address = searchObj['address'] + searchObj['zipcode'];
+    var address = searchObj.address + searchObj.zipcode;
 
     GMaps.geocode({
       address: address,
@@ -121,11 +135,10 @@ var Search = React.createClass({
         if (status === 'OK') {
           var latlng = results[0].geometry.location;
           map.setCenter(latlng.lat(), latlng.lng());
-          map.setZoom(13);
+          map.setZoom(14);
           map.addMarker({
             lat: latlng.lat(),
             lng: latlng.lng(),
-            animation: google.maps.Animation.DROP,
             id: 'You',
             infoWindow: {
               content: '<p>You</p>'
@@ -136,10 +149,8 @@ var Search = React.createClass({
     });
     
     setTimeout(function() {
-      map.markers.forEach(function(marker) {
-        if (marker.id === 'You') {
-          google.maps.event.trigger(marker, 'click');
-        }
+      _.forEach(_.where(map.markers, {id: 'You'}), function(marker) {
+        google.maps.event.trigger(marker, 'click');
       });
     }, 500);
   }
