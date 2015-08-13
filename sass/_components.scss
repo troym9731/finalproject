@@ -32,4 +32,8 @@ a.btn {
   margin: 17px auto;
   text-align: center;
   border: none;
+
+  &:hover {
+    background-color: #4091d2;
+  }
 }

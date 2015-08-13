@@ -14,7 +14,7 @@ var Signup = React.createClass({
               <SignupLeftColumn />
               <SignupRightColumn />
             </div>
-            <a href="" className="btn">Submit</a>
+            <button>Submit</button>
           </form>
         </div>
       </div>

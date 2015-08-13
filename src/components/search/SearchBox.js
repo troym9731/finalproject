@@ -12,7 +12,7 @@ var SearchBox = React.createClass({
           <MapChoices />
           <Address />
           <GenreDropdown />
-          <a href="" className="btn"><i className="fa fa-search"></i></a>
+          <button onClick={this.props.onClick}><i className="fa fa-search"></i></button>
         </form>
       </div>
     );

@@ -15,6 +15,10 @@ var SignupLeftColumn = React.createClass({
           <div><input type="text" name="last-name" id="last-name" placeholder="Last Name"/></div>
         </div>
         <Address />
+        <div className="form-object">
+          <div><i className="fa fa-envelope-o"></i></div>
+          <div><input type="email" name="email" id="email" placeholder="Email Address"/></div>
+        </div>
 
       </div>
     );

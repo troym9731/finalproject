@@ -2426,7 +2426,7 @@ a.btn {
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.login-box a.btn, .signup-box a.btn, .search-box a.btn {
+.login-box button, .login-box a.btn, .signup-box button, .signup-box a.btn, .search-box button, .search-box a.btn {
   background-color: #50A2E5;
   display: block;
   width: 237px;
@@ -2434,6 +2434,8 @@ a.btn {
   margin: 17px auto;
   text-align: center;
   border: none; }
+  .login-box button:hover, .login-box a.btn:hover, .signup-box button:hover, .signup-box a.btn:hover, .search-box button:hover, .search-box a.btn:hover {
+    background-color: #4091d2; }
 
 /****************************************
   Layout
@@ -2592,8 +2594,9 @@ div.background {
       border: 1px solid #50A2E5; }
 
 #map {
+  color: #000;
   width: 1280px;
-  height: 300px; }
+  height: 400px; }
 
 .search {
   background: url("../images/band-night.jpg") center;
@@ -2619,5 +2622,5 @@ div.background {
   .search-box .form-object {
     margin-left: 180px;
     margin-top: 15px; }
-  .search-box a.btn {
+  .search-box button, .search-box a.btn {
     color: #FFF; }

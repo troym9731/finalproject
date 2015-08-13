@@ -4,27 +4,117 @@
       "first_name": "Troy",
       "last_name": "Mullaney",
       "email": "troym9731@gmail.com",
-      "password": "password",
+      "password": "password1",
       "address": "1363 W. 14th St.",
-      "city": "Tempe",
-      "state": "Arizona",
       "zipcode": "85281",
       "genre": "rock",
-      "instruments": ["guitar", "piano", "violin"],
+      "instruments": [
+        "guitar",
+        "piano",
+        "violin"
+      ],
       "id": 1
     },
     {
-      "first_name": "Example",
-      "last_name": "LastExample",
-      "email": "example@ex.com",
-      "password": "password",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john@doe.com",
+      "password": "password2",
       "address": "1525 W. 18th St.",
-      "city": "Tempe",
-      "state": "Arizona",
       "zipcode": "85281",
       "genre": "rock",
-      "instruments": ["guitar", "piano"],
+      "instruments": [
+        "guitar",
+        "piano"
+      ],
       "id": 2
+    },
+    {
+      "first_name": "Sally",
+      "last_name": "Strong",
+      "email": "sally@strong.com",
+      "password": "password3",
+      "address": "S Rosen Dr",
+      "zipcode": "85281",
+      "genre": "jazz",
+      "instruments": [
+        "saxophone"
+      ],
+      "id": 3
+    },
+    {
+      "first_name": "Richi",
+      "last_name": "Brown",
+      "email": "richi@brown.com",
+      "password": "password4",
+      "address": "3232 S 48th St",
+      "zipcode": "85040",
+      "genre": "jazz",
+      "instruments": [
+        "piano",
+        "trumpet"
+      ],
+      "id": 4
+    },
+    {
+      "first_name": "Melissa",
+      "last_name": "Greene",
+      "email": "melissa@greene.com",
+      "password": "password5",
+      "address": "1109 E Alameda Dr",
+      "zipcode": "85282",
+      "genre": "rock",
+      "instruments": [
+        "vocals",
+        "bass"
+      ],
+      "id": 5
+    },
+    {
+      "first_name": "Jane",
+      "last_name": "Anderson",
+      "email": "jane@anderson.com",
+      "password": "password6",
+      "address": "112 S Rockford Dr",
+      "zipcode": "85281",
+      "genre": "rock",
+      "instruments": [
+        "guitar",
+        "piano",
+        "drums",
+        "vocals",
+        "trumpet",
+        "kazoo"
+      ],
+      "id": 6
+    },
+    {
+      "first_name": "Julius",
+      "last_name": "Yared",
+      "email": "julius@yared.com",
+      "password": "password7",
+      "address": "1109 E Alameda Dr",
+      "zipcode": "85282",
+      "genre": "country",
+      "instruments": [
+        "vocals",
+        "violin"
+      ],
+      "id": 7
+    },
+    {
+      "first_name": "Victor",
+      "last_name": "Janez",
+      "email": "victor@janez.com",
+      "password": "password8",
+      "address": "515 W 1st St",
+      "zipcode": "85281",
+      "genre": "country",
+      "instruments": [
+        "cello",
+        "drums"
+      ],
+      "id": 8
     }
   ],
   "bands": [
@@ -32,13 +122,40 @@
       "band_name": "AC/DC",
       "members_needed": 4,
       "address": "1363 W. 14th St.",
-      "city": "Tempe",
-      "state": "Arizona",
       "zipcode": "85281",
       "genre": "rock",
-      "members": [1, 2],
+      "members": [
+        1,
+        2,
+        6
+      ],
       "owner": 1,
       "id": 1
+    },
+    {
+      "band_name": "That Country Duo",
+      "members_needed": 2,
+      "address": "515 W 1st St",
+      "zipcode": "85281",
+      "genre": "country",
+      "members": [
+        7,
+        8
+      ],
+      "owner": 8,
+      "id": 2
+    },
+    {
+      "band_name": "The Duo for Jazz",
+      "members_needed": 2,
+      "address": "3232 S 48th St",
+      "zipcode": "85040",
+      "genre": "jazz",
+      "members": [
+        4
+      ],
+      "owner": 4,
+      "id": 3
     }
   ]
 }
