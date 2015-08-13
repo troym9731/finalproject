@@ -8,6 +8,8 @@ var MapChoices = React.createClass({
         <label htmlFor="bands"> Bands</label>
         <input type="radio" name="choice" value="musicians" id="musicians"/>
         <label htmlFor="musicians"> Musicians</label>
+        <input type="radio" name="choice" value="" id="both" defaultChecked/>
+        <label htmlFor="both"> Both</label>
       </div>
     );
   }

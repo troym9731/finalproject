@@ -8,4 +8,4 @@ var BandProfile = React.createClass({
   }
 });
 
-module.exports = UserProfile;
+module.exports = BandProfile;

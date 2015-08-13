@@ -8,7 +8,7 @@ var Login = require('./components/login/Login');
 var Signup = require('./components/signup/Signup');
 var Search = require('./components/search/Search');
 var UserProfile = require('./components/userprofile/UserProfile');
-var UserProfile = require('./components/bandprofile/BandProfile');
+var BandProfile = require('./components/bandprofile/BandProfile');
 
 var routes = (
   <Route path="/" handler={Template}>
