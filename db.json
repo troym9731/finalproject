@@ -3,6 +3,7 @@
     {
       "first_name": "Troy",
       "last_name": "Mullaney",
+      "image": "./images/me.jpg",
       "email": "troym9731@gmail.com",
       "password": "password1",
       "address": "1363 W. 14th St.",
@@ -18,6 +19,7 @@
     {
       "first_name": "John",
       "last_name": "Doe",
+      "image": "",
       "email": "john@doe.com",
       "password": "password2",
       "address": "1525 W. 18th St.",
@@ -32,6 +34,7 @@
     {
       "first_name": "Sally",
       "last_name": "Strong",
+      "image": "",
       "email": "sally@strong.com",
       "password": "password3",
       "address": "S Rosen Dr",
@@ -45,6 +48,7 @@
     {
       "first_name": "Richi",
       "last_name": "Brown",
+      "image": "",
       "email": "richi@brown.com",
       "password": "password4",
       "address": "3232 S 48th St",
@@ -59,6 +63,7 @@
     {
       "first_name": "Melissa",
       "last_name": "Greene",
+      "image": "",
       "email": "melissa@greene.com",
       "password": "password5",
       "address": "1550 W Southern Ave",
@@ -73,6 +78,7 @@
     {
       "first_name": "Jane",
       "last_name": "Anderson",
+      "image": "",
       "email": "jane@anderson.com",
       "password": "password6",
       "address": "112 S Rockford Dr",
@@ -91,6 +97,7 @@
     {
       "first_name": "Julius",
       "last_name": "Yared",
+      "image": "",
       "email": "julius@yared.com",
       "password": "password7",
       "address": "1109 E Alameda Dr",
@@ -105,6 +112,7 @@
     {
       "first_name": "Victor",
       "last_name": "Janez",
+      "image": "",
       "email": "victor@janez.com",
       "password": "password8",
       "address": "515 W 1st St",
@@ -120,6 +128,7 @@
   "bands": [
     {
       "band_name": "AC/DC",
+      "image": "",
       "members_needed": 4,
       "address": "1363 W. 14th St.",
       "zipcode": "85281",
@@ -135,6 +144,7 @@
     {
       "band_name": "That Country Duo",
       "members_needed": 2,
+      "image": "",
       "address": "515 W 1st St",
       "zipcode": "85281",
       "genre": "Country",
@@ -148,6 +158,7 @@
     {
       "band_name": "The Duo for Jazz",
       "members_needed": 2,
+      "image": "",
       "address": "3232 S 48th St",
       "zipcode": "85040",
       "genre": "Jazz",

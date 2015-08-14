@@ -1,14 +1,12 @@
 var React = require('react');
+var UserInformationBox = require('./UserInformationBox');
 
 var UserProfile = React.createClass({
   render: function() {
     return (
-      <div>
-        <div className="box">
-          <div className="user-profile">
-            <div><img src="" alt="Profile Picture"/></div>
-            <div>Content</div>
-          </div>
+      <div className="background-help">
+        <div className="profile-box">
+          <UserInformationBox />
         </div>
       </div>
     );

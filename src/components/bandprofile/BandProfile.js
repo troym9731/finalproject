@@ -1,9 +1,16 @@
 var React = require('react');
+var BandImage = require('./BandImage');
+var BandMembers = require('./BandMembers');
 
 var BandProfile = React.createClass({
   render: function() {
     return (
-      <div></div>
+      <div className="background-help">
+        <div className="profile-box">
+          <BandImage />
+          <BandMembers />
+        </div>
+      </div>
     );
   }
 });

@@ -1,16 +1,115 @@
-.box {
+.profile-box {
   color: #000;
   background-color: #FFF;
   border-radius: 4px;
   box-shadow: 0 0 12px -4px;
+  margin: 40px auto 0 auto;
+  width: 80%;
+
+  a.btn {
+    width: 270px;
+    margin-top: 10px;
+    padding: 6px 20px;
+    text-align: center;
+
+    &:nth-child(2) {
+      background-color: #50A2E5;
+    }
+
+    &:last-child {
+      background-color: #A9A9C2;
+    }
+  }
 }
 
 .user-profile {
-  @include media-object(100px);
+  @include media-object(300px);
+  padding: 25px;
 
   img {
-    height: 100px;
+    width: 270px;
+    height: 300px;
     display: block;
+    border: 3px solid #444;
+    border-radius: 4px;
+  }
+}
+
+.user-header {
+  position: relative;
+  border-bottom: 1px solid #000;
+  padding: 1px;
+  margin-bottom: 15px;
+
+  h2 {
+    margin: 6px 6px 6px 0;
+    padding: 3px 30px 3px 0;
+    border-right: 1px solid #000;
+    font-size: 25pt;
+    display: inline-block;
+  }
+
+  h4 {
+    padding-left: 6px;
+  }
+
+  .header-info {
+    display: inline-block;
+  }
+}
+
+.profile-content {
+  padding: 6px;
+}
+
+.band-profile {
+  text-align: center;
+  padding: 30px;
+
+  h2 {
+    font-size: 27pt;
+  }
+
+  h4 {
+    font-size: 13pt;
+  }
+
+  img {
+    width: 350px;
+    height: 300px;
+    border: 3px solid #444;
+    border-radius: 4px;
+  }
+}
+
+.background-help {
+  background-color: #F1F1F1;
+  padding-bottom: 40px;
+}
+
+.band-members {
+  width: 80%;
+  margin: 0 auto;
+  
+  h2 {
+    font-size: 25pt; 
+    border-bottom: 1px solid #000;
+  }
+}
+
+.member-container {
+  background-color: #F1F1F1;
+  margin-top: 4px;
+}
+
+.member-tile {
+  display: inline-block;
+  margin: 4px 20px 4px 0;
+
+  img {
+    width: 130px;
+    height: 160px;
+    border-radius: 4px;
   }
 }
 
