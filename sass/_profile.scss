@@ -1,0 +1,16 @@
+.box {
+  color: #000;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 0 12px -4px;
+}
+
+.user-profile {
+  @include media-object(100px);
+
+  img {
+    height: 100px;
+    display: block;
+  }
+}
+

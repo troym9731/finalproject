@@ -9,12 +9,12 @@ div.background {
   }
 
   &.wallpaper {
-    background-image: url('../images/homebg.jpg');
+    background-image: radial-gradient(rgba(35, 35, 35, 0.3), rgba(35, 35, 35, 0.3)), url('../images/bg3.jpg');
     background-size: cover;
   }
 
   &.lightbox {
-    background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url('../images/homebg.jpg');
+    background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url('../images/bg3.jpg');
     background-size: cover;
   }
 }

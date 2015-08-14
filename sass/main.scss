@@ -8,7 +8,7 @@
   Fonts
 *****************************************/
 
-@import url(http://fonts.googleapis.com/css?family=Istok+Web:400,700);
+@import url(http://fonts.googleapis.com/css?family=Exo:400,700);
 
 /****************************************
   Defaults
@@ -26,7 +26,7 @@
   Components and Helpers
 *****************************************/
 
-@import 'components';
+@import 'helpers';
 @import 'mixins';
 
 /****************************************
@@ -36,5 +36,6 @@
 @import 'header';
 @import 'home';
 @import 'footer';
-@import 'login';
+@import 'lightbox';
 @import 'search';
+@import 'profile';

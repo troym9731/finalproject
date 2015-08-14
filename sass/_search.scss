@@ -1,33 +1,31 @@
 #map {
   color: #000;
   width: 100%;
-  height: 650px;
-  box-shadow: 0 0 15px -4px #000;
-  border-radius: 4px;
+  height: 600px;
   margin: 0 auto;
   position: relative;
 }
 
 .search-box {
   @extend %content-box;
-  transform: translate(80%, -17%);
-  width: 350px;
-  min-height: 370px;
+  transform: translate(110%, -20%);
+  width: 300px;
+  min-height: 350px;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 12px -4px #000;
 
   h2 {
-    width: 280px;
-    font-size: 18pt;
+    width: 250px;
+    font-size: 16pt;
     margin: 30px auto;
   }
 
   .map-choices {
-    width: 290px;
+    width: 260px;
     margin: 0 auto;
 
     label {
-      margin-right: 35px;
+      margin-right: 25px;
     }
   }
 
@@ -38,10 +36,20 @@
   .form-object {
     margin-left: 15px;
     margin-top: 15px;
+
+    input {
+      width: 170px;
+    }
+  }
+
+  select {
+    width: 170px;
   }
 
   button {
     color: #FFF;
+    width: 200px;
+    padding: 9px;
     @extend %content-box-button;  
   }
 }

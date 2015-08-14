@@ -7,7 +7,7 @@
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
-@import url(http://fonts.googleapis.com/css?family=Istok+Web:400,700);
+@import url(http://fonts.googleapis.com/css?family=Exo:400,700);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -368,7 +368,7 @@ th {
 *****************************************/
 html {
   box-sizing: border-box;
-  font: 12pt 'Istok Web', 'Open Sans', Arial;
+  font: 12pt Exo, 'Open Sans', Arial;
   color: white; }
 
 *, *::before, *::after {
@@ -2476,10 +2476,10 @@ div.background {
     position: relative;
     min-height: 480px; }
   div.background.wallpaper {
-    background-image: url("../images/homebg.jpg");
+    background-image: radial-gradient(rgba(35, 35, 35, 0.3), rgba(35, 35, 35, 0.3)), url("../images/bg3.jpg");
     background-size: cover; }
   div.background.lightbox {
-    background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url("../images/homebg.jpg");
+    background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url("../images/bg3.jpg");
     background-size: cover; }
 
 .banner {
@@ -2561,6 +2561,8 @@ div.background {
     font-size: 17pt; }
   .signup-box .form-object {
     margin-left: 80px; }
+  .signup-box select {
+    width: 235px; }
 
 .form-divider {
   overflow: hidden; }
@@ -2596,31 +2598,52 @@ div.background {
 #map {
   color: #000;
   width: 100%;
-  height: 650px;
-  box-shadow: 0 0 15px -4px #000;
-  border-radius: 4px;
+  height: 600px;
   margin: 0 auto;
   position: relative; }
 
 .search-box {
-  transform: translate(80%, -17%);
-  width: 350px;
-  min-height: 370px;
+  transform: translate(110%, -20%);
+  width: 300px;
+  min-height: 350px;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 12px -4px #000; }
   .search-box h2 {
-    width: 280px;
-    font-size: 18pt;
+    width: 250px;
+    font-size: 16pt;
     margin: 30px auto; }
   .search-box .map-choices {
-    width: 290px;
+    width: 260px;
     margin: 0 auto; }
     .search-box .map-choices label {
-      margin-right: 35px; }
+      margin-right: 25px; }
   .search-box .fa {
     font-size: 17pt; }
   .search-box .form-object {
     margin-left: 15px;
     margin-top: 15px; }
+    .search-box .form-object input {
+      width: 170px; }
+  .search-box select {
+    width: 170px; }
   .search-box button, .search-box a.btn {
-    color: #FFF; }
+    color: #FFF;
+    width: 200px;
+    padding: 9px; }
+
+.box {
+  color: #000;
+  background-color: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 0 12px -4px; }
+
+.user-profile {
+  overflow: hidden; }
+  .user-profile > :first-child {
+    float: left;
+    width: 100px; }
+  .user-profile > :last-child {
+    margin-left: 100px; }
+  .user-profile img {
+    height: 100px;
+    display: block; }
