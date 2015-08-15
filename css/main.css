@@ -2505,7 +2505,7 @@ div.background {
   .banner a.btn {
     display: inline-block;
     padding: 20px 40px;
-    -webkit-transition: all 0.2s; }
+    transition: all 0.2s; }
     .banner a.btn:hover {
       background-color: #FFF;
       color: #444; }
@@ -2594,7 +2594,7 @@ div.background {
     width: 235px;
     padding: 8px 4px;
     font-size: 10pt;
-    -webkit-transition: all 0.3s; }
+    transition: all 0.3s; }
     .form-object input:focus {
       border: 1px solid #50A2E5; }
 
@@ -2639,17 +2639,25 @@ div.background {
   background-color: #FFF;
   border-radius: 4px;
   box-shadow: 0 0 12px -4px;
+  padding: 1px;
   margin: 40px auto 0 auto;
   width: 80%; }
-  .profile-box a.btn {
-    width: 270px;
-    margin-top: 10px;
-    padding: 6px 20px;
-    text-align: center; }
-    .profile-box a.btn:nth-child(2) {
-      background-color: #50A2E5; }
-    .profile-box a.btn:last-child {
-      background-color: #A9A9C2; }
+  .profile-box b {
+    color: #4091d2; }
+
+.user-image a.btn {
+  width: 270px;
+  margin-top: 10px;
+  padding: 6px 20px;
+  text-align: center; }
+  .user-image a.btn:nth-child(2) {
+    background-color: #50A2E5; }
+    .user-image a.btn:nth-child(2):hover {
+      background-color: #4091d2; }
+  .user-image a.btn:last-child {
+    background-color: #A9A9C2; }
+    .user-image a.btn:last-child:hover {
+      background-color: #9393A9; }
 
 .user-profile {
   overflow: hidden;
@@ -2668,13 +2676,13 @@ div.background {
 
 .user-header {
   position: relative;
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #50A2E5;
   padding: 1px;
   margin-bottom: 15px; }
   .user-header h2 {
     margin: 6px 6px 6px 0;
     padding: 3px 30px 3px 0;
-    border-right: 1px solid #000;
+    border-right: 2px solid #50A2E5;
     font-size: 25pt;
     display: inline-block; }
   .user-header h4 {
@@ -2693,8 +2701,8 @@ div.background {
   .band-profile h4 {
     font-size: 13pt; }
   .band-profile img {
-    width: 350px;
-    height: 300px;
+    width: 280px;
+    height: 230px;
     border: 3px solid #444;
     border-radius: 4px; }
 
@@ -2707,16 +2715,53 @@ div.background {
   margin: 0 auto; }
   .band-members h2 {
     font-size: 25pt;
-    border-bottom: 1px solid #000; }
+    border-bottom: 2px solid #50A2E5; }
 
 .member-container {
-  background-color: #F1F1F1;
-  margin-top: 4px; }
+  margin-top: 10px;
+  margin-bottom: 25px; }
 
 .member-tile {
   display: inline-block;
-  margin: 4px 20px 4px 0; }
+  position: relative;
+  visibility: visible; }
   .member-tile img {
-    width: 130px;
-    height: 160px;
-    border-radius: 4px; }
+    width: 200px;
+    height: 220px;
+    display: block; }
+
+.text-wrapper {
+  color: #FFF;
+  opacity: 0;
+  position: absolute;
+  width: 200px;
+  height: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(35, 35, 35, 0.8);
+  text-align: center;
+  transition: all 0.4s; }
+  .text-wrapper a.btn {
+    padding: 3px 6px;
+    color: #FFF;
+    font-size: 12pt;
+    width: 70px;
+    transition: all 0.2s; }
+    .text-wrapper a.btn:hover {
+      background-color: #FFF;
+      color: #444; }
+
+.inner-text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .inner-text h4 {
+    color: #50A2E5;
+    font-size: 13pt;
+    margin: 7px; }
+
+.member-tile:hover .text-wrapper {
+  opacity: 1; }
