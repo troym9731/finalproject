@@ -9,6 +9,7 @@ var Signup = require('./components/signup/Signup');
 var Search = require('./components/search/Search');
 var UserProfile = require('./components/userprofile/UserProfile');
 var BandProfile = require('./components/bandprofile/BandProfile');
+var BandSignup = require('./components/BandSignup');
 
 var routes = (
   <Route path="/" handler={Template}>
@@ -18,6 +19,7 @@ var routes = (
     <Route name="search" handler={Search}/>
     <Route name="user/:id" handler={UserProfile}/>
     <Route name="band/:id" handler={BandProfile}/>
+    <Route name="bands/create" handler={BandSignup}/> 
   </Route>
 );
 

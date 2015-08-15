@@ -5,8 +5,8 @@ var UserImage = React.createClass({
     return (
       <div className="user-image">
         <img src="./images/me.jpg" alt="Profile Picture"/>
-        <a href="/band/create" className="btn">Start a Band</a>
-        <a href="/user/:id/edit" className="btn">Edit Profile</a>
+        <a href="/#/bands/create" className="btn">Start a Band</a>
+        <a href="/#/user/:id/edit" className="btn">Edit Profile</a>
       </div>
     );
   }
