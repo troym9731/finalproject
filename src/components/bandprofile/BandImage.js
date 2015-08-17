@@ -9,6 +9,7 @@ var BandImage = React.createClass({
         <h4><b>Band Founder:</b> Troy Mullaney</h4>
         <h4><b>Genre:</b> Rock</h4>
         <h4><b>Looking for:</b> 4 members</h4>
+        <a href="" className="btn">Join Band</a>
       </div>
     );
   }

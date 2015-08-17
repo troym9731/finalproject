@@ -1,10 +1,15 @@
 var React = require('react');
+var BandForm = require('./BandForm');
 
 var BandSignup = React.createClass({
   render: function() {
     return (
-      <div>
-      </div>
+      <div className="band-form-bg">
+        <div className="login-box band-form">
+          <h1><i className="fa fa-headphones"></i>Create a Band</h1>
+          <BandForm />
+        </div>
+       </div>
     );
   }
 });
