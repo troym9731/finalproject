@@ -2663,7 +2663,7 @@ div.background {
         background-color: #9393A9; }
 
 .user-hero {
-  background: radial-gradient(rgba(35, 35, 35, 0.15), rgba(35, 35, 35, 0.15)), url("../images/crowd2.jpg");
+  background: radial-gradient(rgba(35, 35, 35, 0.15), rgba(35, 35, 35, 0.15)), url("../images/crowd2blur.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -2711,9 +2711,21 @@ div.background {
   background-repeat: no-repeat;
   background-position: center center; }
 
+.band-form select {
+  width: 235px;
+  margin-top: 10px; }
+
+.band-form .fa {
+  font-size: 17pt; }
+
+.band-form .band-create input {
+  padding: 8px 4px;
+  font-size: 11pt; }
+
 .band-form h1 {
   font-size: 24pt;
-  width: 275px; }
+  width: 275px;
+  margin: 40px auto; }
 
 .band-profile {
   text-align: center;

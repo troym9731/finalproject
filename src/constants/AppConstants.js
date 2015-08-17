@@ -1,5 +1,6 @@
 var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
-  MAPS_SEARCH: null
+  BASIC_SEARCH: null,
+  LOAD_USERS: null
 });
