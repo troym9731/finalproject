@@ -38,6 +38,7 @@ MusicianStore.dispatchToken = AppDispatcher.register(function(action) {
 
     case AppConstants.LOAD_USERS:
       loadUsers(action.data);
+      MusicianStore.emitChange();
       break;
 
     // case AppConstants.CREATE_MESSAGE:

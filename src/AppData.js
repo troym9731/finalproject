@@ -2,17 +2,15 @@ var ProfileActions = require('./actions/ProfileActions');
 var $ = require('jquery');
 
 module.exports = {
-  getUsers: function() {
+  loadData: function() {
     $.get('http://localhost:3000/users')
       .done(function(users) {
         ProfileActions.loadUsers(users);
       })
-  },
 
-  getBands: function() {
     $.get('http://localhost:3000/bands')
       .done(function(bands) {
-        ProfileActions.loadBands(bands);
+        ProfileActions.loadBands(bands)
       })
   }
 }

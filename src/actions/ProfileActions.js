@@ -13,7 +13,7 @@ module.exports = {
 
   loadBands: function(bands) {
     AppDispatcher.dispatch({
-      type: ActionTypes.LOAD_BANDS,
+      type: AppConstants.LOAD_BANDS,
       data: bands
     });
   }

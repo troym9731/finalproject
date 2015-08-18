@@ -3,6 +3,12 @@ var AppConstants = require('../constants/AppConstants');
 var EventEmitter = require('events').EventEmitter;
 var _ = require('lodash');
 
+var _bands = {};
+
+function loadBands(bands) {
+  _bands = bands;
+}
+
 var BandStore = _.assign({}, EventEmitter.prototype, {
   emitChange: function() {
     this.emit('change');
@@ -22,7 +28,7 @@ BandStore.dispatchToken = AppDispatcher.register(function(action) {
   switch(action.type) {
 
     case AppConstants.LOAD_BANDS:
-      loadUsers(action.data);
+      loadBands(action.data);
       BandStore.emitChange();
       break;
 
