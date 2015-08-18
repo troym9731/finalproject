@@ -3,6 +3,15 @@ var SearchBox = require('./SearchBox');
 var $ = require('jquery');
 var _ = require('lodash');
 
+function searchOptions(obj) {
+  for (var prop in obj) {
+    obj = _.omit(obj, obj[prop] !== '' ? '' : prop)
+  }
+    delete obj.address
+    delete obj.zipcode
+    return obj;
+}
+
 var Search = React.createClass({
   componentDidMount: function() {
     map = new GMaps({
@@ -36,7 +45,7 @@ var Search = React.createClass({
                   lat: latlng.lat(),
                   lng: latlng.lng(),
                   visible: false,
-                  musician: true,
+                  choice: 'musicians',
                   id: id,
                   genre: genre,
                   infoWindow: {
@@ -70,7 +79,7 @@ var Search = React.createClass({
                     lat: latlng.lat(),
                     lng: latlng.lng(),
                     visible: false,
-                    band: true,
+                    choice: 'bands',
                     id: id,
                     genre: genre,
                     infoWindow: {
@@ -105,41 +114,20 @@ var Search = React.createClass({
     _.forEach(fields, function(field) {
       searchObj[field.name] = field.value;
     });
-     
-    var choice = searchObj.choice;
-    var genre = searchObj.genre;
+    
+    var address = searchObj.address + searchObj.zipcode; 
+    
+    var omitted = searchOptions(searchObj);
 
-    if (genre === '') {
-      if (choice === '') {
-        _.forEach(map.markers, function(marker) {
-          marker.setVisible(true);
-        });
-      } else if (choice === 'bands') {
-        _.forEach(_.where(map.markers, {band: true}), function(marker) {
-          marker.setVisible(true);
-        });
-      } else if (choice === 'musicians') {
-        _.forEach(_.where(map.markers, {musician: true}), function(marker) {
-          marker.setVisible(true);
-        });
-      }
+    if ($.isEmptyObject(omitted)) {
+      _.forEach(map.markers, function(marker) {
+        marker.setVisible(true);
+      });
     } else {
-      if (choice === '') {
-        _.forEach(_.where(map.markers, {genre: genre}), function(marker) {
-          marker.setVisible(true);
-        });
-      } else if (choice === 'bands') {
-        _.forEach(_.where(map.markers, {band: true, genre: genre}), function(marker) {
-          marker.setVisible(true);
-        });
-      } else if (choice === 'musicians') {
-        _.forEach(_.where(map.markers, {musician: true, genre: genre}), function(marker) {
-          marker.setVisible(true);
-        });
-      }
+      _.forEach(_.where(map.markers, omitted), function(marker) {
+        marker.setVisible(true);
+      });
     }
-
-    var address = searchObj.address + searchObj.zipcode;
 
     GMaps.geocode({
       address: address,
