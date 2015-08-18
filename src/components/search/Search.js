@@ -16,9 +16,17 @@ var Search = React.createClass({
     $.get('http://localhost:3000/users')
       .done(function(users) {
         users.forEach(function(user) {
-          var address = user.address + user.zipcode;
+          var address = user.address + ' ' + user.zipcode;
           var id = user.id;
           var genre = user.genre;
+          var instruments = user.instruments.join(', ');
+          var name = user.first_name + ' ' + user.last_name;
+          var url = '/#/user/' + id;
+          var infoWindowContent = '<h2>' + '<img src=' + user.image + '> ' + 
+                                  '<a href=' + url + '>' + name + '</a></h2>' +
+                                  '<h5>' + address + '</h5>' +
+                                  '<h5><b>Genre:</b> ' + genre + '</h5>' +
+                                  '<h5><b>Instruments:</b> ' + instruments + '</h5>';
           GMaps.geocode({
             address: address,
             callback: function(results, status) {
@@ -32,7 +40,7 @@ var Search = React.createClass({
                   id: id,
                   genre: genre,
                   infoWindow: {
-                    content: '<p>user' + id + ' ' + genre + '</p>' 
+                    content: infoWindowContent 
                   }
                 });
               }
@@ -44,9 +52,15 @@ var Search = React.createClass({
        $.get('http://localhost:3000/bands')
         .done(function(bands) {
           bands.forEach(function(band) {
-            var address = band.address + band.zipcode;
+            var address = band.address + ' ' + band.zipcode;
             var id = band.id;
             var genre = band.genre;
+            var url = '/#/band/' + id;
+            var infoWindowContent = '<h2>' + '<img src=' + band.image + '> ' +
+                                  '<a href=' + url + '>' + band.name + '</a></h2>' +
+                                  '<h5>' + address + '</h5>' +
+                                  '<h5><b>Genre:</b> ' + genre + '</h5>' +
+                                  '<h5><b>Looking for</b> ' + band.members_needed + ' members</h5>';
             GMaps.geocode({
               address: address,
               callback: function(results, status) {
@@ -60,7 +74,7 @@ var Search = React.createClass({
                     id: id,
                     genre: genre,
                     infoWindow: {
-                      content: '<p>band' + id + ' ' + genre + '</p>' 
+                      content: infoWindowContent
                     }
                   });
                 }

@@ -7,7 +7,7 @@
   width: 50%;
 
   b {
-    color: #4091d2;
+    color: $base-color-dark;
   }
 }
 
@@ -22,10 +22,10 @@
     border: none;
 
     &:first-child {
-      background-color: #50A2E5;
+      background-color: $base-color;
 
       &:hover {
-        background-color: #4091d2;
+        background-color: $base-color-dark;
       }
     }
 
@@ -155,7 +155,7 @@ $height-hover: 160px;
   
   h2 {
     font-size: 25pt; 
-    border-bottom: 2px solid #50A2E5;
+    border-bottom: 2px solid $base-color;
   }
 }
 
@@ -211,7 +211,7 @@ $height-hover: 160px;
   transform: translate(-50%, -50%);
 
   h4 {
-    color: #50A2E5;
+    color: $base-color;
     font-size: 13pt;
     margin: 7px;
   }

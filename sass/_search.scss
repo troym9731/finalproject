@@ -4,6 +4,27 @@
   height: 600px;
   margin: 0 auto;
   position: relative;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  h2 {
+    font-style: bold;
+    color: $base-color-dark;
+    font-size: 14pt;
+    margin: 5px;
+  }
+
+  h5 {
+    font-size: 10pt;
+    margin: 3px;
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .search-box {
