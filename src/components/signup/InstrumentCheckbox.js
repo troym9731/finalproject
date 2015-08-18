@@ -1,29 +1,28 @@
 var React = require('react');
 
 var InstrumentCheckbox = React.createClass({
-  instruments: {
-    'guitar': 'Guitar',
-    'piano': 'Piano',
-    'violin': 'Violin',
-    'bass': 'Bass',
-    'drums': 'Drums',
-    'trumpet': 'Trumpet',
-    'vocals': 'Vocals',
-    'saxophone': 'Saxophone',
-    'clarinet': 'Clarinet',
-    'trombone': 'Trombone',
-    'flute': 'Flute',
-    'kazoo': 'Kazoo',
-    'percussion': 'Percussion',
-    'cello': 'Cello',
-    'other': 'Other'
-  },
+  instruments: [
+    'Guitar',
+    'Piano',
+    'Violin','Bass',
+    'Drums',
+    'Trumpet',
+    'Vocals',
+    'Saxophone',
+    'Clarinet',
+    'Trombone',
+    'Flute',
+    'Kazoo',
+    'Percussion',
+    'Cello',
+    'Other'
+  ],
 
   render: function() {
     var checkboxes = [];
-    for (var key in this.instruments) {
-      checkboxes.push(<div className="cb-wrapper" key={key}><input type="checkbox" name="instruments" value={key} id={key}/><label htmlFor={key}> {this.instruments[key]}</label></div>)
-    }
+    this.instruments.forEach(function(instrument) {
+      checkboxes.push(<div className="cb-wrapper" key={instrument}><input type="checkbox" name="instruments" value={instrument} id={instrument}/><label htmlFor={instrument}> {instrument}</label></div>)
+    })
     return (
       <div className="cb-form">
         <h3>What instruments do you play?</h3>

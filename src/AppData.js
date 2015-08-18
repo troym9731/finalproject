@@ -1,4 +1,4 @@
-var ProfileActions = require('../actions/ProfileActions');
+var ProfileActions = require('./actions/ProfileActions');
 var $ = require('jquery');
 
 module.exports = {
@@ -10,6 +10,9 @@ module.exports = {
   },
 
   getBands: function() {
-    return;
+    $.get('http://localhost:3000/bands')
+      .done(function(bands) {
+        ProfileActions.loadBands(bands);
+      })
   }
 }

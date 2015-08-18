@@ -10,8 +10,9 @@ var Search = require('./components/search/Search');
 var UserProfile = require('./components/userprofile/UserProfile');
 var BandProfile = require('./components/bandprofile/BandProfile');
 var BandSignup = require('./components/BandSignup');
-// var ProfileActions = require('./actions/ProfileActions');
-// var AppData = require('./utils/AppData');
+var AppData = require('./AppData');
+
+AppData.getUsers();
 
 var routes = (
   <Route path="/" handler={Template}>

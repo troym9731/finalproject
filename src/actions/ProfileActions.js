@@ -11,10 +11,10 @@ module.exports = {
     });
   },
 
-  receiveCreatedMessage: function(createdMessage) {
+  loadBands: function(bands) {
     AppDispatcher.dispatch({
-      type: ActionTypes.RECEIVE_RAW_CREATED_MESSAGE,
-      data: createdMessage
+      type: ActionTypes.LOAD_BANDS,
+      data: bands
     });
   }
 

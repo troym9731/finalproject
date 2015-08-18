@@ -2485,6 +2485,8 @@ div.background {
   div.background.lightbox {
     background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url("../images/bg3.jpg");
     background-size: cover; }
+  div.background .profile-box {
+    min-height: 300px; }
 
 .banner {
   position: absolute;

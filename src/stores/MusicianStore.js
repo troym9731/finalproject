@@ -24,8 +24,11 @@ var MusicianStore = _.assign({}, EventEmitter.prototype, {
   },
 
   get: function(id) {
-    console.log(_users, id);
     return _.find(_users, {id: id});
+  },
+
+  getAllUsers: function() {
+    return _users;
   }
 });
 

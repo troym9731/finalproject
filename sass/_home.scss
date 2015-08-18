@@ -18,6 +18,10 @@ div.background {
     background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url('../images/bg3.jpg');
     background-size: cover;
   }
+
+  .profile-box {
+    min-height: 300px;
+  }
 }
 
 .banner {
