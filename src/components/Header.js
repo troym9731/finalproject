@@ -22,9 +22,24 @@ var Header = React.createClass({
   checkForLogin: function() {
     if (User) {
       var url = "/#/user/" + User.id;
-      return <a href={url} className="btn">{User.first_name}</a> 
+      if (User.inBand) {
+        var bandUrl = "/#/band/" + User.inBand[0];
+        return (
+          <span>
+            <a href={bandUrl} className="btn">View Band</a>
+            <a href={url} className="btn">{User.first_name}</a>
+          </span>
+        );   
+      } else {
+        return <a href={url} className="btn">{User.first_name}</a>
+      }
     } else {
-      return <a href="/#/login" className="btn">Login</a>
+      return (
+        <span>
+          <a href="/#/signup" className="btn">Sign Up</a>
+          <a href="/#/login" className="btn">Login</a>
+        </span>
+      );
     }
   },
 
@@ -35,7 +50,6 @@ var Header = React.createClass({
         <a href="/#/"><i className="fa fa-music"></i></a>
         <nav className="primary-nav">
           {this.checkForSearch()}
-          <a href="/#/signup" className="btn">Sign Up</a>
           {this.checkForLogin()}
         </nav>
       </header>

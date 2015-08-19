@@ -2672,9 +2672,9 @@ div.background {
       background-color: #50A2E5; }
       .button-options a.btn:first-child:hover {
         background-color: #4091d2; }
-    .button-options a.btn:last-child {
+    .button-options a.btn.alternate {
       background-color: #A9A9C2; }
-      .button-options a.btn:last-child:hover {
+      .button-options a.btn.alternate:hover {
         background-color: #9393A9; }
 
 .user-hero {
@@ -2774,6 +2774,10 @@ div.background {
   .band-profile a.btn {
     width: 150px;
     padding: 5px 25px; }
+    .band-profile a.btn.alternate {
+      background-color: #A9A9C2; }
+      .band-profile a.btn.alternate:hover {
+        background-color: #9393A9; }
 
 .band-members {
   width: 510px;
@@ -2808,13 +2812,25 @@ div.background {
   text-align: center;
   transition: all 0.4s; }
   .text-wrapper a.btn {
-    padding: 3px 6px;
+    padding: 2px 5px;
     color: #FFF;
-    font-size: 12pt;
+    font-size: 10pt;
     width: 70px;
     transition: all 0.2s; }
     .text-wrapper a.btn:hover {
       background-color: #FFF;
+      color: #444; }
+  .text-wrapper button.delete, .text-wrapper a.delete.btn {
+    display: block;
+    margin: 25px auto 0 auto;
+    padding: 2px 5px;
+    border-color: #FF0000;
+    color: #FF0000;
+    font-size: 9pt;
+    width: 100px;
+    transition: all 0.2s; }
+    .text-wrapper button.delete:hover, .text-wrapper a.delete.btn:hover {
+      background-color: #FF0000;
       color: #444; }
 
 .inner-text {

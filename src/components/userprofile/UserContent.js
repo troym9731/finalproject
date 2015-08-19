@@ -1,9 +1,21 @@
 var React = require('react');
 
 var UserContent = React.createClass({
+  checkForLogin: function() {
+    var editUrl = "/#/user/" + this.props.userId + "/edit";
+    if (User.id === this.props.userId) {
+      return (
+        <div className="button-options">
+          <a href="/#/bands/create" className="btn">Start a Band</a>
+          <a href={editUrl} className="btn alternate">Edit Profile</a>
+        </div>
+      );
+    } else {
+      return;
+    }
+  },
+
   render: function() {
-    var id = this.props.userId;
-    var editUrl = "/#/user/" + id + "/edit";
     var user = this.props.user;
     var address = user.address + ' ' + user.zipcode;
     var instruments = user.instruments.join(', ');
@@ -25,11 +37,7 @@ var UserContent = React.createClass({
 
           <p>{user.description}</p>
         </div>
-
-        <div className="button-options">
-          <a href="/#/bands/create" className="btn">Start a Band</a>
-          <a href={editUrl} className="btn">Edit Profile</a>
-        </div>
+        {this.checkForLogin()}
       </div>
     );
   }

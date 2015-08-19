@@ -10,7 +10,26 @@ var Search = require('./components/search/Search');
 var UserProfile = require('./components/userprofile/UserProfile');
 var BandProfile = require('./components/bandprofile/BandProfile');
 var BandSignup = require('./components/bandsignup/BandSignup');
-User = false;
+User = {
+      "first_name": "Troy",
+      "last_name": "Mullaney",
+      "image": "./images/me.jpg",
+      "email": "troym9731@gmail.com",
+      "password": "password",
+      "address": "1363 W. 14th St.",
+      "zipcode": "85281",
+      "genre": "Rock",
+      "inBand": [
+        1
+      ],
+      "description": "I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite b",
+      "instruments": [
+        "Guitar",
+        "Piano",
+        "Violin"
+      ],
+      "id": 1
+    };
 
 var routes = (
   <Route path="/" handler={Template}>

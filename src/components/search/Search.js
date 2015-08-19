@@ -132,7 +132,7 @@ var Search = React.createClass({
       var match = [];
       if (omitted.instrument) {
         _.forEach(map.markers, function(marker) {
-          if (_.contains(marker.instruments, omitted.instrument)) {
+          if (_.includes(marker.instruments, omitted.instrument)) {
             match.push(marker);
           }
         })
