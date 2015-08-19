@@ -5,7 +5,7 @@ var BandSignup = React.createClass({
   render: function() {
     return (
       <div className="band-form-bg">
-        <div className="login-box band-form">
+        <div className="signup-box band-form">
           <h1><i className="fa fa-headphones"></i>Create a Band</h1>
           <BandForm />
         </div>

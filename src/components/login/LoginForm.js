@@ -34,7 +34,6 @@ var LoginForm = React.createClass({
     $.get('http://localhost:3000/users')
       .done(function(users) {
         User = _.find(users, loginObj);
-        console.log(User);
         _this.transitionTo('/');
       })
     

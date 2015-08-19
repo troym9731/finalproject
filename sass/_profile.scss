@@ -96,26 +96,49 @@
   background-position: center center;
 }
 
+.band-form-divider {
+  @include media-object(290px);
+}
+
 .band-form {
-  
+  width: 600px;
+
+  .form-object {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
   select {
-    width: 235px;
+    width: 200px;
     margin-top: 10px;
   }
 
   .fa {
-    font-size: 17pt;
+    font-size: 18pt;
   }
 
-  .band-create input {
-    padding: 8px 4px;
-    font-size: 11pt;
+  .band-form-divider input {
+    padding: 6px 6px;
+    width: 200px;
+  }
+
+  .cb-form {
+    margin: 5px auto;
+    width: 440px;
+
+    label {
+      margin-left: 2px;
+    }
+  }
+
+  .cb-wrapper {
+    margin-left: 20px;
   }
 
   h1 {
-    font-size: 24pt;
-    width: 275px;
-    margin: 40px auto;
+    font-size: 27pt;
+    width: 300px;
+    margin: 20px auto 10px auto;
   }
 }
 

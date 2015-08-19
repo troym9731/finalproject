@@ -65,12 +65,15 @@ var Search = React.createClass({
             var address = band.address + ' ' + band.zipcode;
             var id = band.id;
             var genre = band.genre;
+            var instruments = band.instruments.join(', ');
             var url = '/#/band/' + id;
             var infoWindowContent = '<h2>' + '<img src=' + band.image + '> ' +
                                   '<a href=' + url + '>' + band.name + '</a></h2>' +
                                   '<h5>' + address + '</h5>' +
                                   '<h5><b>Genre:</b> ' + genre + '</h5>' +
-                                  '<h5><b>Looking for</b> ' + band.members_needed + ' members</h5>';
+                                  '<h5><b>Looking For:</b> ' + band.members_needed + ' members</h5>' +
+                                  '<h5><b>Instruments Needed:</b> ' + instruments + '</h5>' +
+                                  '<h5><b>Looking To:</b> ' + band.serious_level + '</h5>';
             GMaps.geocode({
               address: address,
               callback: function(results, status) {
@@ -81,6 +84,7 @@ var Search = React.createClass({
                     lng: latlng.lng(),
                     visible: false,
                     choice: 'bands',
+                    instruments: band.instruments,
                     id: id,
                     genre: genre,
                     infoWindow: {

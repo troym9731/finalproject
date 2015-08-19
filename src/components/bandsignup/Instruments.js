@@ -1,6 +1,6 @@
 var React = require('react');
 
-var InstrumentCheckbox = React.createClass({
+var Instruments = React.createClass({
   instruments: [
     'Guitar',
     'Piano',
@@ -22,7 +22,7 @@ var InstrumentCheckbox = React.createClass({
   render: function() {
     return (
       <div className="cb-form">
-        <h3>What instruments do you play?</h3>
+        <h3>What instruments might you need?</h3>
         <div>
           {this.instruments.map(function(instrument) {
             return (
@@ -38,4 +38,4 @@ var InstrumentCheckbox = React.createClass({
   }
 });
 
-module.exports = InstrumentCheckbox;
+module.exports = Instruments;

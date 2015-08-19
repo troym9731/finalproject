@@ -19,6 +19,15 @@ var Header = React.createClass({
     }
   },
 
+  checkForLogin: function() {
+    if (User) {
+      var url = "/#/user/" + User.id;
+      return <a href={url} className="btn">{User.first_name}</a> 
+    } else {
+      return <a href="/#/login" className="btn">Login</a>
+    }
+  },
+
   render: function() {
     var headerColor = this.changeBackground() ? 'primary-header' : 'primary-header dark';
     return (
@@ -27,7 +36,7 @@ var Header = React.createClass({
         <nav className="primary-nav">
           {this.checkForSearch()}
           <a href="/#/signup" className="btn">Sign Up</a>
-          <a href="/#/login" className="btn">Login</a>
+          {this.checkForLogin()}
         </nav>
       </header>
     );
