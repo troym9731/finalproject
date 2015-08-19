@@ -19,12 +19,6 @@ var Header = React.createClass({
     }
   },
 
-  checkForLogin: function() {
-    if (loggedIn) {
-      
-    }
-  },
-
   render: function() {
     var headerColor = this.changeBackground() ? 'primary-header' : 'primary-header dark';
     return (

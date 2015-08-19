@@ -1,6 +1,11 @@
 var React = require('react');
+var Navigation = require('react-router').Navigation;
+var $ = require('jquery');
+var _ = require('lodash');
 
 var LoginForm = React.createClass({
+  mixins: [Navigation],
+
   render: function() {
     return (
       <form>
@@ -12,9 +17,27 @@ var LoginForm = React.createClass({
           <div><i className="fa fa-key"></i></div>
           <div><input type="password" name="password" id="password" placeholder="Password"/></div>
         </div>
-        <a href="" className="btn">Login</a>
+        <button onClick={this.handleClick}>Login</button>
       </form>
     );
+  },
+
+  handleClick: function(e) {
+    e.preventDefault();
+    var fields = $('form').serializeArray();
+    var loginObj = {};
+    _.forEach(fields, function(field) {
+      loginObj[field.name] = field.value;
+    });
+
+    var _this = this;
+    $.get('http://localhost:3000/users')
+      .done(function(users) {
+        User = _.find(users, loginObj);
+        console.log(User);
+        _this.transitionTo('/');
+      })
+    
   }
 });
 

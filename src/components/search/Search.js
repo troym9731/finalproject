@@ -7,9 +7,9 @@ function searchOptions(obj) {
   for (var prop in obj) {
     obj = _.omit(obj, obj[prop] !== '' ? '' : prop)
   }
-    delete obj.address
-    delete obj.zipcode
-    return obj;
+
+  obj = _.omit(obj, 'address', 'zipcode');
+  return obj;
 }
 
 var Search = React.createClass({
@@ -46,6 +46,7 @@ var Search = React.createClass({
                   lng: latlng.lng(),
                   visible: false,
                   choice: 'musicians',
+                  instruments: user.instruments,
                   id: id,
                   genre: genre,
                   infoWindow: {
@@ -119,14 +120,27 @@ var Search = React.createClass({
     
     var omitted = searchOptions(searchObj);
 
-    if ($.isEmptyObject(omitted)) {
+    if (_.isEmpty(omitted)) {
       _.forEach(map.markers, function(marker) {
         marker.setVisible(true);
       });
     } else {
-      _.forEach(_.where(map.markers, omitted), function(marker) {
-        marker.setVisible(true);
-      });
+      var match = [];
+      if (omitted.instrument) {
+        _.forEach(map.markers, function(marker) {
+          if (_.contains(marker.instruments, omitted.instrument)) {
+            match.push(marker);
+          }
+        })
+        omitted = _.omit(omitted, 'instrument');
+        _.forEach(_.where(match, omitted), function(marker) {
+          marker.setVisible(true);
+        });
+      } else {
+        _.forEach(_.where(map.markers, omitted), function(marker) {
+          marker.setVisible(true);
+        });
+      }
     }
 
     GMaps.geocode({

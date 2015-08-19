@@ -2,6 +2,7 @@ var React = require('react');
 var Address = require('../Address');
 var GenreDropdown = require('../GenreDropdown');
 var MapChoices = require('./MapChoices');
+var InstrumentDropdown = require('../InstrumentDropdown');
 
 var SearchBox = React.createClass({
   render: function() {
@@ -12,6 +13,7 @@ var SearchBox = React.createClass({
           <MapChoices />
           <Address />
           <GenreDropdown />
+          <InstrumentDropdown />
           <button onClick={this.props.onClick}><i className="fa fa-search"></i></button>
         </form>
       </div>

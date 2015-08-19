@@ -4,7 +4,8 @@ var InstrumentCheckbox = React.createClass({
   instruments: [
     'Guitar',
     'Piano',
-    'Violin','Bass',
+    'Violin',
+    'Bass',
     'Drums',
     'Trumpet',
     'Vocals',
@@ -15,7 +16,7 @@ var InstrumentCheckbox = React.createClass({
     'Kazoo',
     'Percussion',
     'Cello',
-    'Other'
+    'Ukulele'
   ],
 
   render: function() {
