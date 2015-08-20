@@ -3,106 +3,102 @@
     {
       "first_name": "Troy",
       "last_name": "Mullaney",
-      "image": "./images/me.jpg",
-      "email": "troym9731@gmail.com",
-      "password": "password",
       "address": "1363 W. 14th St.",
       "zipcode": 85281,
+      "email": "troym9731@gmail.com",
+      "password": "password",
       "genre": "Rock",
-      "inBand": [
-        "1",
-        "2"
-      ],
-      "description": "I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite b",
+      "image": "./images/me.jpg",
       "instruments": [
         "Guitar",
         "Piano",
         "Violin"
+      ],
+      "description": "I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite b",
+      "inBand": [
+        "1",
+        "2"
       ],
       "id": 1
     },
     {
       "first_name": "John",
       "last_name": "Doe",
-      "image": "./images/person1.jpg",
-      "email": "john@doe.com",
-      "password": "password",
       "address": "1525 W. 18th St.",
       "zipcode": "85281",
+      "email": "john@doe.com",
+      "password": "password",
       "genre": "Rock",
-      "inBand": false,
-      "description": "User 2 description",
+      "image": "./images/person1.jpg",
       "instruments": [
         "Guitar",
         "Piano"
       ],
+      "description": "User 2 description",
+      "inBand": false,
       "id": 2
     },
     {
       "first_name": "Sally",
       "last_name": "Strong",
-      "image": "./images/person3.jpg",
-      "email": "sally@strong.com",
-      "password": "password",
       "address": "S Rosen Dr",
       "zipcode": "85281",
+      "email": "sally@strong.com",
+      "password": "password",
       "genre": "Jazz",
-      "inBand": false,
-      "description": "User 3 description",
+      "image": "./images/person3.jpg",
       "instruments": [
         "Saxophone"
       ],
+      "description": "User 3 description",
+      "inBand": false,
       "id": 3
     },
     {
       "first_name": "Richi",
       "last_name": "Brown",
-      "image": "./images/person2.jpg",
-      "email": "richi@brown.com",
-      "password": "password",
       "address": "3232 S 48th St",
       "zipcode": "85040",
+      "email": "richi@brown.com",
+      "password": "password",
       "genre": "Jazz",
-      "inBand": [
-        3
-      ],
-      "description": "User 4 description",
+      "image": "./images/person2.jpg",
       "instruments": [
         "Piano",
         "Trumpet"
+      ],
+      "description": "User 4 description",
+      "inBand": [
+        3
       ],
       "id": 4
     },
     {
       "first_name": "Melissa",
       "last_name": "Greene",
-      "image": "./images/crowd.jpg",
-      "email": "melissa@greene.com",
-      "password": "password",
       "address": "1550 W Southern Ave",
       "zipcode": "85282",
+      "email": "melissa@greene.com",
+      "password": "password",
       "genre": "Rock",
-      "inBand": false,
-      "description": "User 5 description",
+      "image": "./images/crowd.jpg",
       "instruments": [
         "Vocals",
         "Bass"
       ],
+      "description": "User 5 description",
+      "inBand": false,
       "id": 5
     },
     {
       "first_name": "Jane",
       "last_name": "Anderson",
-      "image": "./images/crowd2.jpg",
-      "email": "jane@anderson.com",
-      "password": "password",
       "address": "112 S Rockford Dr",
       "zipcode": "85281",
+      "email": "jane@anderson.com",
+      "password": "password",
       "genre": "Rock",
-      "inBand": [
-        1
-      ],
-      "description": "User 6 description",
+      "image": "./images/crowd2.jpg",
       "instruments": [
         "Guitar",
         "Piano",
@@ -111,43 +107,47 @@
         "Trumpet",
         "Kazoo"
       ],
+      "description": "User 6 description",
+      "inBand": [
+        1
+      ],
       "id": 6
     },
     {
       "first_name": "Julius",
       "last_name": "Yared",
-      "image": "./images/liveconcert.jpg",
-      "email": "julius@yared.com",
-      "password": "password",
       "address": "1109 E Alameda Dr",
       "zipcode": "85282",
+      "email": "julius@yared.com",
+      "password": "password",
       "genre": "Country",
-      "inBand": [
-        2
-      ],
-      "description": "User 7 description",
+      "image": "./images/liveconcert.jpg",
       "instruments": [
         "Vocals",
         "Violin"
+      ],
+      "description": "User 7 description",
+      "inBand": [
+        2
       ],
       "id": 7
     },
     {
       "first_name": "Victor",
       "last_name": "Janez",
-      "image": "./images/band-night.jpg",
-      "email": "victor@janez.com",
-      "password": "password",
       "address": "515 W 1st St",
       "zipcode": "85281",
+      "email": "victor@janez.com",
+      "password": "password",
       "genre": "Country",
-      "inBand": [
-        2
-      ],
-      "description": "User 8 description",
+      "image": "./images/band-night.jpg",
       "instruments": [
         "Cello",
         "Drums"
+      ],
+      "description": "User 8 description",
+      "inBand": [
+        2
       ],
       "id": 8
     }

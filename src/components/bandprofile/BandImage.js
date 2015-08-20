@@ -35,11 +35,13 @@ var BandImage = React.createClass({
       <div className="band-profile">
         <img src={band.image} alt="Band Profile Image"/>
         <h2>{band.name}</h2>
-        <h4><b>Band Founder:</b> {ownerName}</h4>
-        <h4><b>Genre:</b> {band.genre}</h4>
-        <h4><b>Looking for:</b> {band.members_needed} members</h4>
-        <h4><b>Looking To:</b> {band.serious_level}</h4>
-        <h4><b>Instruments Needed:</b> {instruments}</h4>
+        <div className="info">
+          <h4><b>Band Founder:</b> {ownerName}</h4>
+          <h4><b>Genre:</b> {band.genre}</h4>
+          <h4><b>Looking for:</b> {band.members_needed} members</h4>
+          <h4><b>Looking To:</b> {band.serious_level}</h4>
+          <h4><b>Instruments Needed:</b> {instruments}</h4>
+        </div>
         {this.checkForLogin()}
       </div>
     );

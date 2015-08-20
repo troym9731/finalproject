@@ -38,6 +38,10 @@
 }
 
 .signup-box {
+  overflow: hidden;
+  position: static;
+  transform: none;
+  margin: 10px auto;
   width: 800px;
   min-height: 460px;
 
@@ -64,6 +68,23 @@
   }
 }
 
+.signup-right-column .form-object input {
+  padding: 6px 4px;
+}
+
+.description-container {
+  text-align: center;
+}
+
+.profile-description {
+  border: 1px solid #C0C0C0;
+  background-color: $off-white;
+  margin-top: 20px;
+  width: 400px;
+  height: 100px;
+  font-size: 12pt;
+}
+
 .form-divider {
   @include media-object(400px);
 
@@ -81,12 +102,13 @@
   }
 
   input {
+    background-color: $off-white;
     outline: none;
     border: 1px solid #C0C0C0;
     border-radius: 4px;
     width: 235px;
-    padding: 8px 4px;
-    font-size: 10pt;
+    padding: 10px 4px;
+    font-size: 11pt;
     transition: all 0.3s;
 
     &:focus {

@@ -8,11 +8,11 @@ var SignupLeftColumn = React.createClass({
 
         <div className="form-object">
           <div><i className="fa fa-user"></i></div>
-          <div><input type="text" name="first-name" id="first-name" placeholder="First Name"/></div>
+          <div><input type="text" name="first_name" id="first_name" placeholder="First Name"/></div>
         </div>
         <div className="form-object">
           <div><i className="fa fa-user"></i></div>
-          <div><input type="text" name="last-name" id="last-name" placeholder="Last Name"/></div>
+          <div><input type="text" name="last_name" id="last_name" placeholder="Last Name"/></div>
         </div>
         <Address />
         <div className="form-object">
