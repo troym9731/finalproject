@@ -369,7 +369,7 @@ th {
 html {
   box-sizing: border-box;
   font: 12pt Exo, 'Open Sans', Arial;
-  color: #FFF; }
+  color: #ECECEC; }
 
 *, *::before, *::after {
   box-sizing: inherit;
@@ -2408,9 +2408,9 @@ h4, h2 {
   Components and Helpers
 *****************************************/
 button, a.btn {
-  color: #FFF;
+  color: #ECECEC;
   background-color: transparent;
-  border: 1px solid #FFF;
+  border: 1px solid #ECECEC;
   padding: 1em;
   border-radius: 4px; }
 
@@ -2421,8 +2421,8 @@ a.btn {
 .login-box, .signup-box, .search-box {
   width: 340px;
   min-height: 450px;
-  background-color: #FFF;
-  color: #000;
+  background-color: #ECECEC;
+  color: #1B1B1B;
   border-radius: 4px;
   position: absolute;
   top: 50%;
@@ -2448,9 +2448,9 @@ a.btn {
   min-height: 100px;
   position: relative; }
   .primary-header.dark {
-    background-color: #000; }
+    background-color: #1B1B1B; }
   .primary-header .fa {
-    color: #FFF;
+    color: #ECECEC;
     font-size: 4.5em;
     position: absolute;
     top: 15px;
@@ -2466,7 +2466,7 @@ a.btn {
     .primary-header .primary-nav a.btn:last-child {
       -webkit-transition: all 0.2s; }
       .primary-header .primary-nav a.btn:last-child:hover {
-        background-color: #FFF;
+        background-color: #ECECEC;
         color: #444; }
     .primary-header .primary-nav .btn {
       padding: 15px 25px; }
@@ -2496,11 +2496,11 @@ div.background {
   right: 0;
   top: 110px; }
   .banner h1 {
-    color: white;
+    color: #ECECEC;
     font-size: 4.5em;
     margin: 0; }
   .banner p {
-    color: white;
+    color: #ECECEC;
     font-size: 1.4em;
     display: block;
     width: 420px;
@@ -2510,11 +2510,11 @@ div.background {
     padding: 20px 40px;
     transition: all 0.2s; }
     .banner a.btn:hover {
-      background-color: #FFF;
+      background-color: #ECECEC;
       color: #444; }
 
 .primary-footer {
-  background-color: #000;
+  background-color: #1B1B1B;
   color: white;
   min-height: 100px;
   position: relative; }
@@ -2535,12 +2535,12 @@ div.background {
   margin: 65px auto;
   font-size: 33pt; }
   .login-box h1 .fa, .signup-box h1 .fa {
-    color: #000;
+    color: #1B1B1B;
     font-size: 40pt;
     margin-right: 10px; }
 
 .login-box .fa, .signup-box .fa {
-  color: #000;
+  color: #1B1B1B;
   font-size: 20pt; }
 
 .login-box .cb-form, .signup-box .cb-form {
@@ -2602,7 +2602,7 @@ div.background {
       border: 1px solid #50A2E5; }
 
 #map {
-  color: #000;
+  color: #1B1B1B;
   width: 100%;
   height: 600px;
   margin: 0 auto;
@@ -2646,12 +2646,12 @@ div.background {
   .search-box select {
     width: 170px; }
   .search-box button, .search-box a.btn {
-    color: #FFF;
+    color: #ECECEC;
     width: 200px;
     padding: 9px; }
 
 .profile-box {
-  color: #FFF;
+  color: #ECECEC;
   background-color: #444;
   border-radius: 10px;
   overflow: hidden;
@@ -2678,7 +2678,7 @@ div.background {
         background-color: #9393A9; }
 
 .user-hero {
-  background: radial-gradient(rgba(35, 35, 35, 0.15), rgba(35, 35, 35, 0.15)), url("../images/crowd2blur.jpg");
+  background: radial-gradient(rgba(35, 35, 35, 0.33), rgba(35, 35, 35, 0.33)), url("../images/crowd2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -2778,6 +2778,10 @@ div.background {
       background-color: #A9A9C2; }
       .band-profile a.btn.alternate:hover {
         background-color: #9393A9; }
+    .band-profile a.btn.delete {
+      background-color: #D00606; }
+      .band-profile a.btn.delete:hover {
+        background-color: #A10505; }
 
 .band-members {
   width: 510px;

@@ -4,11 +4,11 @@
   position: relative;
 
   &.dark {
-    background-color: #000;
+    background-color: $off-black;
   }
 
   .fa {
-    color: #FFF;
+    color: $off-white;
     font-size: 4.5em;
     position: absolute;
     top: 15px;
@@ -30,7 +30,7 @@
       -webkit-transition: all 0.2s;
 
       &:hover {
-        background-color: #FFF;
+        background-color: $off-white;
         color: #444;
       }
     }

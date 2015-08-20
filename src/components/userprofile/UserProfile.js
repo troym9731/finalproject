@@ -7,7 +7,7 @@ var UserProfile = React.createClass({
   mixins: [ Router.State ],
 
   render: function() {
-    var id = Number(this.props.params.id);
+    var id = +this.props.params.id;
     return (
       <div className="profile-box">
         <UserInformationBox key={id} userId={id} />

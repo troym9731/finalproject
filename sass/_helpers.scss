@@ -1,10 +1,7 @@
-$base-color: #50A2E5;
-$base-color-dark: #4091d2;
-
 button {
-  color: #FFF;
+  color: $off-white;
   background-color: transparent;
-  border: 1px solid #FFF;
+  border: 1px solid $off-white;
   padding: 1em;
   border-radius: 4px;
 }
@@ -18,8 +15,8 @@ a.btn {
 %content-box {
   width: 340px;
   min-height: 450px;
-  background-color: #FFF;
-  color: #000;
+  background-color: $off-white;
+  color: $off-black;
   border-radius: 4px;
   position: absolute;
   top: 50%;

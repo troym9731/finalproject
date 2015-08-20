@@ -1,7 +1,12 @@
+$base-color: #50A2E5;
+$base-color-dark: #4091d2;
+$off-black: #1B1B1B;
+$off-white: #ECECEC;
+
 html {
   box-sizing: border-box;
   font: 12pt Exo, 'Open Sans', Arial;
-  color: #FFF;
+  color: $off-white;
 }
 
 *, *::before, *::after {

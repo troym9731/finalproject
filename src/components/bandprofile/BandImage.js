@@ -1,7 +1,12 @@
 var React = require('react');
+var Router = require('react-router');
+var Navigation = Router.Navigation;
+var $ = require('jquery');
 var _ = require('lodash');
 
 var BandImage = React.createClass({
+  mixins: [ Router.State, Navigation ],
+
   ownerName: function() {
     var band = this.props.band;
     var owner = _.find(this.props.users, {"id": band.owner})
@@ -10,10 +15,13 @@ var BandImage = React.createClass({
   },
 
   checkForLogin: function() {
-    if (User.id === this.props.band.owner) {
+    var band = this.props.band;
+    if (User.id === band.owner) {
       return <a href="" className="btn alternate">Edit Profile</a>
-    } else {
-      return <a href="" className="btn">Join Band</a>;
+    } else if ((_.indexOf(band.members, ''+User.id) > -1)) {
+      return <a href="#" onClick={this.leaveBand} className="btn delete">Leave Band</a>;
+    } else if (User) {
+      return <a href="#" onClick={this.joinBand} className="btn">Join Band</a>;
     }
   },
 
@@ -35,6 +43,65 @@ var BandImage = React.createClass({
         {this.checkForLogin()}
       </div>
     );
+  },
+
+  joinBand: function() {
+    var _this = this;
+    var path = this.getPath();
+
+    if (!User) {
+      return;
+    } else {
+      var band = this.props.band;
+
+      User.inBand.push(band.id);
+      band.members.push(User.id);
+
+      $.ajax({
+        traditional: true,
+        method: 'PUT',
+        url: 'http://localhost:3000/users/' + User.id,
+        data: User
+      })
+
+      $.ajax({
+        traditional: true,
+        method: 'PUT',
+        url: 'http://localhost:3000/bands/' + band.id,
+        data: band
+      }).done(function() {
+        _this.transitionTo(path);
+      })
+    }
+  },
+
+  leaveBand: function() {
+    var _this = this;
+    var path = this.getPath();
+    var band = this.props.band;
+
+    User.inBand = _.without(User.inBand, ''+band.id);
+    band.members = _.without(band.members, ''+User.id);
+
+    if (User.inBand.length === 0) {
+      User.inBand = false;
+    }
+
+    $.ajax({
+      traditional: true,
+      method: 'PUT',
+      url: 'http://localhost:3000/users/' + User.id,
+      data: User
+    })
+
+    $.ajax({
+      traditional: true,
+      method: 'PUT',
+      url: 'http://localhost:3000/bands/' + band.id,
+      data: band
+    }).done(function() {
+      _this.transitionTo(path);
+    })
   }
 });
 

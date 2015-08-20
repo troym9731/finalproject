@@ -33,13 +33,13 @@ div.background {
   top: 110px;
 
   h1 {
-    color: white;
+    color: $off-white;
     font-size: 4.5em;
     margin: 0;
   }
 
   p {
-    color: white;
+    color: $off-white;
     font-size: 1.4em;
     display: block;
     width: 420px;
@@ -52,7 +52,7 @@ div.background {
     transition: all 0.2s;
 
     &:hover {
-      background-color: #FFF;
+      background-color: $off-white;
       color: #444;
     }
   }
