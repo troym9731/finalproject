@@ -62,8 +62,24 @@ var BandForm = React.createClass({
       method: 'POST',
       data: band
     }).done(function(data) {
+      console.log(data)
       var url = '/band/' + data.id;
-      _this.transitionTo(url);
+      if (User.inBand === false) {
+        User.inBand = data.id;
+      } else if (Array.isArray(User.inBand)) {
+        User.inBand = User.inBand.push(data.id);
+      } else {
+        User.inBand = [User.inBand, data.id];
+      }
+      $.ajax({
+        traditional: true,
+        url: 'http://localhost:3000/users/' + User.id,
+        method: 'PUT',
+        data: User
+      }).done(function(data) {
+        console.log(data)
+        _this.transitionTo(url);
+      })
     })
     
   }

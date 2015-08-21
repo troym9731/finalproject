@@ -122,3 +122,72 @@
   }
 }
 
+.band-form-bg {
+  background: radial-gradient(rgba(35, 35, 35, 0.7), rgba(35, 35, 35, 0.7)), url('../images/bandform.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.band-form-divider {
+  @include media-object(290px);
+
+  > :last-child {
+    input {
+      padding: 4px 4px;
+      font-size: 10pt;
+    }
+
+    > .form-object + .form-object {
+      margin-top: 10px;
+    }
+  }
+}
+
+.band-form {
+  width: 600px;
+
+  .form-object {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
+  select {
+    width: 200px;
+    margin-top: 5px;
+  }
+
+  .fa {
+    font-size: 18pt;
+  }
+
+  .band-form-divider input {
+    padding: 10px 6px;
+    width: 200px;
+  }
+
+  .cb-form {
+    margin: 5px auto;
+    width: 435px;
+
+    label {
+      margin-left: 2px;
+    }
+  }
+
+  .cb-wrapper {
+    margin-left: 20px;
+  }
+
+  h1 {
+    font-size: 27pt;
+    width: 300px;
+    margin: 20px auto 10px auto;
+  }
+}
+
+.edit > h1 {
+  width: 230px;
+}
+

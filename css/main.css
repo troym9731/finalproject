@@ -2624,6 +2624,54 @@ div.background {
     .form-object input:focus {
       border: 1px solid #50A2E5; }
 
+.band-form-bg {
+  background: radial-gradient(rgba(35, 35, 35, 0.7), rgba(35, 35, 35, 0.7)), url("../images/bandform.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden; }
+
+.band-form-divider {
+  overflow: hidden; }
+  .band-form-divider > :first-child {
+    float: left;
+    width: 290px; }
+  .band-form-divider > :last-child {
+    margin-left: 290px; }
+  .band-form-divider > :last-child input {
+    padding: 4px 4px;
+    font-size: 10pt; }
+  .band-form-divider > :last-child > .form-object + .form-object {
+    margin-top: 10px; }
+
+.band-form {
+  width: 600px; }
+  .band-form .form-object {
+    margin-top: 20px;
+    margin-left: 30px; }
+  .band-form select {
+    width: 200px;
+    margin-top: 5px; }
+  .band-form .fa {
+    font-size: 18pt; }
+  .band-form .band-form-divider input {
+    padding: 10px 6px;
+    width: 200px; }
+  .band-form .cb-form {
+    margin: 5px auto;
+    width: 435px; }
+    .band-form .cb-form label {
+      margin-left: 2px; }
+  .band-form .cb-wrapper {
+    margin-left: 20px; }
+  .band-form h1 {
+    font-size: 27pt;
+    width: 300px;
+    margin: 20px auto 10px auto; }
+
+.edit > h1 {
+  width: 230px; }
+
 #map {
   color: #1B1B1B;
   width: 100%;
@@ -2743,51 +2791,6 @@ div.background {
   .profile-content p {
     margin-left: 10px; }
 
-.band-form-bg {
-  background: radial-gradient(rgba(35, 35, 35, 0.7), rgba(35, 35, 35, 0.7)), url("../images/bandform.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  overflow: hidden; }
-
-.band-form-divider {
-  overflow: hidden; }
-  .band-form-divider > :first-child {
-    float: left;
-    width: 290px; }
-  .band-form-divider > :last-child {
-    margin-left: 290px; }
-  .band-form-divider > :last-child input {
-    padding: 4px 4px;
-    font-size: 10pt; }
-  .band-form-divider > :last-child > .form-object + .form-object {
-    margin-top: 10px; }
-
-.band-form {
-  width: 600px; }
-  .band-form .form-object {
-    margin-top: 20px;
-    margin-left: 30px; }
-  .band-form select {
-    width: 200px;
-    margin-top: 5px; }
-  .band-form .fa {
-    font-size: 18pt; }
-  .band-form .band-form-divider input {
-    padding: 10px 6px;
-    width: 200px; }
-  .band-form .cb-form {
-    margin: 5px auto;
-    width: 435px; }
-    .band-form .cb-form label {
-      margin-left: 2px; }
-  .band-form .cb-wrapper {
-    margin-left: 20px; }
-  .band-form h1 {
-    font-size: 27pt;
-    width: 300px;
-    margin: 20px auto 10px auto; }
-
 .band-profile {
   text-align: center;
   padding: 30px; }
@@ -2856,8 +2859,9 @@ div.background {
       background-color: #FFF;
       color: #444; }
   .text-wrapper button.delete, .text-wrapper a.delete.btn {
-    display: block;
-    margin: 25px auto 0 auto;
+    position: absolute;
+    top: 80px;
+    left: 36px;
     padding: 2px 5px;
     border-color: #FF0000;
     color: #FF0000;
@@ -2881,6 +2885,3 @@ div.background {
 
 .member-tile:hover .text-wrapper {
   opacity: 1; }
-
-.edit > h1 {
-  width: 230px; }

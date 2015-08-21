@@ -6,7 +6,7 @@ var BandMembers = React.createClass({
   checkForLogin: function(id) {
     var band = this.props.band;
     if (+User.id === +band.owner && +User.id !== +id) {
-      return <button onClick={this.handleClick} className="delete">Kick from Band</button>;
+      return <button onClick={this.kickFromBand} className="delete">Kick from Band</button>;
     } else {
       return;
     }
@@ -68,7 +68,7 @@ var BandMembers = React.createClass({
     );
   },
 
-  handleClick: function(e) {
+  kickFromBand: function(e) {
     var band = this.props.band;
     var users = this.props.users;
     var _this = this;
