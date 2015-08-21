@@ -15,17 +15,14 @@
         "Violin"
       ],
       "description": "I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite b",
-      "inBand": [
-        "1",
-        "2"
-      ],
+      "inBand": 1,
       "id": 1
     },
     {
       "first_name": "John",
       "last_name": "Doe",
       "address": "1525 W. 18th St.",
-      "zipcode": "85281",
+      "zipcode": 85281,
       "email": "john@doe.com",
       "password": "password",
       "genre": "Rock",
@@ -35,7 +32,7 @@
         "Piano"
       ],
       "description": "User 2 description",
-      "inBand": false,
+      "inBand": 1,
       "id": 2
     },
     {
@@ -158,7 +155,7 @@
       "image": "./images/liveconcert.jpg",
       "members_needed": 4,
       "address": "1363 W. 14th St.",
-      "zipcode": "85281",
+      "zipcode": 85281,
       "genre": "Rock",
       "serious_level": "Just jam",
       "instruments": [
@@ -168,16 +165,16 @@
         "Drums"
       ],
       "members": [
-        1,
-        2,
-        6
+        "1",
+        "2",
+        "6"
       ],
       "owner": 1,
       "id": 1
     },
     {
       "name": "That Country Duo",
-      "image": "./images/defaultband.jpg",
+      "image": "http://static.giantbomb.com/uploads/original/0/6087/2435649-0965498946-rockb.jpg",
       "members_needed": 2,
       "address": "515 W 1st St",
       "zipcode": 85281,
@@ -199,7 +196,7 @@
     },
     {
       "name": "The Duo for Jazz",
-      "image": "./images/defaultband.jpg",
+      "image": "http://cdn.bleedingcool.net/wp-content/uploads/2014/03/rockband2_hero.jpg",
       "members_needed": 2,
       "address": "3232 S 48th St",
       "zipcode": 85040,
@@ -211,9 +208,7 @@
         "Bass",
         "Drums"
       ],
-      "members": [
-        "4"
-      ],
+      "members": 4,
       "owner": 4,
       "id": 3
     }

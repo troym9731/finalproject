@@ -1,27 +1,27 @@
 var React = require('react');
 var Router = require('react-router');
 var Navigation = Router.Navigation;
-var SignupHeader = require('./SignupHeader');
-var SignupLeftColumn = require('./SignupLeftColumn');
-var SignupRightColumn = require('./SignupRightColumn');
-var TextArea = require('./TextArea');
+var EditUserHeader = require('./EditUserHeader');
+var EditUserLeft = require('./EditUserLeft');
+var EditUserRight = require('./EditUserRight');
+var EditTextArea = require('./EditTextArea');
 var $ = require('jquery');
 var _ = require('lodash');
 
-var Signup = React.createClass({
-  mixins: [ Navigation ],
+var EditUserProfile = React.createClass({
+  mixins: [ Router.State, Navigation ],
 
   render: function() {
     return (
       <div>
         <div className="signup-box">
-          <SignupHeader />
+          <EditUserHeader />
           <form>
             <div className="form-divider">
-              <SignupLeftColumn />
-              <SignupRightColumn />
+              <EditUserLeft />
+              <EditUserRight />
             </div>
-            <TextArea />
+            <EditTextArea />
             <button onClick={this.handleSubmit} >Submit</button>
           </form>
         </div>
@@ -54,8 +54,8 @@ var Signup = React.createClass({
 
     $.ajax({
       traditional: true,
-      url: 'http://localhost:3000/users',
-      method: 'POST',
+      url: 'http://localhost:3000/users/' + User.id,
+      method: 'PUT',
       data: user
     }).done(function(data) {
       User = data;
@@ -65,4 +65,4 @@ var Signup = React.createClass({
   }
 });
 
-module.exports = Signup;
+module.exports = EditUserProfile;

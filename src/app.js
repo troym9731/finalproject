@@ -10,6 +10,7 @@ var Search = require('./components/search/Search');
 var UserProfile = require('./components/userprofile/UserProfile');
 var BandProfile = require('./components/bandprofile/BandProfile');
 var BandSignup = require('./components/bandsignup/BandSignup');
+var EditUserProfile = require('./components/edituserprofile/EditUserProfile');
 User = false;
 
 var routes = (
@@ -21,8 +22,10 @@ var routes = (
     <Route name="user/:id" handler={UserProfile}/>
     <Route name="band/:id" handler={BandProfile}/>
     <Route name="bands/create" handler={BandSignup}/> 
+    <Route name="/users/edit" handler={EditUserProfile}/>
   </Route>
 );
+    // <Route name="/band/:id/edit" handler={EditBandProfile}/>
 
 Router.run(routes, Router.HashLocation, function(Root) {
   React.render(<Root />, document.body);

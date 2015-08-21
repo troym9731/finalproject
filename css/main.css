@@ -2419,6 +2419,7 @@ a.btn {
   display: inline-block; }
 
 .login-box, .signup-box, .search-box {
+  overflow: hidden;
   width: 340px;
   min-height: 450px;
   background-color: #FBFBFB;
@@ -2555,14 +2556,13 @@ div.background {
   font-size: 11pt; }
 
 .signup-box {
-  overflow: hidden;
   position: static;
   transform: none;
   margin: 10px auto;
   width: 800px;
   min-height: 460px; }
   .signup-box h1 {
-    width: 220px;
+    width: 240px;
     margin: 30px auto 12px auto; }
   .signup-box h3 {
     margin: 10px 0 0 15px;
@@ -2583,10 +2583,14 @@ div.background {
 .profile-description {
   border: 1px solid #C0C0C0;
   background-color: #FBFBFB;
+  border-radius: 4px;
+  outline: none;
   margin-top: 20px;
   width: 400px;
   height: 100px;
   font-size: 12pt; }
+  .profile-description:focus {
+    border: 1px solid #50A2E5; }
 
 .form-divider {
   overflow: hidden; }
@@ -2641,7 +2645,7 @@ div.background {
     text-decoration: none; }
 
 .search-box {
-  transform: translate(110%, -20%);
+  transform: translate(110%, -25%);
   width: 300px;
   min-height: 350px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -2743,7 +2747,8 @@ div.background {
   background: radial-gradient(rgba(35, 35, 35, 0.7), rgba(35, 35, 35, 0.7)), url("../images/bandform.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: center center;
+  overflow: hidden; }
 
 .band-form-divider {
   overflow: hidden; }
@@ -2752,6 +2757,11 @@ div.background {
     width: 290px; }
   .band-form-divider > :last-child {
     margin-left: 290px; }
+  .band-form-divider > :last-child input {
+    padding: 4px 4px;
+    font-size: 10pt; }
+  .band-form-divider > :last-child > .form-object + .form-object {
+    margin-top: 10px; }
 
 .band-form {
   width: 600px; }
@@ -2760,15 +2770,15 @@ div.background {
     margin-left: 30px; }
   .band-form select {
     width: 200px;
-    margin-top: 10px; }
+    margin-top: 5px; }
   .band-form .fa {
     font-size: 18pt; }
   .band-form .band-form-divider input {
-    padding: 6px 6px;
+    padding: 10px 6px;
     width: 200px; }
   .band-form .cb-form {
     margin: 5px auto;
-    width: 440px; }
+    width: 435px; }
     .band-form .cb-form label {
       margin-left: 2px; }
   .band-form .cb-wrapper {

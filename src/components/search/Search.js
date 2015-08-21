@@ -28,7 +28,10 @@ var Search = React.createClass({
           var address = user.address + ' ' + user.zipcode;
           var id = user.id;
           var genre = user.genre;
-          var instruments = user.instruments.join(', ');
+          var instruments = user.instruments;
+          if (Array.isArray(instruments)) {
+            instruments = instruments.join(', ');
+          }
           var name = user.first_name + ' ' + user.last_name;
           var url = '/#/user/' + id;
           var infoWindowContent = '<h2>' + '<img src=' + user.image + '> ' + 
@@ -59,13 +62,20 @@ var Search = React.createClass({
         })
       })
 
-       $.get('http://localhost:3000/bands')
-        .done(function(bands) {
-          bands.forEach(function(band) {
+    $.get('http://localhost:3000/bands')
+      .done(function(bands) {
+        bands.forEach(function(band) {
+          setTimeout(function() {
             var address = band.address + ' ' + band.zipcode;
+            console.log(band)
+            console.log(address)
             var id = band.id;
             var genre = band.genre;
-            var instruments = band.instruments.join(', ');
+            var instruments = band.instruments;
+            if (Array.isArray(instruments)) {
+              instruments = instruments.join(', ');
+            }
+            console.log(instruments)
             var url = '/#/band/' + id;
             var infoWindowContent = '<h2>' + '<img src=' + band.image + '> ' +
                                   '<a href=' + url + '>' + band.name + '</a></h2>' +
@@ -91,11 +101,15 @@ var Search = React.createClass({
                       content: infoWindowContent
                     }
                   });
+                } else {
+                  console.log(results)
+                  console.log(status)
                 }
               }
             });
-          })
+          }, 2500);
         })
+      })
   },
 
   render: function() {

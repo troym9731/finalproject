@@ -12,7 +12,7 @@ var Template = React.createClass({
 
   changeBackground: function() {
     var path = this.getPath();
-    if (path === '/' || path === '/login' || path === '/signup') {
+    if (path === '/' || path === '/login' || path === '/signup' || path === '/users/edit') {
       return true;
     } else {
       return false;
@@ -21,7 +21,7 @@ var Template = React.createClass({
 
   lightbox: function() {
     var path = this.getPath();
-    if (path === '/login' || path === '/signup') {
+    if (path === '/login' || path === '/signup' || path === '/users/edit') {
       return true;
     } else {
       return false;

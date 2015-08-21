@@ -2,7 +2,7 @@ var React = require('react');
 
 var UserContent = React.createClass({
   checkForLogin: function() {
-    var editUrl = "/#/user/" + this.props.userId + "/edit";
+    var editUrl = '/#/users/edit';
     if (User.id === this.props.userId) {
       return (
         <div className="button-options">
@@ -18,7 +18,11 @@ var UserContent = React.createClass({
   render: function() {
     var user = this.props.user;
     var address = user.address + ' ' + user.zipcode;
-    var instruments = user.instruments.join(', ');
+    var instruments = user.instruments;
+
+    if (Array.isArray(instruments)) {
+      instruments = instruments.join(', ');
+    }
 
     return (
       <div>

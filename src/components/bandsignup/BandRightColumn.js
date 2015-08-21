@@ -24,9 +24,13 @@ var BandRightColumn = React.createClass({
     return (
       <div>
         <div className="form-object">
+          <div><i className="fa fa-picture-o"></i></div>
+          <div><input type="text" name="image" id="image" placeholder="Image URL"/></div>
+        </div>
+        <div className="form-object">
           <div><i className="fa fa-list-ol"></i></div>
           <div>
-            <select name="bandmembers" id="bandmembers">
+            <select name="members_needed" id="members_needed">
               <option defaultValue value=''>Number of band members...</option>
               {options}
             </select>

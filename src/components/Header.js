@@ -23,7 +23,11 @@ var Header = React.createClass({
     if (User) {
       var url = "/#/user/" + User.id;
       if (User.inBand) {
-        var bandUrl = "/#/band/" + User.inBand[0];
+        if (Array.isArray(User.inBand)) {
+          var bandUrl = "/#/band/" + User.inBand[0];
+        } else {
+          var bandUrl = "/#/band/" + User.inBand;
+        }
         return (
           <span>
             <a href={bandUrl} className="btn">View Band</a>

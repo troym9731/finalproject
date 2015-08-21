@@ -6,7 +6,7 @@ var BandLeftColumn = React.createClass({
       <div>
         <div className="form-object">
           <div><i className="fa fa-play"></i></div>
-          <div><input type="text" name="band-name" id="band-name" placeholder="Band Name"/></div>
+          <div><input type="text" name="name" id="name" placeholder="Band Name"/></div>
         </div>
         <div className="form-object">
           <div><i className="fa fa-map-pin"></i></div>

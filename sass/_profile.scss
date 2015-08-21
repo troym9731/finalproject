@@ -94,10 +94,22 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  overflow: hidden;
 }
 
 .band-form-divider {
   @include media-object(290px);
+
+  > :last-child {
+    input {
+      padding: 4px 4px;
+      font-size: 10pt;
+    }
+
+    > .form-object + .form-object {
+      margin-top: 10px;
+    }
+  }
 }
 
 .band-form {
@@ -110,7 +122,7 @@
 
   select {
     width: 200px;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   .fa {
@@ -118,13 +130,13 @@
   }
 
   .band-form-divider input {
-    padding: 6px 6px;
+    padding: 10px 6px;
     width: 200px;
   }
 
   .cb-form {
     margin: 5px auto;
-    width: 440px;
+    width: 435px;
 
     label {
       margin-left: 2px;

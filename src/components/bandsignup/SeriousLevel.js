@@ -6,7 +6,7 @@ var SeriousLevel = React.createClass({
       <div className="form-object">
         <div><i className="fa fa-level-up"></i></div>
         <div>
-          <select name="serious_level" id="serious_level">
+          <select name="serious_level" id="serious_level" required>
             <option defaultValue value=''>How serious are you?</option>
             <option value="Just jam">Just jam</option>
             <option value="Practice frequently">Practice frequently</option>
