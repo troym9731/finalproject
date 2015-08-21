@@ -32,7 +32,7 @@
         "Piano"
       ],
       "description": "User 2 description",
-      "inBand": 1,
+      "inBand": "1",
       "id": 2
     },
     {
@@ -65,9 +65,7 @@
         "Trumpet"
       ],
       "description": "User 4 description",
-      "inBand": [
-        3
-      ],
+      "inBand": "3",
       "id": 4
     },
     {
@@ -105,9 +103,7 @@
         "Kazoo"
       ],
       "description": "User 6 description",
-      "inBand": [
-        1
-      ],
+      "inBand": "1",
       "id": 6
     },
     {
@@ -124,9 +120,7 @@
         "Violin"
       ],
       "description": "User 7 description",
-      "inBand": [
-        2
-      ],
+      "inBand": "2",
       "id": 7
     },
     {
@@ -143,9 +137,7 @@
         "Drums"
       ],
       "description": "User 8 description",
-      "inBand": [
-        2
-      ],
+      "inBand": "2",
       "id": 8
     }
   ],
@@ -188,8 +180,7 @@
       ],
       "members": [
         "7",
-        "8",
-        "1"
+        "8"
       ],
       "owner": 8,
       "id": 2

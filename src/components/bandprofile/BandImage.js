@@ -9,19 +9,20 @@ var BandImage = React.createClass({
 
   ownerName: function() {
     var band = this.props.band;
-    console.log(band)
-    var owner = _.find(this.props.users, {"id": band.owner})
-    console.log(owner)
+    var owner = _.find(this.props.users, {id: band.owner})
     var ownerName = owner.first_name + ' ' + owner.last_name;
     return ownerName;
   },
 
   checkForLogin: function() {
     var band = this.props.band;
+    var url= '/#/band/' + band.id + '/edit';
     if (User.id === band.owner) {
-      return <a href="" className="btn alternate">Edit Profile</a>
+      return <a href={url} className="btn alternate">Edit Profile</a>
     } else if ((_.indexOf(band.members, ''+User.id) > -1)) {
       return <a href="#" onClick={this.leaveBand} className="btn delete">Leave Band</a>;
+    } else if (+band.members.length === +band.members_needed) {
+      return <button disabled className="btn disabled">Join Band</button>;
     } else if (User) {
       return <a href="#" onClick={this.joinBand} className="btn">Join Band</a>;
     }
@@ -58,14 +59,14 @@ var BandImage = React.createClass({
   joinBand: function() {
     var _this = this;
     var path = this.getPath();
-    if (!User) {
-      return;
-    }
+
 
     var band = this.props.band;
 
     if (Array.isArray(User.inBand)) {
       User.inBand.push(''+band.id);
+    } else if (User.inBand === false) {
+      User.inBand = [ ''+band.id ]
     } else {
       User.inBand = [''+User.inBand, ''+band.id];
     }
@@ -89,7 +90,7 @@ var BandImage = React.createClass({
       url: 'http://localhost:3000/bands/' + band.id,
       data: band
     }).done(function() {
-      _this.transitionTo(path);
+      _this.forceUpdate();
     })
     
   },
@@ -119,7 +120,7 @@ var BandImage = React.createClass({
       url: 'http://localhost:3000/bands/' + band.id,
       data: band
     }).done(function() {
-      _this.transitionTo(path);
+      _this.forceUpdate();
     })
   }
 });

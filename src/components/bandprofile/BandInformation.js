@@ -20,7 +20,7 @@ var BandInformation = React.createClass({
     var _this = this;
     $.get('http://localhost:3000/bands')
       .done(function(bands) {
-        var band = _.find(bands, {"id": id});
+        var band = _.find(bands, {id: id});
         _this.setState({
           band: band
         })

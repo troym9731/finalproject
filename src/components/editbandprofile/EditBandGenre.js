@@ -1,6 +1,6 @@
 var React = require('react');
 
-var GenreDropdown = React.createClass({
+var EditBandGenre = React.createClass({
   genres: [
     'Rock',
     'Jazz',
@@ -13,8 +13,9 @@ var GenreDropdown = React.createClass({
   ],
 
   checkForLogin: function() {
+    var band = this.props.band;
     var genres = this.genres.map(function(genre) {
-      if (User.genre === genre) {
+      if (band.genre === genre) {
         return <option key={genre} value={genre} selected>{genre}</option>
       } else {
         return <option key={genre} value={genre}>{genre}</option>
@@ -39,4 +40,4 @@ var GenreDropdown = React.createClass({
   }
 });
 
-module.exports = GenreDropdown;
+module.exports = EditBandGenre;
