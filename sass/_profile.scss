@@ -1,12 +1,13 @@
 .profile-box {
-  background: radial-gradient(rgba(3, 74, 134, 0.6), rgba(3, 74, 134, 0.6)), url('../images/profile-bg-blur.jpg');
+  background: radial-gradient(rgba(23, 69, 98, 0.6), rgba(23, 69, 98, 0.6)), url('../images/profile-bg-blur.jpg'); // (13, 51, 74)
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 220px;
+  color: rgba(251, 251, 251, 0.75);
 
-  b {
-    color: $base-color-dark;
+  p {
+    margin: 0;
   }
 }
 
@@ -38,49 +39,96 @@
   }
 }
 
-.user-hero {
-  min-height: 220px;
-  position: relative;
+$profile-width: 50vw;
 
-  img {
-    position: absolute;
-    top: 40px;
-    left: 120px;
-    width: 150px;
-    height: 150px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-  }
+.user-profile {
+  width: $profile-width;
+  margin: 0 auto;
+}
+
+.hero-container {
+  min-height: 220px;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(251, 251, 251, 0.5);
+}
+
+.profile-picture {
+  display: inline-block;
+  width: 190px;
+  height: 190px;
+  border: 3px solid rgba(251, 251, 251, 0.2);
+  border-radius: 50%;
 }
 
 .user-name {
-  position: absolute;
-  top: 70px;
-  left: 300px;
+  padding: 10px;
 
   h2 {
-    margin: 6px 6px 6px 0;
-    padding: 3px 30px 3px 0;
-    font-size: 25pt;
+    font-size: 27pt;
     display: inline-block;
   }
 }
 
-.user-info {
-  overflow: hidden;
-  margin-bottom: 15px;
-  @include media-object(50%);
+.contact-info {
+  text-align: center;
+}
+
+.contact-item {
+  @include media-object(45px);
+  vertical-align: top;
+  margin: 0px 30px;
+  display: inline-block;
 
   h4 {
-    padding-left: 6px;
+    margin-top: 3px;
+  }
+
+  .fa {
+    font-size: 20pt;
+  }
+
+  .fa-map-marker {
+    font-size: 22pt;
   }
 }
 
-.profile-content {
-  padding: 25px;
+.music-choices {
+  @include media-object($profile-width / 2);
+  border-bottom: 1px solid rgba(251, 251, 251, 0.5);
+
+  > :first-child {
+      border-right: 1px solid rgba(251, 251, 251, 0.5);
+    }
+
+  > div {
+    text-align: center;
+    padding: 20px;
+  }
+
+  h4 {
+    font-size: 18pt;
+  }
 
   p {
-    margin-left: 10px;
+    font-size: 11pt;
+  }
+}
+
+.description {
+  border-bottom: 1px solid rgba(251, 251, 251, 0.5);
+  padding: 20px;
+  text-align: center;
+
+  h4 {
+    margin-bottom: 10px; 
+    text-align: center;
+    font-size: 18pt;
+  }
+
+  p {
+    font-family: Arial;
+    font-size: 14pt;
   }
 }
 
@@ -162,7 +210,7 @@ $height-hover: 160px;
 }
 
 .text-wrapper {
-  color: #FFF;
+  color: $off-white;
   opacity: 0;
   position: absolute;
   width: $width-hover;
@@ -176,13 +224,13 @@ $height-hover: 160px;
 
   a.btn, button {
     padding: 2px 5px;
-    color: #FFF;
+    color: $off-white;
     font-size: 10pt;
     width: 70px;
     transition: all 0.2s;
 
     &:hover {
-      background-color: #FFF;
+      background-color: $off-white;
       color: #444;
     }
   }

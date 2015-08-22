@@ -1,9 +1,7 @@
 #map {
   color: $off-black;
   width: 100%;
-  height: 600px;
-  margin: 0 auto;
-  position: relative;
+  min-height: 88vh;
 
   img {
     width: 60px;
@@ -27,12 +25,21 @@
   }
 }
 
+.search {
+  position: relative;
+}
+
 .search-box {
-  @extend %content-box;
-  transform: translate(110%, -25%);
+  overflow: hidden;
+  background-color: $off-white;
+  color: $off-black;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
   width: 300px;
   min-height: 350px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(251, 251, 251, 0.8);
   box-shadow: 0 0 12px -4px #000;
 
   h2 {
@@ -60,6 +67,7 @@
 
     input {
       width: 170px;
+      background-color: #FFF;
     }
   }
 

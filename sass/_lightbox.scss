@@ -41,6 +41,9 @@
   position: static;
   transform: none;
   margin: 10px auto;
+  @media screen and (min-width: 1400px) {
+    margin: 150px auto 0 auto;
+  }
   width: 800px;
   min-height: 460px;
 

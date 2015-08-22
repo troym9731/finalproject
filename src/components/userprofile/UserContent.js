@@ -26,20 +26,24 @@ var UserContent = React.createClass({
 
     return (
       <div>
-        
         <div className="profile-content">
-          <div className="user-info">
+
+          <div className="music-choices">
             <div>
-              <h4><b>Address:</b> {address}</h4>
-              <h4><b>Instruments:</b> {instruments}</h4>
+              <h4><b>{instruments}</b></h4>
+              <p>Instruments</p>
             </div>
             <div>
-              <h4><b>Email Address:</b> {user.email}</h4>
-              <h4><b>Genre:</b> {user.genre}</h4>
+              <h4><b>{user.genre}</b></h4>
+              <p>Genre</p>
             </div>
           </div>
+          
+          <div className="description">
+            <h4><b>About Me</b></h4>
+            <p>{user.description}</p>
+          </div>
 
-          <p>{user.description}</p>
         </div>
         {this.checkForLogin()}
       </div>

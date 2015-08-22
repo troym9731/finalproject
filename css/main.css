@@ -2413,13 +2413,14 @@ button, a.btn {
   background-color: transparent;
   border: 1px solid #FBFBFB;
   padding: 1em;
-  border-radius: 4px; }
+  border-radius: 4px;
+  transition: all 0.2s; }
 
 a.btn {
   text-decoration: none;
   display: inline-block; }
 
-.login-box, .signup-box, .search-box {
+.login-box, .signup-box {
   overflow: hidden;
   width: 340px;
   min-height: 450px;
@@ -2432,7 +2433,7 @@ a.btn {
   transform: translate(-50%, -50%); }
 
 .login-box button, .login-box a.btn, .signup-box button, .signup-box a.btn, .search-box button, .search-box a.btn, .band-profile a.btn, .band-profile button {
-  background-color: #50A2E5;
+  background-color: #4C9FD2;
   display: block;
   width: 237px;
   padding: 12px;
@@ -2440,7 +2441,7 @@ a.btn {
   text-align: center;
   border: none; }
   .login-box button:hover, .login-box a.btn:hover, .signup-box button:hover, .signup-box a.btn:hover, .search-box button:hover, .search-box a.btn:hover, .band-profile a.btn:hover, .band-profile button:hover {
-    background-color: #4091d2; }
+    background-color: #4188B3; }
 
 /****************************************
   Layout
@@ -2475,28 +2476,32 @@ a.btn {
 
 div.background {
   background-color: #A5A5A5;
-  min-height: 580px;
+  min-height: 590px;
   position: relative;
   overflow: hidden; }
   div.background > div {
     position: relative;
     min-height: 480px; }
+    @media screen and (min-width: 1400px) {
+      div.background > div {
+        min-height: 82vh; } }
   div.background.wallpaper {
-    background-image: radial-gradient(rgba(35, 35, 35, 0.3), rgba(35, 35, 35, 0.3)), url("../images/bg3.jpg");
-    background-size: cover; }
+    background-image: radial-gradient(rgba(35, 35, 35, 0.3), rgba(35, 35, 35, 0.3)), url("../images/homebg2.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
   div.background.lightbox {
-    background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url("../images/bg3.jpg");
-    background-size: cover; }
-  div.background .profile-box {
-    min-height: 300px; }
+    background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url("../images/homebg2.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
 
 .banner {
   position: absolute;
   text-align: center;
-  min-height: 170px;
-  left: 0;
-  right: 0;
-  top: 110px; }
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%); }
   .banner h1 {
     color: #FBFBFB;
     font-size: 4.5em;
@@ -2562,6 +2567,9 @@ div.background {
   margin: 10px auto;
   width: 800px;
   min-height: 460px; }
+  @media screen and (min-width: 1400px) {
+    .signup-box {
+      margin: 150px auto 0 auto; } }
   .signup-box h1 {
     width: 240px;
     margin: 30px auto 12px auto; }
@@ -2591,7 +2599,7 @@ div.background {
   height: 100px;
   font-size: 12pt; }
   .profile-description:focus {
-    border: 1px solid #50A2E5; }
+    border: 1px solid #4C9FD2; }
 
 .form-divider {
   overflow: hidden; }
@@ -2623,7 +2631,7 @@ div.background {
     font-size: 11pt;
     transition: all 0.3s; }
     .form-object input:focus {
-      border: 1px solid #50A2E5; }
+      border: 1px solid #4C9FD2; }
 
 .band-form-bg {
   background: radial-gradient(rgba(35, 35, 35, 0.7), rgba(35, 35, 35, 0.7)), url("../images/bandform.jpg");
@@ -2676,15 +2684,13 @@ div.background {
 #map {
   color: #1B1B1B;
   width: 100%;
-  height: 600px;
-  margin: 0 auto;
-  position: relative; }
+  min-height: 88vh; }
   #map img {
     width: 60px;
     height: 60px; }
   #map h2 {
     font-style: bold;
-    color: #4091d2;
+    color: #4188B3;
     font-size: 14pt;
     margin: 5px; }
   #map h5 {
@@ -2693,11 +2699,20 @@ div.background {
   #map a {
     text-decoration: none; }
 
+.search {
+  position: relative; }
+
 .search-box {
-  transform: translate(110%, -25%);
+  overflow: hidden;
+  background-color: #FBFBFB;
+  color: #1B1B1B;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
   width: 300px;
   min-height: 350px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(251, 251, 251, 0.8);
   box-shadow: 0 0 12px -4px #000; }
   .search-box h2 {
     width: 250px;
@@ -2714,7 +2729,8 @@ div.background {
     margin-left: 15px;
     margin-top: 15px; }
     .search-box .form-object input {
-      width: 170px; }
+      width: 170px;
+      background-color: #FFF; }
   .search-box select {
     width: 170px; }
   .search-box button, .search-box a.btn {
@@ -2723,13 +2739,14 @@ div.background {
     padding: 9px; }
 
 .profile-box {
-  background: radial-gradient(rgba(3, 74, 134, 0.6), rgba(3, 74, 134, 0.6)), url("../images/profile-bg-blur.jpg");
+  background: radial-gradient(rgba(23, 69, 98, 0.6), rgba(23, 69, 98, 0.6)), url("../images/profile-bg-blur.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  min-height: 220px; }
-  .profile-box b {
-    color: #4091d2; }
+  min-height: 220px;
+  color: rgba(251, 251, 251, 0.75); }
+  .profile-box p {
+    margin: 0; }
 
 .button-options {
   text-align: center; }
@@ -2740,52 +2757,86 @@ div.background {
     text-align: center;
     border: none; }
     .button-options a.btn:first-child, .button-options button:first-child, .button-options a.btn:first-child {
-      background-color: #50A2E5; }
+      background-color: #4C9FD2; }
       .button-options a.btn:first-child:hover, .button-options button:first-child:hover, .button-options a.btn:first-child:hover {
-        background-color: #4091d2; }
+        background-color: #4188B3; }
     .button-options a.btn.alternate, .button-options button.alternate, .button-options a.alternate.btn {
       background-color: #A9A9C2; }
       .button-options a.btn.alternate:hover, .button-options button.alternate:hover, .button-options a.alternate.btn:hover {
         background-color: #9393A9; }
 
-.user-hero {
+.user-profile {
+  width: 50vw;
+  margin: 0 auto; }
+
+.hero-container {
   min-height: 220px;
-  position: relative; }
-  .user-hero img {
-    position: absolute;
-    top: 40px;
-    left: 120px;
-    width: 150px;
-    height: 150px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%; }
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(251, 251, 251, 0.5); }
+
+.profile-picture {
+  display: inline-block;
+  width: 190px;
+  height: 190px;
+  border: 3px solid rgba(251, 251, 251, 0.2);
+  border-radius: 50%; }
 
 .user-name {
-  position: absolute;
-  top: 70px;
-  left: 300px; }
+  padding: 10px; }
   .user-name h2 {
-    margin: 6px 6px 6px 0;
-    padding: 3px 30px 3px 0;
-    font-size: 25pt;
+    font-size: 27pt;
     display: inline-block; }
 
-.user-info {
-  overflow: hidden;
-  margin-bottom: 15px;
-  overflow: hidden; }
-  .user-info > :first-child {
-    float: left;
-    width: 50%; }
-  .user-info > :last-child {
-    margin-left: 50%; }
-  .user-info h4 {
-    padding-left: 6px; }
+.contact-info {
+  text-align: center; }
 
-.profile-content {
-  padding: 25px; }
-  .profile-content p {
-    margin-left: 10px; }
+.contact-item {
+  overflow: hidden;
+  vertical-align: top;
+  margin: 0px 30px;
+  display: inline-block; }
+  .contact-item > :first-child {
+    float: left;
+    width: 45px; }
+  .contact-item > :last-child {
+    margin-left: 45px; }
+  .contact-item h4 {
+    margin-top: 3px; }
+  .contact-item .fa {
+    font-size: 20pt; }
+  .contact-item .fa-map-marker {
+    font-size: 22pt; }
+
+.music-choices {
+  overflow: hidden;
+  border-bottom: 1px solid rgba(251, 251, 251, 0.5); }
+  .music-choices > :first-child {
+    float: left;
+    width: 25vw; }
+  .music-choices > :last-child {
+    margin-left: 25vw; }
+  .music-choices > :first-child {
+    border-right: 1px solid rgba(251, 251, 251, 0.5); }
+  .music-choices > div {
+    text-align: center;
+    padding: 20px; }
+  .music-choices h4 {
+    font-size: 18pt; }
+  .music-choices p {
+    font-size: 11pt; }
+
+.description {
+  border-bottom: 1px solid rgba(251, 251, 251, 0.5);
+  padding: 20px;
+  text-align: center; }
+  .description h4 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18pt; }
+  .description p {
+    font-family: Arial;
+    font-size: 14pt; }
 
 .band-profile {
   text-align: center;
@@ -2818,7 +2869,7 @@ div.background {
   margin: 0 auto; }
   .band-members h2 {
     font-size: 25pt;
-    border-bottom: 2px solid #50A2E5; }
+    border-bottom: 2px solid #4C9FD2; }
 
 .member-container {
   margin-top: 10px;
@@ -2834,7 +2885,7 @@ div.background {
     display: block; }
 
 .text-wrapper {
-  color: #FFF;
+  color: #FBFBFB;
   opacity: 0;
   position: absolute;
   width: 170px;
@@ -2847,12 +2898,12 @@ div.background {
   transition: all 0.4s; }
   .text-wrapper a.btn, .text-wrapper button, .text-wrapper a.btn {
     padding: 2px 5px;
-    color: #FFF;
+    color: #FBFBFB;
     font-size: 10pt;
     width: 70px;
     transition: all 0.2s; }
     .text-wrapper a.btn:hover, .text-wrapper button:hover, .text-wrapper a.btn:hover {
-      background-color: #FFF;
+      background-color: #FBFBFB;
       color: #444; }
   .text-wrapper button.delete, .text-wrapper a.delete.btn {
     position: absolute;
@@ -2875,7 +2926,7 @@ div.background {
   left: 50%;
   transform: translate(-50%, -50%); }
   .inner-text h4 {
-    color: #50A2E5;
+    color: #4C9FD2;
     font-size: 13pt;
     margin: 7px; }
 

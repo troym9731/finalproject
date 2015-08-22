@@ -100,7 +100,9 @@
         "Drums",
         "Vocals",
         "Trumpet",
-        "Kazoo"
+        "Kazoo",
+        "Percussion",
+        "Cello"
       ],
       "description": "User 6 description",
       "inBand": "1",
