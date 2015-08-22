@@ -2408,6 +2408,7 @@ h4, h2 {
   Components and Helpers
 *****************************************/
 button, a.btn {
+  outline: none;
   color: #FBFBFB;
   background-color: transparent;
   border: 1px solid #FBFBFB;

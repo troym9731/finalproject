@@ -20,11 +20,11 @@ var BandImage = React.createClass({
     if (User.id === band.owner) {
       return <a href={url} className="btn alternate">Edit Profile</a>
     } else if ((_.indexOf(band.members, ''+User.id) > -1)) {
-      return <a href="#" onClick={this.leaveBand} className="btn delete">Leave Band</a>;
+      return <button onClick={this.props.leaveBand} className="btn delete">Leave Band</button>;
     } else if (+band.members.length === +band.members_needed) {
       return <button disabled className="btn disabled">Join Band</button>;
     } else if (User) {
-      return <a href="#" onClick={this.joinBand} className="btn">Join Band</a>;
+      return <button onClick={this.props.joinBand} className="btn">Join Band</button>;
     }
   },
 
@@ -54,74 +54,6 @@ var BandImage = React.createClass({
         {this.checkForLogin()}
       </div>
     );
-  },
-
-  joinBand: function() {
-    var _this = this;
-    var path = this.getPath();
-
-
-    var band = this.props.band;
-
-    if (Array.isArray(User.inBand)) {
-      User.inBand.push(''+band.id);
-    } else if (User.inBand === false) {
-      User.inBand = [ ''+band.id ]
-    } else {
-      User.inBand = [''+User.inBand, ''+band.id];
-    }
-
-    if (Array.isArray(band.members)) {
-      band.members.push(''+User.id);
-    } else {
-      band.members = [''+band.members, ''+User.id];
-    }
-
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/users/' + User.id,
-      data: User
-    })
-
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/bands/' + band.id,
-      data: band
-    }).done(function() {
-      _this.forceUpdate();
-    })
-    
-  },
-
-  leaveBand: function() {
-    var _this = this;
-    var path = this.getPath();
-    var band = this.props.band;
-
-    User.inBand = _.without(User.inBand, ''+band.id);
-    band.members = _.without(band.members, ''+User.id);
-
-    if (User.inBand.length === 0) {
-      User.inBand = false;
-    }
-
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/users/' + User.id,
-      data: User
-    })
-
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/bands/' + band.id,
-      data: band
-    }).done(function() {
-      _this.forceUpdate();
-    })
   }
 });
 
