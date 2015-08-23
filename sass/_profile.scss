@@ -17,8 +17,10 @@ $profile-width: 50vw;
 .button-options {
   text-align: center;
   padding: 20px;
+  border-top: 1px solid rgba(251, 251, 251, 0.5);
 
   a.btn, button {
+    display: inline-block;
     width: 150px;
     margin: 0 20px 20px 20px;
     padding: 6px 20px;
@@ -42,10 +44,10 @@ $profile-width: 50vw;
     }
 
     &.logout {
-      background-color: #5F886F;
+      background-color: #50AA73;
 
       &:hover {
-        background-color: #466753;
+        background-color: #428C5F;
       }
     }
 
@@ -153,7 +155,6 @@ $profile-width: 50vw;
 .ownership {
   text-align: center;
   padding: 20px;
-  border-bottom: 1px solid rgba(251, 251, 251, 0.5);
 
   h4 {
     margin-bottom: 15px;
@@ -162,23 +163,7 @@ $profile-width: 50vw;
 }
 
 .band-profile {
-  text-align: center;
-  padding: 30px;
-
-  h2 {
-    font-size: 27pt;
-  }
-
-  h4 {
-    font-size: 13pt;
-  }
-
-  img {
-    width: 280px;
-    height: 230px;
-    border: 3px solid #000;
-    border-radius: 4px;
-  }
+  @extend .user-profile;
 
   a.btn, button {
     @extend %content-box-button;
@@ -207,6 +192,15 @@ $profile-width: 50vw;
   }
 }
 
+.band-name {
+  padding: 10px;
+
+  h2 {
+    font-size: 27pt;
+    display: inline-block;
+  }
+}
+
 $member-width: 510px;
 $width-hover: $member-width / 3;
 $height-hover: 160px;
@@ -214,16 +208,6 @@ $height-hover: 160px;
 .band-members {
   width: $member-width;
   margin: 0 auto;
-  
-  h2 {
-    font-size: 25pt; 
-    border-bottom: 2px solid $base-color;
-  }
-}
-
-.member-container {
-  margin-top: 10px;
-  margin-bottom: 25px;
 }
 
 .member-tile {
@@ -257,6 +241,8 @@ $height-hover: 160px;
 
   a.btn, button {
     padding: 2px 5px;
+    background-color: transparent;
+    border: 1px solid $off-white;
     color: $off-white;
     font-size: 10pt;
     width: 70px;
@@ -272,15 +258,16 @@ $height-hover: 160px;
     position: absolute;
     top: 70px;
     left: 36px;
-    border-color: #FF0000;
-    color: #FF0000;
+    background-color: transparent;
+    border: 1px solid #D00606;
+    color: #D00606;
     font-size: 9pt;
     width: 100px;
     transition: all 0.2s;
     font-size: 8pt;
 
     &:hover {
-      background-color: #FF0000;
+      background-color: #A10505;
       color: #444;
     }
   }

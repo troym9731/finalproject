@@ -3,12 +3,26 @@ var $ = require('jquery');
 var _ = require('lodash');
 
 var BandMembers = React.createClass({
-  checkForLogin: function(id) {
+  checkForOwner: function(id) {
     var band = this.props.band;
     if (+User.id === +band.owner && +User.id !== +id) {
       return <button onClick={this.kickFromBand} className="delete">Kick from Band</button>;
     } else {
       return;
+    }
+  },
+
+  checkForLogin: function() {
+    var band = this.props.band;
+    var url= '/#/band/' + band.id + '/edit';
+    if (User.id === band.owner) {
+      return <div className="button-options"><a href={url} className="btn alternate">Edit Profile</a></div>;
+    } else if ((_.indexOf(band.members, ''+User.id) > -1)) {
+      return <div className="button-options"><button onClick={this.props.leaveBand} className="btn delete">Leave Band</button></div>;
+    } else if (+band.members.length === +band.members_needed) {
+      return <div className="button-options"><button disabled className="btn disabled">Join Band</button></div>;
+    } else if (User) {
+      return <div className="button-options"><button onClick={this.props.joinBand} className="btn">Join Band</button></div>;
     }
   },
 
@@ -30,7 +44,7 @@ var BandMembers = React.createClass({
               <div className="inner-text">
                 <h4>{name}</h4>
                 <a href={url} className="btn">Profile</a>
-                {_this.checkForLogin(id)}
+                {_this.checkForOwner(id)}
               </div>
             </div>
           </div>
@@ -48,7 +62,7 @@ var BandMembers = React.createClass({
             <div className="inner-text">
               <h4>{name}</h4>
               <a href={url} className="btn">Profile</a>
-              {_this.checkForLogin(ids)}
+              {_this.checkForOwner(ids)}
             </div>
           </div>
         </div>
@@ -58,11 +72,44 @@ var BandMembers = React.createClass({
   },
 
   render: function() {
+    var band = this.props.band;
+    var instruments = band.instruments;
+
+    if (Array.isArray(instruments)) {
+      instruments = instruments.join(', ');
+    }
+
     return (
-      <div className="band-members">
-        <h2>Members</h2>
-        <div className="member-container">
-          {this.members()}
+      <div>
+        <div className="profile-content">
+
+            <div className="music-choices">
+              <div>
+                <h4><b>{instruments}</b></h4>
+                <p>Instruments</p>
+              </div>
+              <div>
+                <h4><b>{band.genre}</b></h4>
+                <p>Genre</p>
+              </div>
+            </div>
+
+            <div className="music-choices">
+              <div>
+                <h4><b>{band.members_needed}</b></h4>
+                <p>Members Needed</p>
+              </div>
+              <div>
+                <h4><b>{band.serious_level}</b></h4>
+                <p>Band Goals</p>
+              </div>
+            </div>
+
+          <div className="ownership">
+            <h4><b>Members</b></h4>
+            {this.members()}
+          </div>
+          {this.checkForLogin()}
         </div>
       </div>
     );

@@ -2491,7 +2491,7 @@ div.background {
     background-repeat: no-repeat;
     background-position: center center; }
   div.background.lightbox {
-    background: radial-gradient(rgba(35, 35, 35, 0.8), rgba(35, 35, 35, 0.8)), url("../images/homebg2.jpeg");
+    background: radial-gradient(rgba(35, 35, 35, 0.9), rgba(35, 35, 35, 0.9)), url("../images/homebg2.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; }
@@ -2751,8 +2751,10 @@ div.background {
 
 .button-options {
   text-align: center;
-  padding: 20px; }
+  padding: 20px;
+  border-top: 1px solid rgba(251, 251, 251, 0.5); }
   .button-options a.btn, .button-options button, .button-options a.btn {
+    display: inline-block;
     width: 150px;
     margin: 0 20px 20px 20px;
     padding: 6px 20px;
@@ -2767,15 +2769,15 @@ div.background {
       .button-options a.btn.alternate:hover, .button-options button.alternate:hover, .button-options a.alternate.btn:hover {
         background-color: #9393A9; }
     .button-options a.btn.logout, .button-options button.logout, .button-options a.logout.btn {
-      background-color: #5F886F; }
+      background-color: #50AA73; }
       .button-options a.btn.logout:hover, .button-options button.logout:hover, .button-options a.logout.btn:hover {
-        background-color: #466753; }
+        background-color: #428C5F; }
     .button-options a.btn.delete, .button-options button.delete, .button-options a.delete.btn {
       background-color: #BA1E1E; }
       .button-options a.btn.delete:hover, .button-options button.delete:hover, .button-options a.delete.btn:hover {
         background-color: #9B1A1A; }
 
-.user-profile {
+.user-profile, .band-profile {
   width: 50vw;
   margin: 0 auto; }
 
@@ -2850,48 +2852,34 @@ div.background {
 
 .ownership {
   text-align: center;
-  padding: 20px;
-  border-bottom: 1px solid rgba(251, 251, 251, 0.5); }
+  padding: 20px; }
   .ownership h4 {
     margin-bottom: 15px;
     font-size: 18pt; }
 
-.band-profile {
-  text-align: center;
-  padding: 30px; }
-  .band-profile h2 {
-    font-size: 27pt; }
-  .band-profile h4 {
-    font-size: 13pt; }
-  .band-profile img {
-    width: 280px;
-    height: 230px;
-    border: 3px solid #000;
-    border-radius: 4px; }
-  .band-profile a.btn, .band-profile button, .band-profile a.btn {
-    width: 150px;
-    padding: 5px 25px; }
-    .band-profile a.btn.alternate, .band-profile button.alternate, .band-profile a.alternate.btn {
-      background-color: #A9A9C2; }
-      .band-profile a.btn.alternate:hover, .band-profile button.alternate:hover, .band-profile a.alternate.btn:hover {
-        background-color: #9393A9; }
-    .band-profile a.btn.delete, .band-profile button.delete, .band-profile a.delete.btn {
-      background-color: #D00606; }
-      .band-profile a.btn.delete:hover, .band-profile button.delete:hover, .band-profile a.delete.btn:hover {
-        background-color: #A10505; }
-    .band-profile a.btn.disabled, .band-profile button.disabled, .band-profile a.disabled.btn {
-      background-color: #B4B4B4; }
+.band-profile a.btn, .band-profile button, .band-profile a.btn {
+  width: 150px;
+  padding: 5px 25px; }
+  .band-profile a.btn.alternate, .band-profile button.alternate, .band-profile a.alternate.btn {
+    background-color: #A9A9C2; }
+    .band-profile a.btn.alternate:hover, .band-profile button.alternate:hover, .band-profile a.alternate.btn:hover {
+      background-color: #9393A9; }
+  .band-profile a.btn.delete, .band-profile button.delete, .band-profile a.delete.btn {
+    background-color: #D00606; }
+    .band-profile a.btn.delete:hover, .band-profile button.delete:hover, .band-profile a.delete.btn:hover {
+      background-color: #A10505; }
+  .band-profile a.btn.disabled, .band-profile button.disabled, .band-profile a.disabled.btn {
+    background-color: #B4B4B4; }
+
+.band-name {
+  padding: 10px; }
+  .band-name h2 {
+    font-size: 27pt;
+    display: inline-block; }
 
 .band-members {
   width: 510px;
   margin: 0 auto; }
-  .band-members h2 {
-    font-size: 25pt;
-    border-bottom: 2px solid #4C9FD2; }
-
-.member-container {
-  margin-top: 10px;
-  margin-bottom: 25px; }
 
 .member-tile {
   display: inline-block;
@@ -2920,6 +2908,8 @@ div.background {
   transition: all 0.4s; }
   .text-wrapper a.btn, .text-wrapper button, .text-wrapper a.btn {
     padding: 2px 5px;
+    background-color: transparent;
+    border: 1px solid #FBFBFB;
     color: #FBFBFB;
     font-size: 10pt;
     width: 70px;
@@ -2931,14 +2921,15 @@ div.background {
     position: absolute;
     top: 70px;
     left: 36px;
-    border-color: #FF0000;
-    color: #FF0000;
+    background-color: transparent;
+    border: 1px solid #D00606;
+    color: #D00606;
     font-size: 9pt;
     width: 100px;
     transition: all 0.2s;
     font-size: 8pt; }
     .text-wrapper button.delete:hover, .text-wrapper a.delete.btn:hover {
-      background-color: #FF0000;
+      background-color: #A10505;
       color: #444; }
 
 .inner-text {

@@ -39,9 +39,9 @@ var BandInformation = React.createClass({
 
     if (this.state.band && this.state.users) {
       return (
-        <div>
-          <BandImage joinBand={this.joinBand} leaveBand={this.leaveBand} band={this.state.band} users={this.state.users} />
-          <BandMembers band={this.state.band} users={this.state.users} />
+        <div className="band-profile">
+          <BandImage band={this.state.band} users={this.state.users} />
+          <BandMembers joinBand={this.joinBand} leaveBand={this.leaveBand} band={this.state.band} users={this.state.users} />
         </div>
       );
     } else {

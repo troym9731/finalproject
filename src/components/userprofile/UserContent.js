@@ -1,7 +1,11 @@
 var React = require('react');
+var Router = require('react-router');
+var Navigation = Router.Navigation;
 var _ = require('lodash');
 
 var UserContent = React.createClass({
+  mixins: [ Navigation ],
+
   checkForLogin: function() {
     var editUrl = '/#/users/edit';
     if (User.id === this.props.userId) {
@@ -9,8 +13,7 @@ var UserContent = React.createClass({
         <div className="button-options">
           <a href="/#/bands/create" className="btn">Start a Band</a>
           <a href={editUrl} className="btn alternate">Edit Profile</a>
-          <button className="logout">Log Out</button>
-          <button className="delete">Delete Profile</button>
+          <button onClick={this.logout} className="logout">Log Out</button>
         </div>
       );
     } else {
@@ -98,6 +101,11 @@ var UserContent = React.createClass({
         {this.checkForLogin()}
       </div>
     );
+  },
+
+  logout: function() {
+    User = false;
+    this.transitionTo('/');
   }
 });
 
