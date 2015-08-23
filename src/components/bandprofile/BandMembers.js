@@ -19,7 +19,7 @@ var BandMembers = React.createClass({
       return <div className="button-options"><a href={url} className="btn alternate">Edit Profile</a></div>;
     } else if ((_.indexOf(band.members, ''+User.id) > -1)) {
       return <div className="button-options"><button onClick={this.props.leaveBand} className="btn delete">Leave Band</button></div>;
-    } else if (+band.members.length === +band.members_needed) {
+    } else if (User && +band.members.length === +band.members_needed) {
       return <div className="button-options"><button disabled className="btn disabled">Join Band</button></div>;
     } else if (User) {
       return <div className="button-options"><button onClick={this.props.joinBand} className="btn">Join Band</button></div>;

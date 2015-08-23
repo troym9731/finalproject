@@ -45,6 +45,8 @@ var UserContent = React.createClass({
         ])
       })
       return partOf;
+    } else if (ids === false) {
+      return;
     } else {
       var band = _.find(bands, {id: +ids});
       var name = band.name;
