@@ -8,7 +8,7 @@ var BandProfile = React.createClass({
   render: function() {
     var id = +this.props.params.id;
     return (
-      <div>
+      <div className="profile-box">
         <BandInformation key={id} bandId={id} />
       </div>
     );

@@ -9,7 +9,8 @@ var $ = require('jquery');
 var UserInformationBox = React.createClass({
   getInitialState: function() {
     return {
-      user: null
+      user: null,
+      bands: null
     }
   },
 
@@ -23,16 +24,23 @@ var UserInformationBox = React.createClass({
           user: user
         })
       });
+
+    $.get('http://localhost:3000/bands')
+      .done(function(bands) {
+        _this.setState({
+          bands: bands
+        })
+      })
   },
 
   render: function() {
     var id = this.props.userId;
 
-    if (this.state.user) {
+    if (this.state.user && this.state.bands) {
       return (
         <div className="user-profile">
-          <UserImage userId={id} user={this.state.user} />
-          <UserContent userId={id} user={this.state.user} />
+          <UserImage userId={id} user={this.state.user} bands={this.state.bands} />
+          <UserContent userId={id} user={this.state.user} bands={this.state.bands} />
         </div>
       );
     } else {

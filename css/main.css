@@ -2744,14 +2744,16 @@ div.background {
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 220px;
-  color: rgba(251, 251, 251, 0.75); }
+  color: rgba(251, 251, 251, 0.75);
+  overflow: hidden; }
   .profile-box p {
     margin: 0; }
 
 .button-options {
-  text-align: center; }
+  text-align: center;
+  padding: 20px; }
   .button-options a.btn, .button-options button, .button-options a.btn {
-    width: 40%;
+    width: 150px;
     margin: 0 20px 20px 20px;
     padding: 6px 20px;
     text-align: center;
@@ -2764,6 +2766,14 @@ div.background {
       background-color: #A9A9C2; }
       .button-options a.btn.alternate:hover, .button-options button.alternate:hover, .button-options a.alternate.btn:hover {
         background-color: #9393A9; }
+    .button-options a.btn.logout, .button-options button.logout, .button-options a.logout.btn {
+      background-color: #5F886F; }
+      .button-options a.btn.logout:hover, .button-options button.logout:hover, .button-options a.logout.btn:hover {
+        background-color: #466753; }
+    .button-options a.btn.delete, .button-options button.delete, .button-options a.delete.btn {
+      background-color: #BA1E1E; }
+      .button-options a.btn.delete:hover, .button-options button.delete:hover, .button-options a.delete.btn:hover {
+        background-color: #9B1A1A; }
 
 .user-profile {
   width: 50vw;
@@ -2777,8 +2787,8 @@ div.background {
 
 .profile-picture {
   display: inline-block;
-  width: 190px;
-  height: 190px;
+  width: 200px;
+  height: 200px;
   border: 3px solid rgba(251, 251, 251, 0.2);
   border-radius: 50%; }
 
@@ -2832,11 +2842,19 @@ div.background {
   text-align: center; }
   .description h4 {
     margin-bottom: 10px;
-    text-align: center;
     font-size: 18pt; }
   .description p {
     font-family: Arial;
-    font-size: 14pt; }
+    font-size: 14pt;
+    line-height: 140%; }
+
+.ownership {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(251, 251, 251, 0.5); }
+  .ownership h4 {
+    margin-bottom: 15px;
+    font-size: 18pt; }
 
 .band-profile {
   text-align: center;
@@ -2878,11 +2896,14 @@ div.background {
 .member-tile {
   display: inline-block;
   position: relative;
-  visibility: visible; }
+  visibility: visible;
+  margin: 0 20px; }
   .member-tile img {
     width: 170px;
     height: 160px;
-    display: block; }
+    display: block;
+    border-radius: 50%;
+    border: 3px solid rgba(251, 251, 251, 0.2); }
 
 .text-wrapper {
   color: #FBFBFB;
@@ -2893,6 +2914,7 @@ div.background {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 50%;
   background: rgba(35, 35, 35, 0.8);
   text-align: center;
   transition: all 0.4s; }
@@ -2907,14 +2929,14 @@ div.background {
       color: #444; }
   .text-wrapper button.delete, .text-wrapper a.delete.btn {
     position: absolute;
-    top: 80px;
+    top: 70px;
     left: 36px;
-    padding: 2px 5px;
     border-color: #FF0000;
     color: #FF0000;
     font-size: 9pt;
     width: 100px;
-    transition: all 0.2s; }
+    transition: all 0.2s;
+    font-size: 8pt; }
     .text-wrapper button.delete:hover, .text-wrapper a.delete.btn:hover {
       background-color: #FF0000;
       color: #444; }
