@@ -2,6 +2,9 @@ var React = require('react');
 var Router = require('react-router');
 var BandImage = require('./BandImage');
 var BandMembers = require('./BandMembers');
+var BandStore = require('../../stores/BandStore');
+var MusicianStore = require('../../stores/MusicianStore');
+var ProfileActions = require('../../actions/ProfileActions');
 var $ = require('jquery');
 var _ = require('lodash');
 
@@ -9,52 +12,36 @@ var BandInformation = React.createClass({
   mixins: [ Router.State ],
 
   getInitialState: function() {
+    var id = +this.props.bandId;
     return {
-      band: null,
-      users: null
+      band: BandStore.get(id),
+      users: MusicianStore.getAll()
     }
   },
 
   componentDidMount: function() {
-    var id = this.props.bandId;
-    var _this = this;
-    $.get('http://localhost:3000/bands')
-      .done(function(bands) {
-        var band = _.find(bands, {id: id});
-        _this.setState({
-          band: band
-        })
-      });
-
-    $.get('http://localhost:3000/users')
-      .done(function(users) {
-        _this.setState({
-          users: users
-        })
-      });
+    BandStore.addChangeListener(this._onChange);
+    MusicianStore.addChangeListener(this._onChange);
   },
 
   render: function() {
-    var id = this.props.bandId;
+    var id = +this.props.bandId;
+    return (
+      <div className="band-profile">
+        <BandImage band={this.state.band} users={this.state.users} />
+        <BandMembers joinBand={this.joinBand} leaveBand={this.leaveBand} band={this.state.band} users={this.state.users} />
+      </div>
+    );
+  },
 
-    if (this.state.band && this.state.users) {
-      return (
-        <div className="band-profile">
-          <BandImage band={this.state.band} users={this.state.users} />
-          <BandMembers joinBand={this.joinBand} leaveBand={this.leaveBand} band={this.state.band} users={this.state.users} />
-        </div>
-      );
-    } else {
-      return <div>Loading...</div>
-    }
+  _onChange: function() {
+    this.setState({
+      band: BandStore.get(id),
+      users: MusicianStore.getAll()
+    })
   },
 
   joinBand: function() {
-    
-    var _this = this;
-    var path = this.getPath();
-
-
     var band = this.state.band;
 
     if (Array.isArray(User.inBand)) {
@@ -71,21 +58,23 @@ var BandInformation = React.createClass({
       band.members = [''+band.members, ''+User.id];
     }
 
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/users/' + User.id,
-      data: User
-    })
+    // ProfileActions.joinBand(User, band)
+
+    // $.ajax({
+    //   traditional: true,
+    //   method: 'PUT',
+    //   url: 'http://localhost:3000/users/' + User.id,
+    //   data: User
+    // })
     
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/bands/' + band.id,
-      data: band
-    }).done(function() {
-      _this.forceUpdate();
-    })
+    // $.ajax({
+    //   traditional: true,
+    //   method: 'PUT',
+    //   url: 'http://localhost:3000/bands/' + band.id,
+    //   data: band
+    // }).done(function() {
+    //   _this.forceUpdate();
+    // })
     
   },
 

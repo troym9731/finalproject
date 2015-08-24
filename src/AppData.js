@@ -12,5 +12,21 @@ module.exports = {
       .done(function(bands) {
         ProfileActions.loadBands(bands)
       })
+  },
+
+  joinBand: function(User, band) {
+    $.ajax({
+      traditional: true,
+      method: 'PUT',
+      url: 'http://localhost:3000/users/' + User.id,
+      data: User
+    })
+    
+    $.ajax({
+      traditional: true,
+      method: 'PUT',
+      url: 'http://localhost:3000/bands/' + band.id,
+      data: band
+    })
   }
 }

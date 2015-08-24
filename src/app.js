@@ -12,6 +12,8 @@ var BandProfile = require('./components/bandprofile/BandProfile');
 var BandSignup = require('./components/bandsignup/BandSignup');
 var EditUserProfile = require('./components/edituserprofile/EditUserProfile');
 var EditBandProfile = require('./components/editbandprofile/EditBandProfile');
+var ProfileActions = require('./actions/ProfileActions');
+var $ = require('jquery');
 User = false;
 
 var routes = (
@@ -28,8 +30,18 @@ var routes = (
   </Route>
 );
 
-Router.run(routes, Router.HashLocation, function(Root) {
-  React.render(<Root />, document.body);
-});
+
+$.get('http://localhost:3000/users')
+  .done(function(users) {
+    ProfileActions.loadUsers(users);
+  })
+
+$.get('http://localhost:3000/bands')
+  .done(function(bands) {
+    ProfileActions.loadBands(bands);
+    Router.run(routes, Router.HashLocation, function(Root) {
+      React.render(<Root />, document.body);
+    });
+  })
 
 

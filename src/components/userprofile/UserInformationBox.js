@@ -3,49 +3,44 @@ var UserImage = require('./UserImage');
 var UserContent = require('./UserContent');
 var ProfileActions = require('../../actions/ProfileActions');
 var MusicianStore = require('../../stores/MusicianStore');
+var BandStore = require('../../stores/BandStore');
 var _ = require('lodash');
 var $ = require('jquery');
 
 var UserInformationBox = React.createClass({
   getInitialState: function() {
+    var id = +this.props.userId;
     return {
-      user: null,
-      bands: null
+      user: MusicianStore.get(id),
+      bands: BandStore.getAll()
     }
   },
 
   componentDidMount: function() {
-    var id = Number(this.props.userId);
-    var _this = this;
-    $.get('http://localhost:3000/users')
-      .done(function(users) {
-        var user = _.find(users, {"id": id});
-        _this.setState({
-          user: user
-        })
-      });
+    MusicianStore.addChangeListener(this._onChange);
+    BandStore.addChangeListener(this._onChange);
+  },
 
-    $.get('http://localhost:3000/bands')
-      .done(function(bands) {
-        _this.setState({
-          bands: bands
-        })
-      })
+  componentWillUnmount: function() {
+    MusicianStore.removeChangeListener(this._onChange);
+    BandStore.removeChangeListener(this._onChange);
   },
 
   render: function() {
-    var id = this.props.userId;
+    var id = +this.props.userId;
+    return (
+      <div className="user-profile">
+        <UserImage userId={id} user={this.state.user} bands={this.state.bands} />
+        <UserContent userId={id} user={this.state.user} bands={this.state.bands} />
+      </div>
+    );
+  },
 
-    if (this.state.user && this.state.bands) {
-      return (
-        <div className="user-profile">
-          <UserImage userId={id} user={this.state.user} bands={this.state.bands} />
-          <UserContent userId={id} user={this.state.user} bands={this.state.bands} />
-        </div>
-      );
-    } else {
-      return <div>Loading...</div>;
-    }
+  _onChange: function() {
+    this.setState({
+      user: MusicianStore.get(id),
+      bands: BandStore.getAll()
+    });
   }
 });
 

@@ -9,6 +9,11 @@ function loadBands(bands) {
   _bands = bands;
 }
 
+function joinBand(band) {
+  console.log(_bands)
+  console.log(band)
+}
+
 var BandStore = _.assign({}, EventEmitter.prototype, {
   emitChange: function() {
     this.emit('change');
@@ -20,6 +25,14 @@ var BandStore = _.assign({}, EventEmitter.prototype, {
 
   removeChangeListener: function(callback) {
     this.removeListener('change', callback);
+  },
+
+  get: function(id) {
+    return _.find(_bands, {id: id});
+  },
+
+  getAll: function() {
+    return _bands;
   }
 });
 
@@ -29,6 +42,11 @@ BandStore.dispatchToken = AppDispatcher.register(function(action) {
 
     case AppConstants.LOAD_BANDS:
       loadBands(action.data);
+      BandStore.emitChange();
+      break;
+
+    case AppConstants.JOIN_BAND:
+      joinBand(action.band);
       BandStore.emitChange();
       break;
 
