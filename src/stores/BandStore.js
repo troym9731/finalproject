@@ -10,8 +10,25 @@ function loadBands(bands) {
 }
 
 function joinBand(band) {
-  console.log(_bands)
-  console.log(band)
+  _bands = _.map(_bands, function(prevBand) {
+    if (prevBand.id === band.id) {
+      prevBand.members = band.members;
+      return prevBand;
+    } else {
+      return prevBand;
+    }
+  })
+}
+
+function leaveBand(band) {
+  _bands = _.map(_bands, function(prevBand) {
+    if (prevBand.id === band.id) {
+      prevBand.members = band.members;
+      return prevBand;
+    } else {
+      return prevBand;
+    }
+  })
 }
 
 var BandStore = _.assign({}, EventEmitter.prototype, {
@@ -50,21 +67,10 @@ BandStore.dispatchToken = AppDispatcher.register(function(action) {
       BandStore.emitChange();
       break;
 
-    // case AppConstants.CREATE_MESSAGE:
-    //   var message = ChatMessageUtils.getCreatedMessageData(
-    //     action.text,
-    //     action.currentThreadID
-    //   );
-    //   _messages[message.id] = message;
-    //   BandStore.emitChange();
-    //   break;
-
-    // case AppConstants.RECEIVE_RAW_MESSAGES:
-    //   _addMessages(action.rawMessages);
-    //   AppDispatcher.waitFor([ThreadStore.dispatchToken]);
-    //   _markAllInThreadRead(ThreadStore.getCurrentID());
-    //   BandStore.emitChange();
-    //   break;
+    case AppConstants.LEAVE_BAND:
+      leaveBand(action.band);
+      BandStore.emitChange();
+      break;
 
     default:
       // do nothing

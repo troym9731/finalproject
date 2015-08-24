@@ -19,12 +19,33 @@ module.exports = {
     });
   },
 
+  createUser: function(user, component) {
+    AppDispatcher.dispatch({
+      type: AppConstants.CREATE_USER,
+      data: user,
+      caller: component
+    })
+  },
+
+  createBand: function(band) {
+
+  },
+
   joinBand: function(User, band) {
-    AppData.joinBand(User, band)
+    AppData.joinLeaveBand(User, band)
     AppDispatcher.dispatch({
       type: AppConstants.JOIN_BAND,
       user: User,
-      band: band,
+      band: band
+    })
+  },
+
+  leaveBand: function(User, band) {
+    AppData.joinLeaveBand(User, band)
+    AppDispatcher.dispatch({
+      type: AppConstants.LEAVE_BAND,
+      user: User,
+      band: band
     })
   }
 

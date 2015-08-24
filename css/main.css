@@ -2486,7 +2486,7 @@ div.background {
       div.background > div {
         min-height: 82vh; } }
   div.background.wallpaper {
-    background-image: radial-gradient(rgba(35, 35, 35, 0.3), rgba(35, 35, 35, 0.3)), url("../images/homebg2.jpeg");
+    background-image: radial-gradient(rgba(35, 35, 35, 0.25), rgba(35, 35, 35, 0.25)), url("../images/homebg2.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; }
@@ -2870,6 +2870,8 @@ div.background {
       background-color: #A10505; }
   .band-profile a.btn.disabled, .band-profile button.disabled, .band-profile a.disabled.btn {
     background-color: #B4B4B4; }
+    .band-profile a.btn.disabled:hover, .band-profile button.disabled:hover, .band-profile a.disabled.btn:hover {
+      background-color: #B4B4B4; }
 
 .band-name {
   padding: 10px; }
@@ -2929,7 +2931,7 @@ div.background {
     transition: all 0.2s;
     font-size: 8pt; }
     .text-wrapper button.delete:hover, .text-wrapper a.delete.btn:hover {
-      background-color: #A10505;
+      background-color: #D00606;
       color: #444; }
 
 .inner-text {

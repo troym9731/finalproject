@@ -2,19 +2,25 @@ var ProfileActions = require('./actions/ProfileActions');
 var $ = require('jquery');
 
 module.exports = {
-  loadData: function() {
-    $.get('http://localhost:3000/users')
-      .done(function(users) {
-        ProfileActions.loadUsers(users);
-      })
 
-    $.get('http://localhost:3000/bands')
-      .done(function(bands) {
-        ProfileActions.loadBands(bands)
-      })
+  createUser: function(user, component) {
+    $.ajax({
+      traditional: true,
+      url: 'http://localhost:3000/users',
+      method: 'POST',
+      data: user
+    }).done(function(newUser) {
+      User = newUser;
+      ProfileActions.createUser(newUser, component);
+    })
+
   },
 
-  joinBand: function(User, band) {
+  createBand: function() {
+
+  },
+
+  joinLeaveBand: function(User, band) {
     $.ajax({
       traditional: true,
       method: 'PUT',

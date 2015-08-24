@@ -5,6 +5,7 @@ var SignupHeader = require('./SignupHeader');
 var SignupLeftColumn = require('./SignupLeftColumn');
 var SignupRightColumn = require('./SignupRightColumn');
 var TextArea = require('./TextArea');
+var AppData = require('../../AppData');
 var $ = require('jquery');
 var _ = require('lodash');
 
@@ -52,16 +53,7 @@ var Signup = React.createClass({
     user.description = description;
     user.inBand = false;
 
-    $.ajax({
-      traditional: true,
-      url: 'http://localhost:3000/users',
-      method: 'POST',
-      data: user
-    }).done(function(data) {
-      User = data;
-      var url = '/user/' + data.id;
-      _this.transitionTo(url)
-    })
+    AppData.createUser(user, this)
   }
 });
 

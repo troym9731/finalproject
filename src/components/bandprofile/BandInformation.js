@@ -24,6 +24,11 @@ var BandInformation = React.createClass({
     MusicianStore.addChangeListener(this._onChange);
   },
 
+  componentWillUnmount: function() {
+    BandStore.removeChangeListener(this._onChange);
+    MusicianStore.removeChangeListener(this._onChange);
+  },
+
   render: function() {
     var id = +this.props.bandId;
     return (
@@ -35,6 +40,7 @@ var BandInformation = React.createClass({
   },
 
   _onChange: function() {
+    var id = +this.props.bandId;
     this.setState({
       band: BandStore.get(id),
       users: MusicianStore.getAll()
@@ -58,29 +64,10 @@ var BandInformation = React.createClass({
       band.members = [''+band.members, ''+User.id];
     }
 
-    // ProfileActions.joinBand(User, band)
-
-    // $.ajax({
-    //   traditional: true,
-    //   method: 'PUT',
-    //   url: 'http://localhost:3000/users/' + User.id,
-    //   data: User
-    // })
-    
-    // $.ajax({
-    //   traditional: true,
-    //   method: 'PUT',
-    //   url: 'http://localhost:3000/bands/' + band.id,
-    //   data: band
-    // }).done(function() {
-    //   _this.forceUpdate();
-    // })
-    
+    ProfileActions.joinBand(User, band)
   },
 
   leaveBand: function() {
-    var _this = this;
-    var path = this.getPath();
     var band = this.state.band;
 
     User.inBand = _.without(User.inBand, ''+band.id);
@@ -90,21 +77,7 @@ var BandInformation = React.createClass({
       User.inBand = false;
     }
 
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/users/' + User.id,
-      data: User
-    })
-
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/bands/' + band.id,
-      data: band
-    }).done(function() {
-      _this.forceUpdate();
-    })
+    ProfileActions.leaveBand(User, band)
   }
 });
 

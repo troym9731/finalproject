@@ -10,6 +10,32 @@ function loadUsers(users) {
   _users = users;
 }
 
+function newUser(user) {
+  _users.push(user);
+}
+
+function joinBand(user) {
+  _users = _.map(_users, function(prevUser) {
+    if (prevUser.id === user.id) {
+      prevUser.inBand = user.inBand;
+      return prevUser;
+    } else {
+      return prevUser;
+    }
+  })
+}
+
+function leaveBand(user) {
+  _users = _.map(_users, function(prevUser) {
+    if (prevUser.id === user.id) {
+      prevUser.inBand = user.inBand;
+      return prevUser;
+    } else {
+      return prevUser;
+    }
+  })
+}
+
 var MusicianStore = _.assign({}, EventEmitter.prototype, {
   emitChange: function() {
     this.emit('change');
@@ -41,21 +67,22 @@ MusicianStore.dispatchToken = AppDispatcher.register(function(action) {
       MusicianStore.emitChange();
       break;
 
-    // case AppConstants.CREATE_MESSAGE:
-    //   var message = ChatMessageUtils.getCreatedMessageData(
-    //     action.text,
-    //     action.currentThreadID
-    //   );
-    //   _messages[message.id] = message;
-    //   MusicianStore.emitChange();
-    //   break;
+    case AppConstants.CREATE_USER:
+      newUser(action.data);
+      var url = '/user/' + action.data.id;
+      MusicianStore.emitChange();
+      action.caller.transitionTo(url);
+      break;
 
-    // case AppConstants.RECEIVE_RAW_MESSAGES:
-    //   _addMessages(action.rawMessages);
-    //   AppDispatcher.waitFor([ThreadStore.dispatchToken]);
-    //   _markAllInThreadRead(ThreadStore.getCurrentID());
-    //   MusicianStore.emitChange();
-    //   break;
+    case AppConstants.JOIN_BAND:
+      joinBand(action.user);
+      MusicianStore.emitChange();
+      break;
+
+    case AppConstants.LEAVE_BAND:
+      leaveBand(action.user);
+      MusicianStore.emitChange();
+      break;
 
     default:
       // do nothing
