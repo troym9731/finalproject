@@ -27,8 +27,13 @@ module.exports = {
     })
   },
 
-  createBand: function(band) {
-
+  createBand: function(band, user, component) {
+    AppDispatcher.dispatch({
+      type: AppConstants.CREATE_BAND,
+      band: band,
+      user: user,
+      caller: component
+    })
   },
 
   joinBand: function(User, band) {

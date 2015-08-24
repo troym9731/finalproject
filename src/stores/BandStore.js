@@ -9,18 +9,11 @@ function loadBands(bands) {
   _bands = bands;
 }
 
-function joinBand(band) {
-  _bands = _.map(_bands, function(prevBand) {
-    if (prevBand.id === band.id) {
-      prevBand.members = band.members;
-      return prevBand;
-    } else {
-      return prevBand;
-    }
-  })
+function createBand(band) {
+  _bands.push(band);
 }
 
-function leaveBand(band) {
+function updateBand(band) {
   _bands = _.map(_bands, function(prevBand) {
     if (prevBand.id === band.id) {
       prevBand.members = band.members;
@@ -62,13 +55,20 @@ BandStore.dispatchToken = AppDispatcher.register(function(action) {
       BandStore.emitChange();
       break;
 
+    case AppConstants.CREATE_BAND:
+      createBand(action.band);
+      var url = '/band/' + action.band.id;
+      BandStore.emitChange();
+      action.caller.transitionTo(url);
+      break;
+
     case AppConstants.JOIN_BAND:
-      joinBand(action.band);
+      updateBand(action.band);
       BandStore.emitChange();
       break;
 
     case AppConstants.LEAVE_BAND:
-      leaveBand(action.band);
+      updateBand(action.band);
       BandStore.emitChange();
       break;
 

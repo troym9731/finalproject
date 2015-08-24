@@ -4,6 +4,7 @@ var Navigation = Router.Navigation;
 var BandLeftColumn = require('./BandLeftColumn');
 var BandRightColumn = require('./BandRightColumn');
 var Instruments = require('./Instruments');
+var AppData = require('../../AppData');
 var $ = require('jquery');
 var _ = require('lodash');
 
@@ -28,7 +29,6 @@ var BandForm = React.createClass({
     if (!User) {
       return;
     }
-    var _this = this;
 
     var fields = $('form').serializeArray();
     var band = {};
@@ -55,32 +55,34 @@ var BandForm = React.createClass({
     
     band.members = User.id;
     band.owner = User.id;
+
+    AppData.createBand(band, User, this);
     
-    $.ajax({
-      traditional: true,
-      url: 'http://localhost:3000/bands',
-      method: 'POST',
-      data: band
-    }).done(function(data) {
-      console.log(data)
-      var url = '/band/' + data.id;
-      if (User.inBand === false) {
-        User.inBand = data.id;
-      } else if (Array.isArray(User.inBand)) {
-        User.inBand = User.inBand.push(data.id);
-      } else {
-        User.inBand = [User.inBand, data.id];
-      }
-      $.ajax({
-        traditional: true,
-        url: 'http://localhost:3000/users/' + User.id,
-        method: 'PUT',
-        data: User
-      }).done(function(data) {
-        console.log(data)
-        _this.transitionTo(url);
-      })
-    })
+    // $.ajax({
+    //   traditional: true,
+    //   url: 'http://localhost:3000/bands',
+    //   method: 'POST',
+    //   data: band
+    // }).done(function(data) {
+    //   console.log(data)
+    //   var url = '/band/' + data.id;
+    //   if (User.inBand === false) {
+    //     User.inBand = data.id;
+    //   } else if (Array.isArray(User.inBand)) {
+    //     User.inBand = User.inBand.push(data.id);
+    //   } else {
+    //     User.inBand = [User.inBand, data.id];
+    //   }
+    //   $.ajax({
+    //     traditional: true,
+    //     url: 'http://localhost:3000/users/' + User.id,
+    //     method: 'PUT',
+    //     data: User
+    //   }).done(function(data) {
+    //     console.log(data)
+    //     _this.transitionTo(url);
+    //   })
+    // })
     
   }
 });

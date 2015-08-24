@@ -14,18 +14,7 @@ function newUser(user) {
   _users.push(user);
 }
 
-function joinBand(user) {
-  _users = _.map(_users, function(prevUser) {
-    if (prevUser.id === user.id) {
-      prevUser.inBand = user.inBand;
-      return prevUser;
-    } else {
-      return prevUser;
-    }
-  })
-}
-
-function leaveBand(user) {
+function updateUserAfterBands(user) {
   _users = _.map(_users, function(prevUser) {
     if (prevUser.id === user.id) {
       prevUser.inBand = user.inBand;
@@ -74,13 +63,18 @@ MusicianStore.dispatchToken = AppDispatcher.register(function(action) {
       action.caller.transitionTo(url);
       break;
 
+    case AppConstants.CREATE_BAND:
+      updateUserAfterBands(action.user);
+      MusicianStore.emitChange();
+      break;
+
     case AppConstants.JOIN_BAND:
-      joinBand(action.user);
+      updateUserAfterBands(action.user);
       MusicianStore.emitChange();
       break;
 
     case AppConstants.LEAVE_BAND:
-      leaveBand(action.user);
+      updateUserAfterBands(action.user);
       MusicianStore.emitChange();
       break;
 
