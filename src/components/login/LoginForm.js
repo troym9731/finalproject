@@ -30,10 +30,16 @@ var LoginForm = React.createClass({
       loginObj[field.name] = field.value;
     });
 
+    if (loginObj.password === '' || !!loginObj.email === '') {
+      return;
+    }
+
     var _this = this;
     $.get('http://localhost:3000/users')
       .done(function(users) {
-        User = _.find(users, loginObj);
+        if (_.find(users, loginObj)) {
+          User = _.find(users, loginObj);
+        }
         _this.transitionTo('/');
       })
     

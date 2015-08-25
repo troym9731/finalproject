@@ -14,23 +14,20 @@ var GenreDropdown = React.createClass({
 
   checkForLogin: function() {
     var genres = this.genres.map(function(genre) {
-      if (User.genre === genre) {
-        return <option key={genre} value={genre} selected>{genre}</option>
-      } else {
-        return <option key={genre} value={genre}>{genre}</option>
-      }
+      return <option key={genre} value={genre}>{genre}</option>
     });
 
     return genres;
   },
 
   render: function() {
+    var optionValue = User.genre ? User.genre : 'Genre...';
     return (
       <div className="form-object">
         <div><i className="fa fa-music"></i></div>
         <div>
-          <select name="genre" id="genre">
-            <option value=''>Genre...</option>
+          <select defaultValue={optionValue} name="genre" id="genre">
+            <option value="">Genre...</option>
             {this.checkForLogin()}
           </select>
         </div>

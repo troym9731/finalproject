@@ -18,13 +18,10 @@ var EditBandRightColumn = React.createClass({
 
   render: function() {
     var band = this.props.band;
+    var optionValue = band.members_needed;
     var options = [];
     this.number.forEach(function(number) {
-      if (band.members_needed === number) {
-        options.push(<option key={number} value={number} selected>{number}</option>);
-      } else {
-        options.push(<option key={number} value={number}>{number}</option>)
-      }
+      options.push(<option key={number} value={number}>{number}</option>)
     });
     return (
       <div>
@@ -35,8 +32,8 @@ var EditBandRightColumn = React.createClass({
         <div className="form-object">
           <div><i className="fa fa-list-ol"></i></div>
           <div>
-            <select name="members_needed" id="members_needed">
-              <option defaultValue value=''>Number of band members...</option>
+            <select defaultValue={optionValue} name="members_needed" id="members_needed">
+              <option value=''>Number of band members...</option>
               {options}
             </select>
           </div>

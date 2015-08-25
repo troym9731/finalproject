@@ -34,6 +34,13 @@ var EditInstruments = React.createClass({
                   <label htmlFor={instrument}> {instrument}</label>
                 </div>
               );
+            } else if (band.instruments === instrument) {
+              return (
+                <div className="cb-wrapper" key={instrument}>
+                  <input type="checkbox" name="instruments" value={instrument} id={instrument} defaultChecked/>
+                  <label htmlFor={instrument}> {instrument}</label>
+                </div>
+              );
             } else {
               return (
                 <div className="cb-wrapper" key={instrument}>

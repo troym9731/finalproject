@@ -15,22 +15,19 @@ var EditBandGenre = React.createClass({
   checkForLogin: function() {
     var band = this.props.band;
     var genres = this.genres.map(function(genre) {
-      if (band.genre === genre) {
-        return <option key={genre} value={genre} selected>{genre}</option>
-      } else {
-        return <option key={genre} value={genre}>{genre}</option>
-      }
+      return <option key={genre} value={genre}>{genre}</option>
     });
 
     return genres;
   },
 
   render: function() {
+    var optionValue = this.props.band.genre;
     return (
       <div className="form-object">
         <div><i className="fa fa-music"></i></div>
         <div>
-          <select name="genre" id="genre">
+          <select defaultValue={optionValue} name="genre" id="genre">
             <option value=''>Genre...</option>
             {this.checkForLogin()}
           </select>

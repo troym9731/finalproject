@@ -31,7 +31,7 @@ var BandRightColumn = React.createClass({
           <div><i className="fa fa-list-ol"></i></div>
           <div>
             <select name="members_needed" id="members_needed">
-              <option defaultValue value=''>Number of band members...</option>
+              <option value=''>Number of band members...</option>
               {options}
             </select>
           </div>

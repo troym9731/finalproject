@@ -13,7 +13,6 @@ var BandSignup = require('./components/bandsignup/BandSignup');
 var EditUserProfile = require('./components/edituserprofile/EditUserProfile');
 var EditBandProfile = require('./components/editbandprofile/EditBandProfile');
 var ProfileActions = require('./actions/ProfileActions');
-var AppData = require('./AppData');
 var $ = require('jquery');
 User = false;
 

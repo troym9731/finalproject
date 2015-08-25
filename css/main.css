@@ -2484,7 +2484,7 @@ div.background {
     min-height: 480px; }
     @media screen and (min-width: 1400px) {
       div.background > div {
-        min-height: 82vh; } }
+        min-height: 75vh; } }
   div.background.wallpaper {
     background-image: radial-gradient(rgba(35, 35, 35, 0.25), rgba(35, 35, 35, 0.25)), url("../images/homebg2.jpeg");
     background-size: cover;
@@ -2569,7 +2569,7 @@ div.background {
   min-height: 460px; }
   @media screen and (min-width: 1400px) {
     .signup-box {
-      margin: 150px auto 0 auto; } }
+      margin: 50px auto 40px auto; } }
   .signup-box h1 {
     width: 240px;
     margin: 30px auto 12px auto; }

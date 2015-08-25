@@ -29,7 +29,7 @@ var InstrumentDropdown = React.createClass({
         <div><i className="fa fa-music"></i></div>
         <div>
           <select name="instrument" id="instrument">
-            <option defaultValue value=''>Specific Instrument...</option>
+            <option value=''>Specific Instrument...</option>
             {options}
           </select>
         </div>
