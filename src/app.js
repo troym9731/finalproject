@@ -48,7 +48,6 @@ var routes = (
   </Route>
 );
 
-
 $.get('http://localhost:3000/users')
   .done(function(users) {
     ProfileActions.loadUsers(users);

@@ -50,6 +50,15 @@ module.exports = {
       band: band,
       member: member
     })
+  },
+
+  editProfile: function(user, component, band) {
+    AppDispatcher.dispatch({
+      type: AppConstants.EDIT_PROFILE,
+      user: user,
+      band: band,
+      caller: component
+    })
   }
 };
 

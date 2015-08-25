@@ -130,25 +130,7 @@ var BandMembers = React.createClass({
       member.inBand = false;
     }
 
-    AppData.kickFromBand(band, member);
-
-
-
-    // $.ajax({
-    //   traditional: true,
-    //   method: 'PUT',
-    //   url: 'http://localhost:3000/users/' + userId,
-    //   data: member
-    // }).done(function(data) {
-    //   $(self).closest('.member-tile').fadeOut(300);
-    // })
-
-    // $.ajax({
-    //   traditional: true,
-    //   method: 'PUT',
-    //   url: 'http://localhost:3000/bands/' + band.id,
-    //   data: band
-    // })
+    AppData.kickFromBand(band, member, self);
   }
 });
 

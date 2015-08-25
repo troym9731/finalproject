@@ -71,6 +71,12 @@ BandStore.dispatchToken = AppDispatcher.register(function(action) {
       BandStore.emitChange();
       break;
 
+    case AppConstants.EDIT_PROFILE:
+      if (action.band) {
+        updateBand(action.band);
+        BandStore.emitChange();
+      }
+      break;
     default:
       // do nothing
   }

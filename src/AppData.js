@@ -58,12 +58,14 @@ module.exports = {
     })
   },
 
-  kickFromBand: function(band, member) {
+  kickFromBand: function(band, member, self) {
     $.ajax({
       traditional: true,
       method: 'PUT',
       url: 'http://localhost:3000/users/' + member.id,
       data: member
+    }).done(function() {
+      $(self).closest('.member-tile').fadeOut(300);
     })
 
     $.ajax({
@@ -74,5 +76,26 @@ module.exports = {
     }).done(function() {
       ProfileActions.kickFromBand(band, member);
     })
+  },
+
+  editProfile: function(user, component, band) {
+    if (band) {
+      $.ajax({
+        traditional: true,
+        method: 'PUT',
+        url: 'http://localhost:3000/band/' + User.id,
+        data: band
+      })
+    }
+
+    $.ajax({
+      traditional: true,
+      method: 'PUT',
+      url: 'http://localhost:3000/users/' + User.id,
+      data: user
+    }).done(function(updatedUser) {
+      ProfileActions.editProfile(updatedUser, component, band);
+    })
+
   }
 };;

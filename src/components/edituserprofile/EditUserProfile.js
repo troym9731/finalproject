@@ -5,6 +5,7 @@ var EditUserHeader = require('./EditUserHeader');
 var EditUserLeft = require('./EditUserLeft');
 var EditUserRight = require('./EditUserRight');
 var EditTextArea = require('./EditTextArea');
+var AppData = require('../../AppData');
 var $ = require('jquery');
 var _ = require('lodash');
 
@@ -50,18 +51,20 @@ var EditUserProfile = React.createClass({
       user.instruments.push(fields[i].value);
     }
     user.description = description;
-    user.inBand = false;
+    user.id = User.id;
 
-    $.ajax({
-      traditional: true,
-      url: 'http://localhost:3000/users/' + User.id,
-      method: 'PUT',
-      data: user
-    }).done(function(data) {
-      User = data;
-      var url = '/user/' + data.id;
-      _this.transitionTo(url)
-    })
+    AppData.editProfile(user, this);
+
+    // $.ajax({
+    //   traditional: true,
+    //   url: 'http://localhost:3000/users/' + User.id,
+    //   method: 'PUT',
+    //   data: user
+    // }).done(function(data) {
+    //   User = data;
+    //   var url = '/user/' + data.id;
+    //   _this.transitionTo(url)
+    // })
   }
 });
 
