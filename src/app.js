@@ -15,24 +15,7 @@ var EditBandProfile = require('./components/editbandprofile/EditBandProfile');
 var ProfileActions = require('./actions/ProfileActions');
 var AppData = require('./AppData');
 var $ = require('jquery');
-User = {
-      "first_name": "Troy",
-      "last_name": "Mullaney",
-      "address": "1363 W. 14th St.",
-      "zipcode": 85281,
-      "email": "troym9731@gmail.com",
-      "password": "password",
-      "genre": "Rock",
-      "image": "./images/me.jpg",
-      "instruments": [
-        "Guitar",
-        "Piano",
-        "Violin"
-      ],
-      "description": "I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite b",
-      "inBand": 1,
-      "id": 1
-    };
+User = false;
 
 var routes = (
   <Route path="/" handler={Template}>

@@ -1,5 +1,7 @@
 var React = require('react');
 var SearchBox = require('./SearchBox');
+var MusicianStore = require('../../stores/MusicianStore');
+var BandStore = require('../../stores/BandStore');
 var $ = require('jquery');
 var _ = require('lodash');
 
@@ -22,23 +24,22 @@ var Search = React.createClass({
       scrollwheel: false
     });
 
-    $.get('http://localhost:3000/users')
-      .done(function(users) {
-        users.forEach(function(user) {
-          var address = user.address + ' ' + user.zipcode;
-          var id = user.id;
-          var genre = user.genre;
-          var instruments = user.instruments;
-          if (Array.isArray(instruments)) {
-            instruments = instruments.join(', ');
-          }
-          var name = user.first_name + ' ' + user.last_name;
-          var url = '/#/user/' + id;
-          var infoWindowContent = '<h2>' + '<img src=' + user.image + '> ' + 
-                                  '<a href=' + url + '>' + name + '</a></h2>' +
-                                  '<h5>' + address + '</h5>' +
-                                  '<h5><b>Genre:</b> ' + genre + '</h5>' +
-                                  '<h5><b>Instruments:</b> ' + instruments + '</h5>';
+    var users = MusicianStore.getAll();
+    users.forEach(function(user) {
+      var address = user.address + ' ' + user.zipcode;
+      var id = user.id;
+      var genre = user.genre;
+      var instruments = user.instruments;
+      if (Array.isArray(instruments)) {
+        instruments = instruments.join(', ');
+      }
+      var name = user.first_name + ' ' + user.last_name;
+      var url = '/#/user/' + id;
+      var infoWindowContent = '<h2>' + '<img src=' + user.image + '> ' + 
+                              '<a href=' + url + '>' + name + '</a></h2>' +
+                              '<h5>' + address + '</h5>' +
+                              '<h5><b>Genre:</b> ' + genre + '</h5>' +
+                              '<h5><b>Instruments:</b> ' + instruments + '</h5>';
           GMaps.geocode({
             address: address,
             callback: function(results, status) {
@@ -60,30 +61,25 @@ var Search = React.createClass({
             }
           });
         })
-      })
 
-    $.get('http://localhost:3000/bands')
-      .done(function(bands) {
-        bands.forEach(function(band) {
-          setTimeout(function() {
-            var address = band.address + ' ' + band.zipcode;
-            console.log(band)
-            console.log(address)
-            var id = band.id;
-            var genre = band.genre;
-            var instruments = band.instruments;
-            if (Array.isArray(instruments)) {
-              instruments = instruments.join(', ');
-            }
-            console.log(instruments)
-            var url = '/#/band/' + id;
-            var infoWindowContent = '<h2>' + '<img src=' + band.image + '> ' +
-                                  '<a href=' + url + '>' + band.name + '</a></h2>' +
-                                  '<h5>' + address + '</h5>' +
-                                  '<h5><b>Genre:</b> ' + genre + '</h5>' +
-                                  '<h5><b>Looking For:</b> ' + band.members_needed + ' members</h5>' +
-                                  '<h5><b>Instruments Needed:</b> ' + instruments + '</h5>' +
-                                  '<h5><b>Looking To:</b> ' + band.serious_level + '</h5>';
+    var bands = BandStore.getAll();
+    bands.forEach(function(band) {
+      setTimeout(function() {
+        var address = band.address + ' ' + band.zipcode;
+        var id = band.id;
+        var genre = band.genre;
+        var instruments = band.instruments;
+        if (Array.isArray(instruments)) {
+          instruments = instruments.join(', ');
+        }
+        var url = '/#/band/' + id;
+        var infoWindowContent = '<h2>' + '<img src=' + band.image + '> ' +
+                              '<a href=' + url + '>' + band.name + '</a></h2>' +
+                              '<h5>' + address + '</h5>' +
+                              '<h5><b>Genre:</b> ' + genre + '</h5>' +
+                              '<h5><b>Looking For:</b> ' + band.members_needed + ' members</h5>' +
+                              '<h5><b>Instruments Needed:</b> ' + instruments + '</h5>' +
+                              '<h5><b>Looking To:</b> ' + band.serious_level + '</h5>';
             GMaps.geocode({
               address: address,
               callback: function(results, status) {
@@ -109,7 +105,6 @@ var Search = React.createClass({
             });
           }, 2500);
         })
-      })
   },
 
   render: function() {
