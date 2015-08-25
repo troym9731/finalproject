@@ -78,24 +78,25 @@ module.exports = {
     })
   },
 
-  editProfile: function(user, component, band) {
-    if (band) {
-      $.ajax({
-        traditional: true,
-        method: 'PUT',
-        url: 'http://localhost:3000/band/' + User.id,
-        data: band
-      })
-    }
-
+  editUserProfile: function(user, component) {
     $.ajax({
       traditional: true,
       method: 'PUT',
       url: 'http://localhost:3000/users/' + User.id,
       data: user
     }).done(function(updatedUser) {
-      ProfileActions.editProfile(updatedUser, component, band);
+      ProfileActions.editUserProfile(updatedUser, component);
     })
+  },
 
+  editBandProfile: function(band, component) {
+    $.ajax({
+      traditional: true,
+      url: 'http://localhost:3000/bands/' + band.id,
+      method: 'PUT',
+      data: band
+    }).done(function(updatedBand) {
+      ProfileActions.editBandProfile(updatedBand, component);
+    })
   }
 };;

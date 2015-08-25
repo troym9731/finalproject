@@ -53,7 +53,7 @@ var EditUserProfile = React.createClass({
     user.description = description;
     user.id = User.id;
 
-    AppData.editProfile(user, this);
+    AppData.editUserProfile(user, this);
 
     // $.ajax({
     //   traditional: true,

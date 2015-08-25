@@ -77,7 +77,7 @@ MusicianStore.dispatchToken = AppDispatcher.register(function(action) {
       MusicianStore.emitChange();
       break;
 
-    case AppConstants.EDIT_PROFILE:
+    case AppConstants.EDIT_USER:
       User = action.user;
       var url = '/user/' + User.id;
       updateUser(action.user);

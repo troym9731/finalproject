@@ -4,6 +4,7 @@ var Navigation = Router.Navigation;
 var EditBandLeftColumn = require('./EditBandLeftColumn');
 var EditBandRightColumn = require('./EditBandRightColumn');
 var EditInstruments = require('./EditInstruments');
+var AppData = require('../../AppData');
 var $ = require('jquery');
 var _ = require('lodash');
 
@@ -87,18 +88,9 @@ var EditBandForm = React.createClass({
 
     band.members = band.members.split(",");
     band.owner = User.id;
-    
-    $.ajax({
-      traditional: true,
-      url: 'http://localhost:3000/bands/' + this.state.band.id,
-      method: 'PUT',
-      data: band
-    }).done(function(data) {
-      var url = '/band/' + data.id;
-      console.log(data)
-      _this.transitionTo(url);
-    })
-    
+    band.id = id;
+
+    AppData.editBandProfile(band, this);
   }
 });
 

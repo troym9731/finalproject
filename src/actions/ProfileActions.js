@@ -52,10 +52,17 @@ module.exports = {
     })
   },
 
-  editProfile: function(user, component, band) {
+  editUserProfile: function(user, component) {
     AppDispatcher.dispatch({
-      type: AppConstants.EDIT_PROFILE,
+      type: AppConstants.EDIT_USER,
       user: user,
+      caller: component
+    })
+  },
+
+  editBandProfile: function(band, component) {
+    AppDispatcher.dispatch({
+      type: AppConstants.EDIT_BAND,
       band: band,
       caller: component
     })

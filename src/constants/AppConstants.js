@@ -7,5 +7,6 @@ module.exports = keyMirror({
   CREATE_BAND: null,
   BAND_MEMBERSHIP: null,
   KICK_FROM_BAND: null,
-  EDIT_PROFILE: null
+  EDIT_BAND: null,
+  EDIT_USER: null
 });
