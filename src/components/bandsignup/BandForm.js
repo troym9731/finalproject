@@ -19,7 +19,7 @@ var BandForm = React.createClass({
           <BandRightColumn />
         </div>
         <Instruments />
-        <button onClick={this.handleSubmit} >Submit</button>
+        <button onClick={this.handleSubmit}>Submit</button>
       </form>
     );
   },
@@ -57,33 +57,6 @@ var BandForm = React.createClass({
     band.owner = User.id;
 
     AppData.createBand(band, User, this);
-    
-    // $.ajax({
-    //   traditional: true,
-    //   url: 'http://localhost:3000/bands',
-    //   method: 'POST',
-    //   data: band
-    // }).done(function(data) {
-    //   console.log(data)
-    //   var url = '/band/' + data.id;
-    //   if (User.inBand === false) {
-    //     User.inBand = data.id;
-    //   } else if (Array.isArray(User.inBand)) {
-    //     User.inBand = User.inBand.push(data.id);
-    //   } else {
-    //     User.inBand = [User.inBand, data.id];
-    //   }
-    //   $.ajax({
-    //     traditional: true,
-    //     url: 'http://localhost:3000/users/' + User.id,
-    //     method: 'PUT',
-    //     data: User
-    //   }).done(function(data) {
-    //     console.log(data)
-    //     _this.transitionTo(url);
-    //   })
-    // })
-    
   }
 });
 

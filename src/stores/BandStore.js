@@ -16,8 +16,7 @@ function createBand(band) {
 function updateBand(band) {
   _bands = _.map(_bands, function(prevBand) {
     if (prevBand.id === band.id) {
-      prevBand.members = band.members;
-      return prevBand;
+      return band;
     } else {
       return prevBand;
     }
@@ -62,12 +61,12 @@ BandStore.dispatchToken = AppDispatcher.register(function(action) {
       action.caller.transitionTo(url);
       break;
 
-    case AppConstants.JOIN_BAND:
+    case AppConstants.BAND_MEMBERSHIP:
       updateBand(action.band);
       BandStore.emitChange();
       break;
 
-    case AppConstants.LEAVE_BAND:
+    case AppConstants.KICK_FROM_BAND:
       updateBand(action.band);
       BandStore.emitChange();
       break;

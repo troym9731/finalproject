@@ -1,4 +1,5 @@
 var React = require('react');
+var AppData = require('../../AppData');
 var $ = require('jquery');
 var _ = require('lodash');
 
@@ -118,33 +119,36 @@ var BandMembers = React.createClass({
   kickFromBand: function(e) {
     var band = this.props.band;
     var users = this.props.users;
-    var _this = this;
 
     var self = e.target;
     var userId = $(self).closest('.member-tile').data('id');
     var member = _.find(users, {id: userId});
 
-    band.members = _.without(band.members, userId);
+    band.members = _.without(band.members, ''+userId);
     member.inBand = _.without(member.inBand, ''+band.id)
     if (member.inBand.length === 0) {
       member.inBand = false;
     }
 
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/users/' + userId,
-      data: member
-    }).done(function(data) {
-      $(self).closest('.member-tile').fadeOut(300);
-    })
+    AppData.kickFromBand(band, member);
 
-    $.ajax({
-      traditional: true,
-      method: 'PUT',
-      url: 'http://localhost:3000/bands/' + band.id,
-      data: band
-    })
+
+
+    // $.ajax({
+    //   traditional: true,
+    //   method: 'PUT',
+    //   url: 'http://localhost:3000/users/' + userId,
+    //   data: member
+    // }).done(function(data) {
+    //   $(self).closest('.member-tile').fadeOut(300);
+    // })
+
+    // $.ajax({
+    //   traditional: true,
+    //   method: 'PUT',
+    //   url: 'http://localhost:3000/bands/' + band.id,
+    //   data: band
+    // })
   }
 });
 

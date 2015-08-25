@@ -36,22 +36,20 @@ module.exports = {
     })
   },
 
-  joinBand: function(User, band) {
-    AppData.joinLeaveBand(User, band)
+  bandMembership: function(User, band) {
     AppDispatcher.dispatch({
-      type: AppConstants.JOIN_BAND,
+      type: AppConstants.BAND_MEMBERSHIP,
       user: User,
       band: band
     })
   },
 
-  leaveBand: function(User, band) {
-    AppData.joinLeaveBand(User, band)
+  kickFromBand: function(band, member) {
     AppDispatcher.dispatch({
-      type: AppConstants.LEAVE_BAND,
-      user: User,
-      band: band
+      type: AppConstants.KICK_FROM_BAND,
+      band: band,
+      member: member
     })
   }
-
 };
+

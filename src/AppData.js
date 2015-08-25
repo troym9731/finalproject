@@ -13,7 +13,6 @@ module.exports = {
       User = newUser;
       ProfileActions.createUser(newUser, component);
     })
-
   },
 
   createBand: function(band, User, component) {
@@ -36,12 +35,12 @@ module.exports = {
         method: 'PUT',
         data: User
       }).done(function(user) {
-        ProfileActions.create(newBand, user, component);
+        ProfileActions.createBand(newBand, user, component);
       })
     })
   },
 
-  joinLeaveBand: function(User, band) {
+  bandMembership: function(User, band) {
     $.ajax({
       traditional: true,
       method: 'PUT',
@@ -54,6 +53,26 @@ module.exports = {
       method: 'PUT',
       url: 'http://localhost:3000/bands/' + band.id,
       data: band
+    }).done(function() {
+      ProfileActions.bandMembership(User, band);
+    })
+  },
+
+  kickFromBand: function(band, member) {
+    $.ajax({
+      traditional: true,
+      method: 'PUT',
+      url: 'http://localhost:3000/users/' + member.id,
+      data: member
+    })
+
+    $.ajax({
+      traditional: true,
+      method: 'PUT',
+      url: 'http://localhost:3000/bands/' + band.id,
+      data: band
+    }).done(function() {
+      ProfileActions.kickFromBand(band, member);
     })
   }
-}
+};;

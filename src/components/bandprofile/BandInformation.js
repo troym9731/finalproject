@@ -4,7 +4,7 @@ var BandImage = require('./BandImage');
 var BandMembers = require('./BandMembers');
 var BandStore = require('../../stores/BandStore');
 var MusicianStore = require('../../stores/MusicianStore');
-var ProfileActions = require('../../actions/ProfileActions');
+var AppData = require('../../AppData');
 var $ = require('jquery');
 var _ = require('lodash');
 
@@ -64,7 +64,7 @@ var BandInformation = React.createClass({
       band.members = [''+band.members, ''+User.id];
     }
 
-    ProfileActions.joinBand(User, band)
+    AppData.bandMembership(User, band)
   },
 
   leaveBand: function() {
@@ -77,7 +77,7 @@ var BandInformation = React.createClass({
       User.inBand = false;
     }
 
-    ProfileActions.leaveBand(User, band)
+    AppData.bandMembership(User, band)
   }
 });
 
