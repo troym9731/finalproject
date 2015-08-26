@@ -2486,7 +2486,7 @@ div.background {
       div.background > div {
         min-height: 75vh; } }
   div.background.wallpaper {
-    background-image: radial-gradient(rgba(35, 35, 35, 0.2), rgba(35, 35, 35, 0.2)), url("../images/homebg2.jpeg");
+    background-image: radial-gradient(rgba(35, 35, 35, 0.24), rgba(35, 35, 35, 0.24)), url("../images/homebg2.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; }

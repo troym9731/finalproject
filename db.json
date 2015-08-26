@@ -55,11 +55,11 @@
       "id": 3
     },
     {
-      "first_name": "Richi",
-      "last_name": "Brown",
+      "first_name": "Ryan",
+      "last_name": "Medina",
       "address": "3232 S 48th St",
       "zipcode": "85040",
-      "email": "richi@brown.com",
+      "email": "ryan@medina.com",
       "password": "password",
       "genre": "Jazz",
       "image": "./images/ryan.jpg",
@@ -67,7 +67,7 @@
         "Piano",
         "Trumpet"
       ],
-      "description": "I love to jam! My real name is Richard, but everybody calls me Richi. The piano and trumpet are my go-to instruments, but I can pick up new ones in a matter of weeks. I'm a big jazz fan, and would love to meet up wtih some local musicians to just jam on the weekends or whenever anybody is free.",
+      "description": "I love to jam! My real name is Richard, but everybody calls me Ryan. The piano and trumpet are my go-to instruments, but I can pick up new ones in a matter of weeks. I'm a big jazz fan, and would love to meet up wtih some local musicians to just jam on the weekends or whenever anybody is free.",
       "inBand": "3",
       "id": 4
     },
