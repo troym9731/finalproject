@@ -14,22 +14,24 @@
         "Piano",
         "Violin"
       ],
-      "description": "I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin.I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite b",
+      "description": "I'm a huge fan of pop punk band such as Blink-182, Green Day, and Sum 41. Some of my favorite bands include Yellowcard and Breaking Benjamin. I love to jam with other fellow musicians. I've played the piano for well over 10 years, but I also play guitar. If someone is looking for a violinist, I might be able to bust out my old violin as well. Looking for a band to jam with.",
       "inBand": 1,
       "id": 1
     },
     {
-      "first_name": "John",
-      "last_name": "Doe",
+      "first_name": "Alban",
+      "last_name": "Cerberus",
       "address": "1525 W. 18th St.",
       "zipcode": 85281,
-      "email": "john@doe.com",
+      "email": "alban@cerberus.com",
       "password": "password",
       "genre": "Rock",
       "image": "./images/person1.jpg",
       "instruments": [
         "Guitar",
-        "Piano"
+        "Piano",
+        "Drums",
+        "Flute"
       ],
       "description": "User 2 description",
       "inBand": "1",
@@ -145,7 +147,7 @@
   ],
   "bands": [
     {
-      "name": "AC/DC",
+      "name": "Rock of the Arizona",
       "image": "./images/liveconcert.jpg",
       "members_needed": 4,
       "address": "1363 W. 14th St.",
@@ -167,7 +169,7 @@
       "id": 1
     },
     {
-      "name": "That Country Duo",
+      "name": "Beyond Country",
       "image": "http://static.giantbomb.com/uploads/original/0/6087/2435649-0965498946-rockb.jpg",
       "members_needed": 2,
       "address": "515 W 1st St",
@@ -177,8 +179,7 @@
       "instruments": [
         "Guitar",
         "Vocals",
-        "Violin",
-        "Drums"
+        "Violin"
       ],
       "members": [
         "7",
@@ -188,9 +189,9 @@
       "id": 2
     },
     {
-      "name": "The Duo for Jazz",
+      "name": "Jazz Hotel",
       "image": "http://cdn.bleedingcool.net/wp-content/uploads/2014/03/rockband2_hero.jpg",
-      "members_needed": 2,
+      "members_needed": 5,
       "address": "3232 S 48th St",
       "zipcode": 85040,
       "genre": "Jazz",
@@ -198,6 +199,7 @@
       "instruments": [
         "Trumpet",
         "Saxophone",
+        "Guitar",
         "Bass",
         "Drums"
       ],
