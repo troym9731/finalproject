@@ -33,24 +33,25 @@
         "Drums",
         "Flute"
       ],
-      "description": "User 2 description",
+      "description": "My name is Alban, and I've been rocking out with fellow musicians for the past 30 years. The drums are by far my favorite instrument to play, and I've recently picked up the flute in the last 10 years to add to my arsenal. You may not think it is an instrument suited for rock, but wait until you hear it before completely writing it off.",
       "inBand": "1",
       "id": 2
     },
     {
       "first_name": "Sally",
       "last_name": "Strong",
-      "address": "S Rosen Dr",
-      "zipcode": "85281",
+      "address": "799 S Rosen Dr",
+      "zipcode": 85281,
       "email": "sally@strong.com",
       "password": "password",
       "genre": "Jazz",
       "image": "./images/person3.jpg",
       "instruments": [
-        "Saxophone"
+        "Saxophone",
+        "Percussion"
       ],
-      "description": "User 3 description",
-      "inBand": false,
+      "description": "Hello everyone, my name is Sally Strong and I'm looking for a serious band to go around and play at local jazz venues. It doesn't matter what the size of the band is, as I've been playing in Jazz Duo's for many years. If you're interested in a saxophone or percussion player, email me with details to your band.",
+      "inBand": 3,
       "id": 3
     },
     {
@@ -61,12 +62,12 @@
       "email": "richi@brown.com",
       "password": "password",
       "genre": "Jazz",
-      "image": "./images/person2.jpg",
+      "image": "./images/ryan.jpg",
       "instruments": [
         "Piano",
         "Trumpet"
       ],
-      "description": "User 4 description",
+      "description": "I love to jam! My real name is Richard, but everybody calls me Richi. The piano and trumpet are my go-to instruments, but I can pick up new ones in a matter of weeks. I'm a big jazz fan, and would love to meet up wtih some local musicians to just jam on the weekends or whenever anybody is free.",
       "inBand": "3",
       "id": 4
     },
@@ -74,17 +75,17 @@
       "first_name": "Melissa",
       "last_name": "Greene",
       "address": "1550 W Southern Ave",
-      "zipcode": "85282",
+      "zipcode": 85282,
       "email": "melissa@greene.com",
       "password": "password",
       "genre": "Rock",
-      "image": "./images/crowd.jpg",
+      "image": "http://images1.miaminewtimes.com/imager/gloria-romero-roses-random-person-to-run/u/original/6524760/rosesdem.jpg",
       "instruments": [
         "Vocals",
         "Bass"
       ],
-      "description": "User 5 description",
-      "inBand": false,
+      "description": "Hi all, I am Melissa and I'm a passionate bass player who excels in backup vocals. ",
+      "inBand": 1,
       "id": 5
     },
     {
@@ -95,7 +96,7 @@
       "email": "jane@anderson.com",
       "password": "password",
       "genre": "Rock",
-      "image": "./images/crowd2.jpg",
+      "image": "http://www.taaz.com/images/1DCE27598CABBCF0CD814B5EF1D01A76.jpg",
       "instruments": [
         "Guitar",
         "Piano",
@@ -118,7 +119,7 @@
       "email": "julius@yared.com",
       "password": "password",
       "genre": "Country",
-      "image": "./images/liveconcert.jpg",
+      "image": "https://c1.staticflickr.com/3/2758/4060282653_1fc33aeea9_b.jpg",
       "instruments": [
         "Vocals",
         "Violin"
@@ -135,7 +136,7 @@
       "email": "victor@janez.com",
       "password": "password",
       "genre": "Country",
-      "image": "./images/band-night.jpg",
+      "image": "http://i7.photobucket.com/albums/y278/guiteej3/bruce_lee_101fin_f2.jpg",
       "instruments": [
         "Cello",
         "Drums"
@@ -163,7 +164,8 @@
       "members": [
         "1",
         "2",
-        "6"
+        "6",
+        "5"
       ],
       "owner": 1,
       "id": 1
@@ -203,7 +205,10 @@
         "Bass",
         "Drums"
       ],
-      "members": 4,
+      "members": [
+        "4",
+        "3"
+      ],
       "owner": 4,
       "id": 3
     }

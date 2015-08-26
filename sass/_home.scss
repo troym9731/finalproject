@@ -13,14 +13,14 @@ div.background {
   }
 
   &.wallpaper {
-    background-image: radial-gradient(rgba(35, 35, 35, 0.25), rgba(35, 35, 35, 0.25)), url('../images/homebg2.jpeg');
+    background-image: radial-gradient(rgba(35, 35, 35, 0.2), rgba(35, 35, 35, 0.2)), url('../images/homebg2.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
   }
 
   &.lightbox {
-    background: radial-gradient(rgba(35, 35, 35, 0.9), rgba(35, 35, 35, 0.9)), url('../images/homebg2.jpeg');
+    background: radial-gradient(rgba(35, 35, 35, 0.85), rgba(35, 35, 35, 0.85)), url('../images/homebg2.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
