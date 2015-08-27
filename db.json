@@ -26,7 +26,7 @@
       "email": "alban@cerberus.com",
       "password": "password",
       "genre": "Rock",
-      "image": "./images/person1.jpg",
+      "image": "http://eventualmillionaire.com/wp-content/uploads/2013/08/Craig-Fluty_204.jpg",
       "instruments": [
         "Guitar",
         "Piano",
@@ -55,8 +55,8 @@
       "id": 3
     },
     {
-      "first_name": "Ryan",
-      "last_name": "Medina",
+      "first_name": "Bryan",
+      "last_name": "Cadina",
       "address": "3232 S 48th St",
       "zipcode": "85040",
       "email": "ryan@medina.com",
@@ -67,7 +67,7 @@
         "Piano",
         "Trumpet"
       ],
-      "description": "I love to jam! My real name is Richard, but everybody calls me Ryan. The piano and trumpet are my go-to instruments, but I can pick up new ones in a matter of weeks. I'm a big jazz fan, and would love to meet up wtih some local musicians to just jam on the weekends or whenever anybody is free.",
+      "description": "I love to jam! My name is Bryan, but everybody calls me Bry for short. The piano and trumpet are my go-to instruments, but I can pick up new ones in a matter of weeks. I'm a big jazz fan, and would love to meet up wtih some local musicians to just jam on the weekends or whenever anybody is free.",
       "inBand": "3",
       "id": 4
     },
@@ -84,7 +84,7 @@
         "Vocals",
         "Bass"
       ],
-      "description": "Hi all, I am Melissa and I'm a passionate bass player who excels in backup vocals. ",
+      "description": "Hi all, I am Melissa and I'm a passionate bass player who excels in backup vocals. Some of my favorite bands include Van Halen, Weezer, and Angels and Airwaves. I am not looking for anything serious, so if you have a local, casual band, feel free to contact me!",
       "inBand": 1,
       "id": 5
     },
@@ -107,7 +107,7 @@
         "Percussion",
         "Cello"
       ],
-      "description": "User 6 description",
+      "description": "What's up! My name is Jane Anderson, and I am a huge fan of rock and roll. I play a huge selectin of instruments, and I believe I would be an excellent addition to any local band. I am looking for any seriousness level, from just jamming to actually going on gigs.",
       "inBand": "1",
       "id": 6
     },
@@ -124,7 +124,7 @@
         "Vocals",
         "Violin"
       ],
-      "description": "User 7 description",
+      "description": "My name is Julius Yared, and I am an avid country fan. I only play the violin, but I can easily sing while playing. Music has been a huge influence on my life, and now that I have a steady job and extra time, I would love to get together with some local musicians and jam together.",
       "inBand": "2",
       "id": 7
     },
@@ -141,7 +141,7 @@
         "Cello",
         "Drums"
       ],
-      "description": "User 8 description",
+      "description": "Yo! My name is Victor Janez, and I am a huge country buff. I have played the cello for most of my life, including all throughout high school and in a small symphony at my college. Recently, I have started playing the drums. If anybody is looking for a cello player for a country band, hit me up.",
       "inBand": "2",
       "id": 8
     }
