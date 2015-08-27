@@ -62,7 +62,7 @@
       "email": "ryan@medina.com",
       "password": "password",
       "genre": "Jazz",
-      "image": "./images/ryan.jpg",
+      "image": "http://annietopia.com/wp-content/uploads/2013/10/e73c0-screenshot2013-10-09at2-44-59am.png",
       "instruments": [
         "Piano",
         "Trumpet"
