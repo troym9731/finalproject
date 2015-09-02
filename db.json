@@ -34,7 +34,7 @@
         "Flute"
       ],
       "description": "My name is Alban, and I've been rocking out with fellow musicians for the past 30 years. The drums are by far my favorite instrument to play, and I've recently picked up the flute in the last 10 years to add to my arsenal. You may not think it is an instrument suited for rock, but wait until you hear it before completely writing it off.",
-      "inBand": "1",
+      "inBand": false,
       "id": 2
     },
     {
@@ -144,6 +144,24 @@
       "description": "Yo! My name is Victor Janez, and I am a huge country buff. I have played the cello for most of my life, including all throughout high school and in a small symphony at my college. Recently, I have started playing the drums. If anybody is looking for a cello player for a country band, hit me up.",
       "inBand": "2",
       "id": 8
+    },
+    {
+      "first_name": "Jake",
+      "last_name": "Stoll",
+      "address": "1200 W. 14th St.",
+      "zipcode": 85281,
+      "email": "jake@stoll.com",
+      "password": "password",
+      "image": "http://santetotal.com/wp-content/uploads/2014/05/default-user.png",
+      "genre": "Jazz",
+      "instruments": [
+        "Guitar",
+        "Bass",
+        "Drums"
+      ],
+      "description": "Hello everyone, I’m Jake! My favorite genre of music is Jazz, and I would love to find a local band to jam with during my free time. I used to have a group of guys I would play with on the weekends before I moved out here to Tempe. I play guitar, bass, and drums, so if anybody is looking for a slot to fill, feel free to email me!",
+      "inBand": 4,
+      "id": 9
     }
   ],
   "bands": [
@@ -163,7 +181,6 @@
       ],
       "members": [
         "1",
-        "2",
         "6",
         "5"
       ],
@@ -211,6 +228,24 @@
       ],
       "owner": 4,
       "id": 3
+    },
+    {
+      "name": "Arizona Quatro",
+      "address": "1200 W. 14th St.",
+      "zipcode": 85281,
+      "image": "./images/defaultband.jpg",
+      "members_needed": 4,
+      "genre": "Jazz",
+      "serious_level": "Just jam",
+      "instruments": [
+        "Guitar",
+        "Piano",
+        "Drums",
+        "Trumpet"
+      ],
+      "members": 9,
+      "owner": 9,
+      "id": 4
     }
   ]
 }
