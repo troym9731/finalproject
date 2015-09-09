@@ -28,7 +28,7 @@ var BandStore = _.assign({}, EventEmitter.prototype, {
     this.emit('change');
   },
 
-    addChangeListener: function(callback) {
+  addChangeListener: function(callback) {
     this.on('change', callback);
   },
 
