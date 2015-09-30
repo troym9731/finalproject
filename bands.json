@@ -1,0 +1,83 @@
+[{
+  "name": "Rock of the Arizona",
+  "image": "./images/liveconcert.jpg",
+  "members_needed": 4,
+  "address": "1363 W. 14th St.",
+  "zipcode": 85281,
+  "genre": "Rock",
+  "serious_level": "Just jam",
+  "instruments": [
+    "Guitar",
+    "Vocals",
+    "Bass",
+    "Drums"
+  ],
+  "members": [
+    "1",
+    "6",
+    "5"
+  ],
+  "owner": 1,
+  "id": 1
+},
+{
+  "name": "Beyond Country",
+  "image": "http://static.giantbomb.com/uploads/original/0/6087/2435649-0965498946-rockb.jpg",
+  "members_needed": 2,
+  "address": "515 W 1st St",
+  "zipcode": 85281,
+  "genre": "Country",
+  "serious_level": "Practice frequently",
+  "instruments": [
+    "Guitar",
+    "Vocals",
+    "Violin"
+  ],
+  "members": [
+    "7",
+    "8"
+  ],
+  "owner": 8,
+  "id": 2
+},
+{
+  "name": "Jazz Hotel",
+  "image": "http://cdn.bleedingcool.net/wp-content/uploads/2014/03/rockband2_hero.jpg",
+  "members_needed": 5,
+  "address": "3232 S 48th St",
+  "zipcode": 85040,
+  "genre": "Jazz",
+  "serious_level": "Play at venues",
+  "instruments": [
+    "Trumpet",
+    "Saxophone",
+    "Guitar",
+    "Bass",
+    "Drums"
+  ],
+  "members": [
+    "4",
+    "3"
+  ],
+  "owner": 4,
+  "id": 3
+},
+{
+  "name": "Arizona Quatro",
+  "address": "1200 W. 14th St.",
+  "zipcode": 85281,
+  "image": "./images/defaultband.jpg",
+  "members_needed": 4,
+  "genre": "Jazz",
+  "serious_level": "Just jam",
+  "instruments": [
+    "Guitar",
+    "Piano",
+    "Drums",
+    "Trumpet"
+  ],
+  "members": 9,
+  "owner": 9,
+  "id": 4
+}
+]
