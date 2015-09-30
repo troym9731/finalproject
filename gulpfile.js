@@ -17,7 +17,7 @@ var sass = require('gulp-sass');
 *****************************************/
 
 var bundler = browserify({
-  entries: ['./src/app.js'],
+  entries: ['./public/src/app.js'],
   debug: true
 });
 
@@ -31,7 +31,7 @@ gulp.task('build', ['clean'], function () {
   return bundler.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('bundle.js'))
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('public/build'));
 });
 
 
@@ -60,7 +60,7 @@ gulp.task('serve', ['serve:api', 'serve:web']);
 gulp.task('sass', function() {
   return gulp.src('./sass/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./public/css'));
 });
 
 /****************************************

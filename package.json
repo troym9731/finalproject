@@ -10,12 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "ampersand-model": "^5.0.3",
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
     "flux": "^2.0.3",
     "font-awesome": "^4.4.0",
+    "jade": "^1.11.0",
     "jquery": "^2.1.4",
     "keymirror": "^0.1.1",
     "lodash": "^3.10.1",
+    "morgan": "^1.6.1",
     "normalize.css": "^3.0.3",
+    "path": "^0.12.7",
     "react": "^0.13.3",
     "react-router": "^0.13.3"
   },
