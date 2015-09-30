@@ -17,7 +17,7 @@ var sass = require('gulp-sass');
 *****************************************/
 
 var bundler = browserify({
-  entries: ['./public/src/app.js'],
+  entries: ['./src/app.js'],
   debug: true
 });
 
