@@ -4,6 +4,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// DB
+
+var db = require('./db');
+db.connect('mongodb://localhost:27017/finalproject', function(err) {
+  if (err) {
+    console.log('Unable to connect to Mongo.')
+    process.exit(1)
+  }
+})
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var bands = require('./routes/bands');
