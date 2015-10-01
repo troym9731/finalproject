@@ -1,13 +1,11 @@
 'use strict';
 
 var gulp = require('gulp');
+var reactify = require('reactify');
 var gutil = require('gulp-util');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var rimraf = require('rimraf');
-var jsonServer = require('json-server');
-var apiServer = jsonServer.create();
-var router = jsonServer.router('db.json');
 var serve = require('gulp-serve');
 var sass = require('gulp-sass');
 
@@ -19,7 +17,7 @@ var sass = require('gulp-sass');
 var bundler = browserify({
   entries: ['./src/app.js'],
   debug: true
-});
+}).transform(reactify);
 
 bundler.on('log', gutil.log); // output build logs to terminal
 
@@ -33,25 +31,6 @@ gulp.task('build', ['clean'], function () {
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('public/build'));
 });
-
-
-/****************************************
-  Servers (Web and API)
-*****************************************/
-
-apiServer.use(jsonServer.defaults);
-apiServer.use(router);
-
-gulp.task('serve:api', function (cb) {
-  apiServer.listen(3000, cb);
-});
-
-gulp.task('serve:web', ['serve:api'], serve({
-  root: ['.'],
-  port: process.env.PORT || 8000
-}));
-
-gulp.task('serve', ['serve:api', 'serve:web']);
 
 /****************************************
   Sass
@@ -73,4 +52,4 @@ gulp.task('watch', ['build'], function () {
 })
 
 // Default
-gulp.task('default', ['serve', 'watch', 'sass']);
+gulp.task('default', ['watch', 'sass']);
